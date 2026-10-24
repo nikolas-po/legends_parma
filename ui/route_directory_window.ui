@@ -11,7 +11,224 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Route_Catalog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget {
+    background-color: #F5F0E8;
+}
+
+#headerFrame {
+    background-color: #2C2A26;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+#headerFrame QLabel {
+    color: #F5F0E8;
+    border: none;
+}
+#logout_btn {
+    background-color: transparent;
+    color: #F5F0E8;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+#logout_btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+#logout_btn:pressed {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#leftZone {
+    background-color: #EDE6D9;
+    border-right: 1px solid #D4CBBE;
+}
+#rightZone {
+    background-color: #FFFFFF;
+}
+#rightZone QLabel {
+    border: none;
+    background: transparent;
+}
+
+#pointsFrame, #reviewsFrame, #infoFrame {
+    background-color: #FFFFFF;
+    border: 1px solid #D4CBBE;
+}
+#mapFrame {
+    background-color: #EDE6D9;
+    border: 1px solid #D4CBBE;
+}
+#mapFrame QLabel {
+    background: #FFFFFF;
+    border: 1px solid #D4CBBE;
+    color: #6B6560;
+    font-size: 11px;
+    padding: 4px 8px;
+}
+
+#pointsFrame QLabel#lbl_points_title, 
+#reviewsFrame QLabel#lbl_reviews_title, 
+#rightZone QLabel#lbl_route_props, 
+#rightZone QLabel#lbl_route_desc_title {
+    font-size: 11px;
+    color: #6B6560;
+}
+
+#point1Frame, #point2Frame {
+    background: #FFFFFF;
+    border: 1px solid #D4CBBE;
+}
+#point1Frame QLabel, #point2Frame QLabel {
+    border: none;
+}
+#point1Frame QLabel#lbl_p1_name, #point2Frame QLabel#lbl_p2_name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2C2A26;
+}
+#point1Frame QLabel#lbl_p1_coords, #point2Frame QLabel#lbl_p2_coords {
+    font-size: 11px;
+    font-family: monospace;
+    color: #6B6560;
+}
+
+#weatherFrame {
+    background-color: #EDE6D9;
+    border: 1px solid #D4CBBE;
+}
+#weatherFrame QLabel {
+    border: none;
+}
+#weatherFrame QLabel#lbl_weather_title {
+    font-size: 11px;
+    color: #6B6560;
+}
+#weatherFrame QLabel#lbl_temp {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2C2A26;
+}
+#weatherFrame QLabel#lbl_weather_desc {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2C2A26;
+}
+#weatherFrame QLabel#lbl_weather_cache {
+    font-size: 11px;
+    color: #6B6560;
+}
+
+#reviewsFrame QLabel#lbl_stars {
+    font-size: 12px;
+    color: #C4A35A;
+}
+#reviewItemLayout QLabel#lbl_review_text {
+    font-size: 12px;
+    color: #6B6560;
+}
+#reviewItemLayout QLabel#lbl_review_author {
+    font-size: 11px;
+    color: #A39E94;
+}
+#review_line {
+    border: none;
+    border-top: 1px solid #D4CBBE;
+    max-height: 1px;
+}
+
+#rightZone QLabel#lbl_route_title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2C2A26;
+}
+#rightZone QLabel#lbl_route_desc {
+    font-size: 12px;
+    color: #6B6560;
+}
+#info_line {
+    border: none;
+    border-top: 1px solid #D4CBBE;
+    max-height: 1px;
+}
+
+#actionBarFrame {
+    background-color: #FFFFFF;
+    border-top: 1px solid #D4CBBE;
+}
+#btn_back {
+    padding: 3px 9px;
+    font-size: 12px;
+    color: #6B6560;
+    background: transparent;
+    border: none;
+}
+#btn_back:hover {
+    background: #F5F0E8;
+    color: #2C2A26;
+}
+#btn_back:pressed {
+    background: #EDE6D9;
+}
+
+#btn_edit, #btn_export, #btn_leave_review, #btn_update_weather {
+    background: #FFFFFF;
+    color: #2C2A26;
+    border: 1px solid #D4CBBE;
+    padding: 3px 9px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+#btn_edit:hover, #btn_export:hover, #btn_leave_review:hover, #btn_update_weather:hover {
+    background: #F5F0E8;
+    border: 1px solid #4A6741;
+}
+#btn_edit:pressed, #btn_export:pressed, #btn_leave_review:pressed, #btn_update_weather:pressed {
+    background: #EDE6D9;
+}
+
+#btn_schedule {
+    background: #4A6741;
+    color: #FFFFFF;
+    border: none;
+    padding: 3px 9px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+#btn_schedule:hover { background: #3D5636; }
+#btn_schedule:pressed { background: #334A2E; }
+
+#btn_delete {
+    background: #FFFFFF;
+    color: #B54A3A;
+    border: 1px solid #B54A3A;
+    padding: 3px 9px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+#btn_delete:hover { background: #F5E8E6; }
+#btn_delete:pressed { background: #EBD5D1; }
+
+QTabWidget::panel { border: none; background-color: #FFFFFF; }
+QTabBar { background-color: #FFFFFF; border: none; }
+QTabBar::tab { 
+    height: 40px; 
+    background-color: #FFFFFF; 
+    color: #6B6560; 
+    font-size: 12px; 
+    font-weight: normal; 
+    padding: 0px 30px; 
+    border: none; 
+    border-bottom: 2px solid transparent; 
+    border-top: 1px solid #D4CBBE;
+    text-align: center; 
+}
+QTabBar::tab:hover { color: #2C2A26; }
+QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -758,7 +975,7 @@ QTabBar::tab:selected {
        <enum>QTabWidget::TabPosition::North</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="usesScrollButtons">
        <bool>false</bool>
