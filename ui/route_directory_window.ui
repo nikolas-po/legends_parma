@@ -47,7 +47,22 @@
       <property name="styleSheet">
        <string notr="true">#headerFrame { background-color: #2C2A26; border: none; }
 #headerFrame QLabel { color: #F5F0E8; }
-#headerFrame QPushButton { color: #F5F0E8; background: transparent; border: none; }</string>
+#logout_btn {
+    background-color: transparent;
+    color: #F5F0E8;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+#logout_btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+#logout_btn:pressed {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <property name="spacing">
@@ -167,11 +182,6 @@
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton { font-size: 12px; padding: 3px 10px; border-radius: 4px; background-color: transparent; color: #F5F0E8; border: 1px solid rgba(255, 255, 255, 0.25); }
-QPushButton:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }
-QPushButton:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }</string>
-         </property>
          <property name="text">
           <string>Выйти</string>
          </property>
@@ -219,14 +229,47 @@ QPushButton:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px s
           <string notr="true">#leftPanel { background-color: #F5F0E8; border-right: 1px solid #D4CBBE; }
 #lbl_title { font-size: 12px; color: #6B6560; }
 #lbl_desc { font-size: 11px; color: #6B6560; }
-QPushButton { font-size: 12px; padding: 3px 9px; border-radius: 4px; }
-#btn_open { background-color: #4A6741; color: #FFFFFF; border: none; }
+
+#btn_open {
+    background-color: #4A6741;
+    color: #FFFFFF;
+    border: none;
+    padding: 3px 9px;
+    font-size: 12px;
+    border-radius: 4px;
+}
 #btn_open:hover { background-color: #3D5636; }
 #btn_open:pressed { background-color: #334A2E; }
-#btn_edit { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; }
-#btn_edit:hover { border: 1px solid #4A6741; }
-#btn_delete { background-color: #FFFFFF; color: #B54A3A; border: 1px solid #B54A3A; }
-#btn_delete:hover { background-color: #F5E8E6; }</string>
+#btn_open:disabled { background-color: #A8B5A0; }
+
+#btn_edit {
+    background-color: #FFFFFF;
+    color: #2C2A26;
+    border: 1px solid #D4CBBE;
+    padding: 3px 9px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+#btn_edit:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }
+#btn_edit:pressed { background-color: #EDE6D9; border: 1px solid #3D5636; }
+#btn_edit:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }
+
+#btn_delete {
+    background-color: #FFFFFF;
+    color: #B54A3A;
+    border: 1px solid #B54A3A;
+    padding: 3px 9px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+#btn_delete:hover { background-color: #F5E8E6; color: #B54A3A; border: 1px solid #B54A3A; }
+#btn_delete:pressed { background-color: #EBD5D1; color: #9A3E30; border: 1px solid #9A3E30; }
+#btn_delete:disabled { background-color: #FFFFFF; color: #D4A39C; border: 1px solid #E5C4BF; }
+
+QRadioButton { spacing: 6px; font-size: 12px; color: #6B6560; }
+QRadioButton::indicator { width: 15px; height: 15px; }
+QRadioButton::indicator:unchecked { border: 1px solid #D4CBBE; border-radius: 8px; background-color: #FFFFFF; }
+QRadioButton::indicator:checked { border: 4px solid #4A6741; border-radius: 8px; background-color: #FFFFFF; }</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <property name="spacing">
@@ -373,7 +416,8 @@ QPushButton { font-size: 12px; padding: 3px 9px; border-radius: 4px; }
     background-color: #F5F0E8;
     border-top: 1px solid #D4CBBE;
 }
-#filterPanel QLineEdit, #filterPanel QComboBox {
+
+#filterPanel QLineEdit {
     padding: 4px 8px;
     font-size: 12px;
     border-radius: 4px;
@@ -381,31 +425,90 @@ QPushButton { font-size: 12px; padding: 3px 9px; border-radius: 4px; }
     background-color: #FFFFFF;
     color: #2C2A26;
 }
+#filterPanel QLineEdit:hover { border: 1px solid #B8AE9E; }
+#filterPanel QLineEdit:focus { border: 1px solid #4A6741; }
 #filterPanel QLineEdit#searchInput { min-width: 160px; max-width: 240px; }
-#filterPanel QComboBox { min-width: 120px; }
-#btn_add_route {
-    padding: 3px 9px;
+
+#filterPanel QComboBox {
+    padding: 4px 8px;
     font-size: 12px;
     border-radius: 4px;
+    border: 1px solid #D4CBBE;
+    background-color: #FFFFFF;
+    color: #2C2A26;
+    min-width: 120px;
+}
+#filterPanel QComboBox:hover { border: 1px solid #B8AE9E; }
+#filterPanel QComboBox:on { border: 1px solid #4A6741; }
+#filterPanel QComboBox:disabled { background-color: #F5F0E8; color: #A39E94; border: 1px solid #E5DFD4; }
+#filterPanel QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #D4CBBE;
+    selection-background-color: #E8EDE4;
+    selection-color: #2C2A26;
+}
+#filterPanel QComboBox QAbstractItemView::item:hover {
+    background-color: #EDE6D9;
+}
+
+#btn_add_route {
     background-color: #4A6741;
     color: #FFFFFF;
     border: none;
-}
-#btn_add_route:hover { background-color: #3D5636; }
-#btn_add_route:pressed { background-color: #334A2E; }
-#btn_reset {
     padding: 3px 9px;
     font-size: 12px;
     border-radius: 4px;
+}
+#btn_add_route:hover { background-color: #3D5636; }
+#btn_add_route:pressed { background-color: #334A2E; }
+#btn_add_route:disabled { background-color: #A8B5A0; }
+
+#btn_reset {
     background-color: #FFFFFF;
     color: #2C2A26;
     border: 1px solid #D4CBBE;
+    padding: 3px 9px;
+    font-size: 12px;
+    border-radius: 4px;
 }
-#btn_reset:hover { border: 1px solid #4A6741; }
-#chk_deleted { font-size: 12px; color: #2C2A26; }
+#btn_reset:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }
+#btn_reset:pressed { background-color: #EDE6D9; border: 1px solid #3D5636; }
+#btn_reset:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }
+
+#chk_deleted {
+    spacing: 6px;
+    font-size: 12px;
+    color: #6B6560;
+}
+#chk_deleted::indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    border: 1px solid #D4CBBE;
+    background-color: #FFFFFF;
+}
+#chk_deleted::indicator:hover {
+    border: 1px solid #B8AE9E;
+}
+#chk_deleted::indicator:checked {
+    background-color: #4A6741;
+    border: 1px solid #4A6741;
+}
+#chk_deleted::indicator:pressed {
+    background-color: #334A2E;
+    border: 1px solid #334A2E;
+}
+#chk_deleted::indicator:disabled {
+    background-color: #E5DFD4;
+    border: 1px solid #E5DFD4;
+}
+#chk_deleted:disabled {
+    color: #A39E94;
+}
 
 #tableWidget {
     background-color: #FFFFFF;
+    alternate-background-color: #FAF8F3;
     border: 1px solid #D4CBBE;
     outline: none;
 }
@@ -423,7 +526,7 @@ QTableWidget::item {
     font-size: 12px;
     color: #2C2A26;
     padding: 7px 10px;
-    border-bottom: 1px solid #E0DCD3;
+    border-bottom: 1px solid #D4CBBE;
 }
 QTableWidget::item:hover { background-color: #EDE6D9; }
 QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
@@ -591,6 +694,9 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
              </item>
              <item>
               <widget class="QCheckBox" name="chk_deleted">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="text">
                 <string>Показывать удалённые</string>
                </property>
@@ -628,9 +734,25 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
       <property name="styleSheet">
        <string notr="true">QTabWidget::panel { border: none; background-color: #FFFFFF; }
 QTabBar { background-color: #FFFFFF; border: none; }
-QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; text-align: center; }
-QTabBar::tab:hover { color: #2C2A26; }
-QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }</string>
+QTabBar::tab { 
+    height: 40px; 
+    background-color: #FFFFFF; 
+    color: #6B6560; 
+    font-size: 12px; 
+    font-weight: normal; 
+    padding: 0px 30px; 
+    border: none; 
+    border-bottom: 2px solid transparent; 
+    text-align: center; 
+}
+QTabBar::tab:hover { 
+    color: #2C2A26; 
+}
+QTabBar::tab:selected { 
+    color: #2C2A26; 
+    font-weight: 600; 
+    border-bottom: 2px solid #4A6741; 
+}</string>
       </property>
       <property name="tabPosition">
        <enum>QTabWidget::TabPosition::North</enum>
