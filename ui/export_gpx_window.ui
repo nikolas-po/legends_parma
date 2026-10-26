@@ -42,7 +42,6 @@
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Стили для модального окна */
 #modalFrame {
     background-color: #FFFFFF;
     border: 1px solid #D4CBBE;
@@ -184,7 +183,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
     <property name="rightMargin"><number>0</number></property>
     <property name="bottomMargin"><number>0</number></property>
     
-    <!-- Шапка -->
     <item>
      <widget class="QFrame" name="headerFrame">
       <property name="minimumSize"><size><width>0</width><height>40</height></size></property>
@@ -250,7 +248,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
      </widget>
     </item>
 
-    <!-- Область модального окна (по центру) -->
     <item>
      <layout class="QHBoxLayout" name="centerLayout">
       <property name="spacing"><number>0</number></property>
@@ -278,14 +275,12 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
          <property name="rightMargin"><number>28</number></property>
          <property name="bottomMargin"><number>24</number></property>
          
-         <!-- Заголовок -->
          <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="lbl_modal_title">
            <property name="text"><string>Экспорт в GPX</string></property>
           </widget>
          </item>
          
-         <!-- Маршрут -->
          <item>
           <layout class="QVBoxLayout" name="routeLayout">
            <property name="spacing"><number>5</number></property>
@@ -303,7 +298,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
           </layout>
          </item>
          
-         <!-- Опции -->
          <item>
           <layout class="QVBoxLayout" name="optionsLayout">
            <property name="spacing"><number>6</number></property>
@@ -325,14 +319,12 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
           </layout>
          </item>
          
-         <!-- Подсказка об ошибке / пустом маршруте -->
          <item>
           <widget class="QLabel" name="lbl_error_hint">
            <property name="text"><string>Без точек маршрута экспорт невозможен</string></property>
           </widget>
          </item>
          
-         <!-- Путь к файлу -->
          <item>
           <layout class="QVBoxLayout" name="pathLayout">
            <property name="spacing"><number>5</number></property>
@@ -360,7 +352,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
           </layout>
          </item>
          
-         <!-- Кнопки действий -->
          <item>
           <layout class="QHBoxLayout" name="buttonsLayout">
            <property name="spacing"><number>8</number></property>
@@ -385,7 +376,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
           </layout>
          </item>
          
-         <!-- Успех (скрыт по умолчанию) -->
          <item>
           <widget class="QFrame" name="successBanner">
            <property name="visible"><bool>false</bool></property>
@@ -403,7 +393,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
           </widget>
          </item>
          
-         <!-- Ошибка (скрыта по умолчанию) -->
          <item>
           <widget class="QFrame" name="errorBanner">
            <property name="visible"><bool>false</bool></property>
@@ -435,7 +424,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
      </layout>
     </item>
 
-    <!-- Распорка -->
     <item>
      <spacer name="verticalSpacer">
       <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
@@ -443,7 +431,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
      </spacer>
     </item>
 
-    <!-- Нижние вкладки -->
     <item alignment="Qt::AlignHCenter">
      <widget class="QTabWidget" name="tabWidget">
       <property name="sizePolicy"><sizepolicy hsizetype="Maximum" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>

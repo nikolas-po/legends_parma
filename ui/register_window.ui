@@ -207,6 +207,9 @@ margin-bottom:5px;</string>
            </item>
            <item>
             <widget class="QLineEdit" name="passw_in">
+             <property name="echoMode">
+              <enum>QLineEdit::EchoMode::Password</enum>
+             </property>
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -254,6 +257,9 @@ margin-bottom:5px;</string>
            </item>
            <item>
             <widget class="QLineEdit" name="passw_in_2">
+             <property name="echoMode">
+              <enum>QLineEdit::EchoMode::Password</enum>
+             </property>
              <property name="minimumSize">
               <size>
                <width>0</width>

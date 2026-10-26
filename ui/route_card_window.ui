@@ -769,13 +769,10 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
              </sizepolicy>
             </property>
             <layout class="QVBoxLayout" name="mapLayout">
-             <item>
+             <item alignment="Qt::AlignmentFlag::AlignCenter">
               <widget class="QLabel" name="lbl_map_placeholder">
                <property name="text">
                 <string>Карта маршрута</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
               </widget>
              </item>

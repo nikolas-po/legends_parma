@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1172</width>
+    <height>673</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AuditLogWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget {
+    background-color: #F5F0E8;
+}
+
+#headerFrame { 
+    background-color: #2C2A26; 
+    border: none; 
+}
+#headerFrame QLabel { 
+    color: #F5F0E8; 
+}
+#logout_btn {
+    background-color: transparent;
+    color: #F5F0E8;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 3px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+#logout_btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+#logout_btn:pressed {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#contentFrame {
+    background-color: #F5F0E8;
+}
+
+QTableWidget {
+    background-color: #FFFFFF;
+    border: 1px solid #D4CBBE;
+    outline: none;
+    gridline-color: transparent;
+}
+QHeaderView::section {
+    background-color: #EDE6D9;
+    color: #6B6560;
+    font-size: 11px;
+    font-weight: 600;
+    border: none;
+    border-bottom: 1px solid #D4CBBE;
+    border-right: 1px solid #D4CBBE;
+    padding: 7px 10px;
+    text-align: left;
+}
+QTableWidget::item {
+    border-bottom: 1px solid #D4CBBE;
+    padding: 7px 10px;
+    color: #2C2A26;
+    font-size: 12px;
+}
+QTableWidget::item:hover {
+    background-color: #EDE6D9;
+}
+QTableWidget::item:selected {
+    background-color: #E8EDE4;
+    color: #2C2A26;
+}
+
+#filterFrame {
+    background-color: transparent;
+}
+#filterFrame QLabel {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6B6560;
+}
+
+QDateEdit, QComboBox {
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 4px;
+    border: 1px solid #D4CBBE;
+    background-color: #FFFFFF;
+    color: #2C2A26;
+    min-height: 20px;
+}
+QDateEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 28px;
+    border-left: 1px solid #D4CBBE;
+    background-color: #F5F0E8;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+QDateEdit:hover, QComboBox:hover {
+    border: 1px solid #B8AE9E;
+}
+QDateEdit:focus, QComboBox:focus {
+    border: 1px solid #4A6741;
+}
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #D4CBBE;
+    selection-background-color: #E8EDE4;
+    selection-color: #2C2A26;
+}
+QComboBox QAbstractItemView::item:hover {
+    background-color: #EDE6D9;
+}
+
+#btn_apply, #btn_export {
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #2C2A26;
+    border: 1px solid #D4CBBE;
+    min-height: 20px;
+}
+#btn_apply:hover, #btn_export:hover {
+    border: 1px solid #4A6741;
+    background-color: #F5F0E8;
+}
+#btn_apply:pressed, #btn_export:pressed {
+    background-color: #EDE6D9;
+}
+
+QTabWidget::panel { border: none; background-color: #FFFFFF; }
+QTabBar { background-color: #FFFFFF; border: none; }
+QTabBar::tab { 
+    height: 40px; 
+    background-color: #FFFFFF; 
+    color: #6B6560; 
+    font-size: 12px; 
+    font-weight: normal; 
+    padding: 0px 30px; 
+    border: none; 
+    border-bottom: 2px solid transparent; 
+    border-top: 1px solid #D4CBBE;
+    text-align: center; 
+}
+QTabBar::tab:hover { color: #2C2A26; }
+QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="headerFrame">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>40</height>
+       </size>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>15</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>15</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="logo">
+         <property name="minimumSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { background: transparent; margin-right: 12px; border: none; }</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../qrc/login_res.qrc">
+           <normaloff>:/login/icons/logo.png</normaloff>:/login/icons/logo.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>18</width>
+           <height>18</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="name">
+         <property name="styleSheet">
+          <string notr="true">font-size: 13px; font-weight: bold; margin-right: 15px;</string>
+         </property>
+         <property name="text">
+          <string>Легенды Пармы</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="name_chart">
+         <property name="styleSheet">
+          <string notr="true">font-size: 13px; margin-right: 10px;</string>
+         </property>
+         <property name="text">
+          <string>Журнал аудита</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="status_lb">
+         <property name="minimumSize">
+          <size>
+           <width>7</width>
+           <height>7</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>7</width>
+           <height>7</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: #4A6741; border-radius: 3px; border: none;</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="role_lb">
+         <property name="styleSheet">
+          <string notr="true">font-size: 12px; margin-right: 15px;</string>
+         </property>
+         <property name="text">
+          <string>Администратор</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="logout_btn">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Выйти</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="contentFrame">
+      <layout class="QVBoxLayout" name="contentLayout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>12</number>
+       </property>
+       <property name="topMargin">
+        <number>12</number>
+       </property>
+       <property name="rightMargin">
+        <number>12</number>
+       </property>
+       <property name="bottomMargin">
+        <number>12</number>
+       </property>
+       <item>
+        <widget class="QTableWidget" name="auditTable">
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+         </property>
+         <property name="showGrid">
+          <bool>false</bool>
+         </property>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Дата/время</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Пользователь</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Действие</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Объект</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Результат</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Детали</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="filterFrame">
+         <layout class="QHBoxLayout" name="filterLayout">
+          <property name="spacing">
+           <number>8</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblDateFrom">
+            <property name="text">
+             <string>С</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="dateFrom">
+            <property name="minimumSize">
+             <size>
+              <width>140</width>
+              <height>38</height>
+             </size>
+            </property>
+            <property name="displayFormat">
+             <string>dd.MM.yyyy</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblDateTo">
+            <property name="text">
+             <string>По</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="dateTo">
+            <property name="minimumSize">
+             <size>
+              <width>140</width>
+              <height>38</height>
+             </size>
+            </property>
+            <property name="displayFormat">
+             <string>dd.MM.yyyy</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboUser">
+            <property name="minimumSize">
+             <size>
+              <width>140</width>
+              <height>38</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Пользователь</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboAction">
+            <property name="minimumSize">
+             <size>
+              <width>140</width>
+              <height>38</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Действие</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <spacer name="filterSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_apply">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>38</height>
+             </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Применить</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_export">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>38</height>
+             </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Выгрузить CSV</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>44</height>
+       </size>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::TabPosition::North</enum>
+      </property>
+      <property name="currentIndex">
+       <number>5</number>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="drawBase" stdset="0">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="title">
+        <string>Каталог маршрутов</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_9">
+       <attribute name="title">
+        <string>Туры</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_10">
+       <attribute name="title">
+        <string>Импорт и экспорт</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_11">
+       <attribute name="title">
+        <string>Синхронизация</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_12">
+       <attribute name="title">
+        <string>Пользователи</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_13">
+       <attribute name="title">
+        <string>Журнал аудита</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_14">
+       <attribute name="title">
+        <string>Настройки API и кеш</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../qrc/login_res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

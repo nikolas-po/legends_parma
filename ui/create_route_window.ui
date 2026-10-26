@@ -88,7 +88,7 @@
     color: #2C2A26;
 }
 
-QLineEdit, QTextEdit, QComboBox {
+QLineEdit, QTextEdit, QComboBox, QDoubleSpinBox {
     padding: 10px 12px;
     font-size: 14px;
     border-radius: 4px;
@@ -96,10 +96,10 @@ QLineEdit, QTextEdit, QComboBox {
     background-color: #FFFFFF;
     color: #2C2A26;
 }
-QLineEdit:hover, QTextEdit:hover, QComboBox:hover {
+QLineEdit:hover, QTextEdit:hover, QComboBox:hover, QDoubleSpinBox:hover {
     border: 1px solid #B8AE9E;
 }
-QLineEdit:focus, QTextEdit:focus, QComboBox:focus {
+QLineEdit:focus, QTextEdit:focus, QComboBox:focus, QDoubleSpinBox:focus {
     border: 1px solid #4A6741;
 }
 QComboBox QAbstractItemView {
@@ -457,7 +457,17 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="input_lat"/>
+                 <widget class="QDoubleSpinBox" name="input_lat">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-90.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>90.000000000000000</double>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -474,7 +484,17 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="input_lon"/>
+                 <widget class="QDoubleSpinBox" name="input_lon">
+                  <property name="decimals">
+                   <number>6</number>
+                  </property>
+                  <property name="minimum">
+                   <double>-180.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>180.000000000000000</double>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -491,7 +511,11 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="input_alt"/>
+                 <widget class="QDoubleSpinBox" name="input_alt">
+                  <property name="maximum">
+                   <double>99999.000000000000000</double>
+                  </property>
+                 </widget>
                 </item>
                </layout>
               </item>
@@ -687,7 +711,11 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="input_length"/>
+                    <widget class="QDoubleSpinBox" name="input_length">
+                     <property name="maximum">
+                      <double>99999.000000000000000</double>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </item>
@@ -704,7 +732,11 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="input_time"/>
+                    <widget class="QDoubleSpinBox" name="input_time">
+                     <property name="maximum">
+                      <double>99999.000000000000000</double>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </item>

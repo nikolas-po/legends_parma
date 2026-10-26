@@ -57,7 +57,7 @@
     color: #6B6560;
 }
 
-QLineEdit, QTextEdit {
+QLineEdit, QTextEdit, QComboBox {
     padding: 10px 12px;
     font-size: 14px;
     border-radius: 4px;
@@ -65,11 +65,17 @@ QLineEdit, QTextEdit {
     background-color: #FFFFFF;
     color: #2C2A26;
 }
-QLineEdit:hover, QTextEdit:hover {
+QLineEdit:hover, QTextEdit:hover, QComboBox:hover {
     border: 1px solid #B8AE9E;
 }
-QLineEdit:focus, QTextEdit:focus {
+QLineEdit:focus, QTextEdit:focus, QComboBox:focus {
     border: 1px solid #4A6741;
+}
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #D4CBBE;
+    selection-background-color: #E8EDE4;
+    selection-color: #2C2A26;
 }
 
 #btn_publish {
@@ -334,13 +340,38 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="input_rating">
+            <widget class="QComboBox" name="input_rating">
              <property name="maximumSize">
               <size>
                <width>150</width>
                <height>16777215</height>
               </size>
              </property>
+             <item>
+              <property name="text">
+               <string>1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>5</string>
+              </property>
+             </item>
             </widget>
            </item>
           </layout>

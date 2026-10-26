@@ -521,6 +521,9 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                    <property name="calendarPopup">
                     <bool>true</bool>
                    </property>
+                   <property name="displayFormat">
+                    <string>dd.MM.yyyy</string>
+                   </property>
                   </widget>
                  </item>
                 </layout>
@@ -541,6 +544,9 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                   <widget class="QDateEdit" name="dateEnd">
                    <property name="calendarPopup">
                     <bool>true</bool>
+                   </property>
+                   <property name="displayFormat">
+                    <string>dd.MM.yyyy</string>
                    </property>
                   </widget>
                  </item>
