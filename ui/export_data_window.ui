@@ -14,163 +14,53 @@
    <string>ExportWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#centralwidget {
-    background-color: #F5F0E8;
-}
+   <string notr="true">#centralwidget { background-color: #F5F0E8; }
+#headerFrame { background-color: #2C2A26; border: none; }
+#headerFrame QLabel { color: #F5F0E8; }
+#logout_btn { background-color: transparent; color: #F5F0E8; border: 1px solid rgba(255, 255, 255, 0.25); padding: 3px 10px; font-size: 12px; border-radius: 4px; }
+#logout_btn:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }
+#logout_btn:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }
 
-#headerFrame { 
-    background-color: #2C2A26; 
-    border: none; 
-}
-#headerFrame QLabel { 
-    color: #F5F0E8; 
-}
-#logout_btn {
-    background-color: transparent;
-    color: #F5F0E8;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 3px 10px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-#logout_btn:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-#logout_btn:pressed {
-    background-color: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
+#formCard { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }
+#lbl_form_title { font-size: 16px; font-weight: 600; color: #2C2A26; }
+#fieldLabel { font-size: 12px; color: #6B6560; }
 
-#formCard {
-    background-color: #FFFFFF;
-    border: 1px solid #D4CBBE;
-    border-radius: 4px;
-}
-#lbl_form_title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #2C2A26;
-}
-#fieldLabel {
-    font-size: 12px;
-    color: #6B6560;
-}
+QLineEdit, QComboBox { padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; }
+QLineEdit:hover, QComboBox:hover { border: 1px solid #B8AE9E; }
+QLineEdit:focus, QComboBox:focus { border: 1px solid #4A6741; }
+QLineEdit[error="true"], QComboBox[error="true"] { border: 1px solid #B54A3A; }
+QLineEdit:disabled, QComboBox:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }
+QComboBox QAbstractItemView { background-color: #FFFFFF; border: 1px solid #D4CBBE; selection-background-color: #E8EDE4; selection-color: #2C2A26; }
+QComboBox QAbstractItemView::item:hover { background-color: #EDE6D9; }
 
-QLineEdit, QComboBox {
-    padding: 10px 12px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #D4CBBE;
-    background-color: #FFFFFF;
-    color: #2C2A26;
-}
-QLineEdit:hover, QComboBox:hover {
-    border: 1px solid #B8AE9E;
-}
-QLineEdit:focus, QComboBox:focus {
-    border: 1px solid #4A6741;
-}
-QComboBox QAbstractItemView {
-    background-color: #FFFFFF;
-    border: 1px solid #D4CBBE;
-    selection-background-color: #E8EDE4;
-    selection-color: #2C2A26;
-}
-QComboBox QAbstractItemView::item:hover {
-    background-color: #EDE6D9;
-}
+#columnsFrame { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }
+QCheckBox { spacing: 6px; font-size: 12px; color: #6B6560; background: transparent; }
+QCheckBox::indicator { width: 15px; height: 15px; border-radius: 3px; border: 1px solid #D4CBBE; background-color: #FFFFFF; }
+QCheckBox::indicator:hover { border: 1px solid #B8AE9E; }
+QCheckBox::indicator:checked { background-color: #4A6741; border: 1px solid #4A6741; }
+QCheckBox::indicator:disabled { background-color: #E5DFD4; border: 1px solid #E5DFD4; }
+QCheckBox:disabled { color: #A39E94; }
 
-#columnsFrame {
-    background-color: #FFFFFF;
-    border: 1px solid #D4CBBE;
-    border-radius: 4px;
-}
-QCheckBox {
-    spacing: 6px;
-    font-size: 12px;
-    color: #6B6560;
-    background: transparent;
-}
-QCheckBox::indicator {
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    border: 1px solid #D4CBBE;
-    background-color: #FFFFFF;
-}
-QCheckBox::indicator:hover {
-    border: 1px solid #B8AE9E;
-}
-QCheckBox::indicator:checked {
-    background-color: #4A6741;
-    border: 1px solid #4A6741;
-}
-
-#btn_export {
-    background-color: #4A6741;
-    color: #FFFFFF;
-    border: none;
-    padding: 11px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 4px;
-}
+#btn_export { background-color: #4A6741; color: #FFFFFF; border: none; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }
 #btn_export:hover { background-color: #3D5636; }
 #btn_export:pressed { background-color: #334A2E; }
 #btn_export:disabled { background-color: #A8B5A0; }
+#btn_export:focus { border: 1px dashed #4A6741; }
 
-#btn_browse {
-    background-color: #FFFFFF;
-    color: #2C2A26;
-    border: 1px solid #D4CBBE;
-    padding: 10px 16px;
-    font-size: 14px;
-    border-radius: 4px;
-}
-#btn_browse:hover {
-    border: 1px solid #4A6741;
-    background-color: #F5F0E8;
-}
+#btn_browse { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; padding: 10px 16px; font-size: 14px; border-radius: 4px; }
+#btn_browse:hover { border: 1px solid #4A6741; background-color: #F5F0E8; }
+#btn_browse:pressed { background-color: #EDE6D9; }
+#btn_browse:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }
+#btn_browse:focus { border: 1px dashed #4A6741; }
 
-#successBanner {
-    background-color: #E8EDE4;
-    border: 1px solid #4A6741;
-    border-radius: 4px;
-}
-#successBanner QLabel {
-    color: #4A6741;
-    font-size: 12px;
-    border: none;
-    background: transparent;
-}
-
-#errorBanner {
-    background-color: #F5E8E6;
-    border: 1px solid #B54A3A;
-    border-radius: 4px;
-}
-#errorBanner QLabel {
-    color: #B54A3A;
-    font-size: 12px;
-    border: none;
-    background: transparent;
-}
+#successBanner { background-color: #E8EDE4; border: 1px solid #4A6741; border-radius: 4px; }
+#successBanner QLabel { color: #4A6741; font-size: 12px; border: none; background: transparent; }
+#errorBanner { background-color: #F5E8E6; border: 1px solid #B54A3A; border-radius: 4px; }
+#errorBanner QLabel { color: #B54A3A; font-size: 12px; border: none; background: transparent; }
 
 QTabWidget::panel { border: none; background-color: #FFFFFF; }
 QTabBar { background-color: #FFFFFF; border: none; }
-QTabBar::tab { 
-    height: 40px; 
-    background-color: #FFFFFF; 
-    color: #6B6560; 
-    font-size: 12px; 
-    font-weight: normal; 
-    padding: 0px 30px; 
-    border: none; 
-    border-bottom: 2px solid transparent; 
-    border-top: 1px solid #D4CBBE;
-    text-align: center; 
-}
+QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }
 QTabBar::tab:hover { color: #2C2A26; }
 QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }</string>
   </property>
@@ -181,7 +71,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
     <property name="topMargin"><number>0</number></property>
     <property name="rightMargin"><number>0</number></property>
     <property name="bottomMargin"><number>0</number></property>
-    
     <item>
      <widget class="QFrame" name="headerFrame">
       <property name="minimumSize"><size><width>0</width><height>40</height></size></property>

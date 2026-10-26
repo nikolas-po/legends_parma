@@ -14,164 +14,52 @@
    <string>ExportGPX_Window</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#centralwidget {
-    background-color: #F5F0E8;
-}
+   <string notr="true">#centralwidget { background-color: #F5F0E8; }
+#headerFrame { background-color: #2C2A26; border: none; }
+#headerFrame QLabel { color: #F5F0E8; }
+#logout_btn { background-color: transparent; color: #F5F0E8; border: 1px solid rgba(255, 255, 255, 0.25); padding: 3px 10px; font-size: 12px; border-radius: 4px; }
+#logout_btn:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }
+#logout_btn:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }
 
-#headerFrame { 
-    background-color: #2C2A26; 
-    border: none; 
-}
-#headerFrame QLabel { 
-    color: #F5F0E8; 
-}
-#logout_btn {
-    background-color: transparent;
-    color: #F5F0E8;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 3px 10px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-#logout_btn:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-#logout_btn:pressed {
-    background-color: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
+#modalFrame { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }
+#lbl_modal_title { font-size: 16px; font-weight: 600; color: #2C2A26; }
+#lbl_field { font-size: 12px; color: #6B6560; }
+#lbl_error_hint { font-size: 12px; color: #B54A3A; }
 
-#modalFrame {
-    background-color: #FFFFFF;
-    border: 1px solid #D4CBBE;
-    border-radius: 4px;
-}
-#lbl_modal_title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #2C2A26;
-}
-#lbl_subtitle {
-    font-size: 12px;
-    color: #6B6560;
-}
-#lbl_field {
-    font-size: 12px;
-    color: #6B6560;
-}
-#lbl_error_hint {
-    font-size: 12px;
-    color: #B54A3A;
-}
+QComboBox, QLineEdit { padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; }
+QComboBox:hover, QLineEdit:hover { border: 1px solid #B8AE9E; }
+QComboBox:focus, QLineEdit:focus { border: 1px solid #4A6741; }
+QComboBox[error="true"], QLineEdit[error="true"] { border: 1px solid #B54A3A; }
+QComboBox:disabled, QLineEdit:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }
+QComboBox QAbstractItemView { background-color: #FFFFFF; border: 1px solid #D4CBBE; selection-background-color: #E8EDE4; selection-color: #2C2A26; }
 
-QComboBox, QLineEdit {
-    padding: 10px 12px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #D4CBBE;
-    background-color: #FFFFFF;
-    color: #2C2A26;
-}
-QComboBox:hover, QLineEdit:hover {
-    border: 1px solid #B8AE9E;
-}
-QComboBox:focus, QLineEdit:focus {
-    border: 1px solid #4A6741;
-}
-QComboBox QAbstractItemView {
-    background-color: #FFFFFF;
-    border: 1px solid #D4CBBE;
-    selection-background-color: #E8EDE4;
-    selection-color: #2C2A26;
-}
+QCheckBox { spacing: 6px; font-size: 12px; color: #6B6560; background: transparent; }
+QCheckBox::indicator { width: 15px; height: 15px; border-radius: 3px; border: 1px solid #D4CBBE; background-color: #FFFFFF; }
+QCheckBox::indicator:hover { border: 1px solid #B8AE9E; }
+QCheckBox::indicator:checked { background-color: #4A6741; border: 1px solid #4A6741; }
+QCheckBox::indicator:disabled { background-color: #E5DFD4; border: 1px solid #E5DFD4; }
+QCheckBox:disabled { color: #A39E94; }
 
-QCheckBox {
-    spacing: 6px;
-    font-size: 12px;
-    color: #6B6560;
-    background: transparent;
-}
-QCheckBox::indicator {
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    border: 1px solid #D4CBBE;
-    background-color: #FFFFFF;
-}
-QCheckBox::indicator:hover {
-    border: 1px solid #B8AE9E;
-}
-QCheckBox::indicator:checked {
-    background-color: #4A6741;
-    border: 1px solid #4A6741;
-}
-
-#btn_export {
-    background-color: #4A6741;
-    color: #FFFFFF;
-    border: none;
-    padding: 11px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 4px;
-}
+#btn_export { background-color: #4A6741; color: #FFFFFF; border: none; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }
 #btn_export:hover { background-color: #3D5636; }
 #btn_export:pressed { background-color: #334A2E; }
 #btn_export:disabled { background-color: #A8B5A0; }
+#btn_export:focus { border: 1px dashed #4A6741; }
 
-#btn_cancel, #btn_browse {
-    background-color: #FFFFFF;
-    color: #2C2A26;
-    border: 1px solid #D4CBBE;
-    padding: 11px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 4px;
-}
-#btn_cancel:hover, #btn_browse:hover {
-    background-color: #F5F0E8;
-    border: 1px solid #4A6741;
-}
+#btn_cancel, #btn_browse { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }
+#btn_cancel:hover, #btn_browse:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }
+#btn_cancel:pressed, #btn_browse:pressed { background-color: #EDE6D9; }
+#btn_cancel:disabled, #btn_browse:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }
+#btn_cancel:focus, #btn_browse:focus { border: 1px dashed #4A6741; }
 
-#successBanner {
-    background-color: #E8EDE4;
-    border: 1px solid #4A6741;
-    border-radius: 4px;
-}
-#successBanner QLabel {
-    color: #4A6741;
-    font-size: 12px;
-    border: none;
-    background: transparent;
-}
-
-#errorBanner {
-    background-color: #F5E8E6;
-    border: 1px solid #B54A3A;
-    border-radius: 4px;
-}
-#errorBanner QLabel {
-    color: #B54A3A;
-    font-size: 12px;
-    border: none;
-    background: transparent;
-}
+#successBanner { background-color: #E8EDE4; border: 1px solid #4A6741; border-radius: 4px; }
+#successBanner QLabel { color: #4A6741; font-size: 12px; border: none; background: transparent; }
+#errorBanner { background-color: #F5E8E6; border: 1px solid #B54A3A; border-radius: 4px; }
+#errorBanner QLabel { color: #B54A3A; font-size: 12px; border: none; background: transparent; }
 
 QTabWidget::panel { border: none; background-color: #FFFFFF; }
 QTabBar { background-color: #FFFFFF; border: none; }
-QTabBar::tab { 
-    height: 40px; 
-    background-color: #FFFFFF; 
-    color: #6B6560; 
-    font-size: 12px; 
-    font-weight: normal; 
-    padding: 0px 30px; 
-    border: none; 
-    border-bottom: 2px solid transparent; 
-    border-top: 1px solid #D4CBBE;
-    text-align: center; 
-}
+QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }
 QTabBar::tab:hover { color: #2C2A26; }
 QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }</string>
   </property>
@@ -182,7 +70,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
     <property name="topMargin"><number>0</number></property>
     <property name="rightMargin"><number>0</number></property>
     <property name="bottomMargin"><number>0</number></property>
-    
     <item>
      <widget class="QFrame" name="headerFrame">
       <property name="minimumSize"><size><width>0</width><height>40</height></size></property>
@@ -247,7 +134,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
       </layout>
      </widget>
     </item>
-
     <item>
      <layout class="QHBoxLayout" name="centerLayout">
       <property name="spacing"><number>0</number></property>
@@ -255,14 +141,12 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
       <property name="topMargin"><number>24</number></property>
       <property name="rightMargin"><number>24</number></property>
       <property name="bottomMargin"><number>24</number></property>
-      
       <item>
        <spacer name="leftSpacer">
         <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
         <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
        </spacer>
       </item>
-      
       <item>
        <widget class="QFrame" name="modalFrame">
         <property name="minimumSize"><size><width>440</width><height>0</height></size></property>
@@ -274,13 +158,11 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
          <property name="topMargin"><number>24</number></property>
          <property name="rightMargin"><number>28</number></property>
          <property name="bottomMargin"><number>24</number></property>
-         
          <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="lbl_modal_title">
            <property name="text"><string>Экспорт в GPX</string></property>
           </widget>
          </item>
-         
          <item>
           <layout class="QVBoxLayout" name="routeLayout">
            <property name="spacing"><number>5</number></property>
@@ -297,7 +179,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </item>
           </layout>
          </item>
-         
          <item>
           <layout class="QVBoxLayout" name="optionsLayout">
            <property name="spacing"><number>6</number></property>
@@ -318,13 +199,11 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </item>
           </layout>
          </item>
-         
          <item>
           <widget class="QLabel" name="lbl_error_hint">
            <property name="text"><string>Без точек маршрута экспорт невозможен</string></property>
           </widget>
          </item>
-         
          <item>
           <layout class="QVBoxLayout" name="pathLayout">
            <property name="spacing"><number>5</number></property>
@@ -351,7 +230,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </item>
           </layout>
          </item>
-         
          <item>
           <layout class="QHBoxLayout" name="buttonsLayout">
            <property name="spacing"><number>8</number></property>
@@ -375,7 +253,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </item>
           </layout>
          </item>
-         
          <item>
           <widget class="QFrame" name="successBanner">
            <property name="visible"><bool>false</bool></property>
@@ -392,7 +269,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </layout>
           </widget>
          </item>
-         
          <item>
           <widget class="QFrame" name="errorBanner">
            <property name="visible"><bool>false</bool></property>
@@ -409,28 +285,23 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </layout>
           </widget>
          </item>
-         
         </layout>
        </widget>
       </item>
-      
       <item>
        <spacer name="rightSpacer">
         <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
         <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
        </spacer>
       </item>
-      
      </layout>
     </item>
-
     <item>
      <spacer name="verticalSpacer">
       <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
       <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
      </spacer>
     </item>
-
     <item alignment="Qt::AlignHCenter">
      <widget class="QTabWidget" name="tabWidget">
       <property name="sizePolicy"><sizepolicy hsizetype="Maximum" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
@@ -441,30 +312,15 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
       <property name="usesScrollButtons"><bool>false</bool></property>
       <property name="tabsClosable"><bool>false</bool></property>
       <property name="drawBase" stdset="0"><bool>false</bool></property>
-      <widget class="QWidget" name="tab_8">
-       <attribute name="title"><string>Каталог маршрутов</string></attribute>
-      </widget>
-      <widget class="QWidget" name="tab_9">
-       <attribute name="title"><string>Туры</string></attribute>
-      </widget>
-      <widget class="QWidget" name="tab_10">
-       <attribute name="title"><string>Импорт и экспорт</string></attribute>
-      </widget>
-      <widget class="QWidget" name="tab_11">
-       <attribute name="title"><string>Синхронизация</string></attribute>
-      </widget>
-      <widget class="QWidget" name="tab_12">
-       <attribute name="title"><string>Пользователи</string></attribute>
-      </widget>
-      <widget class="QWidget" name="tab_13">
-       <attribute name="title"><string>Журнал аудита</string></attribute>
-      </widget>
-      <widget class="QWidget" name="tab_14">
-       <attribute name="title"><string>Настройки API и кеш</string></attribute>
-      </widget>
+      <widget class="QWidget" name="tab_8"><attribute name="title"><string>Каталог маршрутов</string></attribute></widget>
+      <widget class="QWidget" name="tab_9"><attribute name="title"><string>Туры</string></attribute></widget>
+      <widget class="QWidget" name="tab_10"><attribute name="title"><string>Импорт и экспорт</string></attribute></widget>
+      <widget class="QWidget" name="tab_11"><attribute name="title"><string>Синхронизация</string></attribute></widget>
+      <widget class="QWidget" name="tab_12"><attribute name="title"><string>Пользователи</string></attribute></widget>
+      <widget class="QWidget" name="tab_13"><attribute name="title"><string>Журнал аудита</string></attribute></widget>
+      <widget class="QWidget" name="tab_14"><attribute name="title"><string>Настройки API и кеш</string></attribute></widget>
      </widget>
     </item>
-    
    </layout>
   </widget>
  </widget>
