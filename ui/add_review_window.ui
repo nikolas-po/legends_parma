@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>1226</width>
-    <height>682</height>
+    <height>646</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>AddReview_Window</string>
+   <string>AddReviewWindow</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#centralwidget {
@@ -454,7 +454,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
        <enum>QTabWidget::TabPosition::North</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="usesScrollButtons">
        <bool>false</bool>
