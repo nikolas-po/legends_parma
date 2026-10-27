@@ -24,9 +24,9 @@
 
 #contentFrame { background-color: #F5F0E8; }
 #leftPanel, #rightPanel { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }
-#panelTitle { font-size: 14px; font-weight: 600; color: #2C2A26; }
-#fieldLabel { font-size: 12px; color: #6B6560; }
-#statsLabel { font-size: 12px; color: #6B6560; }
+#title_cache, #title_api { font-size: 14px; font-weight: 600; color: #2C2A26; }
+#lbl_ttl, #lbl_api_key, #lbl_osm, #lbl_timeout { font-size: 12px; color: #6B6560; }
+#lbl_stats { font-size: 12px; color: #6B6560; }
 
 QLineEdit, QSpinBox {
     padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26;
@@ -158,14 +158,14 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
             <property name="rightMargin"><number>14</number></property>
             <property name="bottomMargin"><number>14</number></property>
             <item>
-             <widget class="QLabel" name="panelTitle">
+             <widget class="QLabel" name="title_cache">
               <property name="text"><string>Кеш</string></property>
              </widget>
             </item>
             <item>
              <layout class="QVBoxLayout" name="ttlLayout">
               <property name="spacing"><number>5</number></property>
-              <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>TTL, секунды</string></property></widget></item>
+              <item><widget class="QLabel" name="lbl_ttl"><property name="text"><string>TTL, секунды</string></property></widget></item>
               <item>
                <widget class="QSpinBox" name="input_ttl">
                 <property name="maximum"><number>999999</number></property>
@@ -177,9 +177,9 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
             <item>
              <layout class="QVBoxLayout" name="statsLayout">
               <property name="spacing"><number>5</number></property>
-              <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Статистика кеша</string></property></widget></item>
+              <item><widget class="QLabel" name="lbl_stats"><property name="text"><string>Статистика кеша</string></property></widget></item>
               <item>
-               <widget class="QLabel" name="statsLabel">
+               <widget class="QLabel" name="statsValue">
                 <property name="text"><string>Записей: — · Размер: —</string></property>
                </widget>
               </item>
@@ -218,14 +218,14 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
             <property name="rightMargin"><number>14</number></property>
             <property name="bottomMargin"><number>14</number></property>
             <item>
-             <widget class="QLabel" name="panelTitle">
+             <widget class="QLabel" name="title_api">
               <property name="text"><string>Настройки API</string></property>
              </widget>
             </item>
             <item>
              <layout class="QVBoxLayout" name="apiKeyLayout">
               <property name="spacing"><number>5</number></property>
-              <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Ключ OpenWeather (маска)</string></property></widget></item>
+              <item><widget class="QLabel" name="lbl_api_key"><property name="text"><string>Ключ OpenWeather (маска)</string></property></widget></item>
               <item>
                <widget class="QLineEdit" name="input_api_key">
                 <property name="echoMode"><enum>QLineEdit::EchoMode::Password</enum></property>
@@ -236,14 +236,14 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
             <item>
              <layout class="QVBoxLayout" name="osmLayout">
               <property name="spacing"><number>5</number></property>
-              <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Endpoint OSM / Overpass</string></property></widget></item>
+              <item><widget class="QLabel" name="lbl_osm"><property name="text"><string>Endpoint OSM / Overpass</string></property></widget></item>
               <item><widget class="QLineEdit" name="input_osm"/></item>
              </layout>
             </item>
             <item>
              <layout class="QVBoxLayout" name="timeoutLayout">
               <property name="spacing"><number>5</number></property>
-              <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Таймаут, с</string></property></widget></item>
+              <item><widget class="QLabel" name="lbl_timeout"><property name="text"><string>Таймаут, с</string></property></widget></item>
               <item>
                <widget class="QSpinBox" name="input_timeout">
                 <property name="maximum"><number>999</number></property>

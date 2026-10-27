@@ -32,15 +32,16 @@ class Ui_MainWindow(object):
 "#logout_btn { background-color: transparent; color: #F5F0E8; border: 1px solid rgba(255, 255, 255, 0.25); padding: 3px 10px; font-size: 12px; border-radius: 4px; }\n"
 "#logout_btn:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }\n"
 "#logout_btn:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }\n"
+"#logout_btn:focus { border: 1px dashed #F5F0E8; }\n"
 "\n"
 "#formCard { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }\n"
 "#lbl_form_title { font-size: 16px; font-weight: 600; color: #2C2A26; }\n"
-"#fieldLabel { font-size: 12px; color: #6B6560; }\n"
+"#lbl_dataset, #lbl_format, #lbl_columns, #lbl_path { font-size: 12px; color: #6B6560; }\n"
 "\n"
-"QLineEdit, QComboBox { padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; }\n"
+"QLineEdit, QComboBox { padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A"
+                        "26; }\n"
 "QLineEdit:hover, QComboBox:hover { border: 1px solid #B8AE9E; }\n"
-"QLineEdit:focus"
-                        ", QComboBox:focus { border: 1px solid #4A6741; }\n"
+"QLineEdit:focus, QComboBox:focus { border: 1px solid #4A6741; }\n"
 "QLineEdit[error=\"true\"], QComboBox[error=\"true\"] { border: 1px solid #B54A3A; }\n"
 "QLineEdit:disabled, QComboBox:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }\n"
 "QComboBox QAbstractItemView { background-color: #FFFFFF; border: 1px solid #D4CBBE; selection-background-color: #E8EDE4; selection-color: #2C2A26; }\n"
@@ -50,9 +51,9 @@ class Ui_MainWindow(object):
 "QCheckBox { spacing: 6px; font-size: 12px; color: #6B6560; background: transparent; }\n"
 "QCheckBox::indicator { width: 15px; height: 15px; border-radius: 3px; border: 1px solid #D4CBBE; background-color: #FFFFFF; }\n"
 "QCheckBox::indicator:hover { border: 1px solid #B8AE9E; }\n"
-"QCheckBox::indicator:checked { background-color: #4A6741; border: 1px solid #4A6741; }\n"
-"QCheckBox::indicator:disabled { background-color: #E5DFD4; borde"
-                        "r: 1px solid #E5DFD4; }\n"
+"QCheckBox::indicator:checked { background-color: #4A6741; bord"
+                        "er: 1px solid #4A6741; }\n"
+"QCheckBox::indicator:disabled { background-color: #E5DFD4; border: 1px solid #E5DFD4; }\n"
 "QCheckBox:disabled { color: #A39E94; }\n"
 "\n"
 "#btn_export { background-color: #4A6741; color: #FFFFFF; border: none; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }\n"
@@ -67,9 +68,9 @@ class Ui_MainWindow(object):
 "#btn_browse:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }\n"
 "#btn_browse:focus { border: 1px dashed #4A6741; }\n"
 "\n"
-"#successBanner { background-color: #E8EDE4; border: 1px solid #4A6741; border-radius: 4px; }\n"
-"#successBanner QLabel { color: #4A674"
-                        "1; font-size: 12px; border: none; background: transparent; }\n"
+"#successBanner { background-color: #E8EDE"
+                        "4; border: 1px solid #4A6741; border-radius: 4px; }\n"
+"#successBanner QLabel { color: #4A6741; font-size: 12px; border: none; background: transparent; }\n"
 "#errorBanner { background-color: #F5E8E6; border: 1px solid #B54A3A; border-radius: 4px; }\n"
 "#errorBanner QLabel { color: #B54A3A; font-size: 12px; border: none; background: transparent; }\n"
 "\n"
@@ -172,10 +173,10 @@ class Ui_MainWindow(object):
         self.datasetLayout = QVBoxLayout()
         self.datasetLayout.setSpacing(5)
         self.datasetLayout.setObjectName(u"datasetLayout")
-        self.fieldLabel = QLabel(self.formCard)
-        self.fieldLabel.setObjectName(u"fieldLabel")
+        self.lbl_dataset = QLabel(self.formCard)
+        self.lbl_dataset.setObjectName(u"lbl_dataset")
 
-        self.datasetLayout.addWidget(self.fieldLabel)
+        self.datasetLayout.addWidget(self.lbl_dataset)
 
         self.comboDataset = QComboBox(self.formCard)
         self.comboDataset.addItem("")
@@ -193,10 +194,10 @@ class Ui_MainWindow(object):
         self.formatLayout = QVBoxLayout()
         self.formatLayout.setSpacing(5)
         self.formatLayout.setObjectName(u"formatLayout")
-        self.fieldLabel1 = QLabel(self.formCard)
-        self.fieldLabel1.setObjectName(u"fieldLabel1")
+        self.lbl_format = QLabel(self.formCard)
+        self.lbl_format.setObjectName(u"lbl_format")
 
-        self.formatLayout.addWidget(self.fieldLabel1)
+        self.formatLayout.addWidget(self.lbl_format)
 
         self.comboFormat = QComboBox(self.formCard)
         self.comboFormat.addItem("")
@@ -213,10 +214,10 @@ class Ui_MainWindow(object):
         self.columnsLayout = QVBoxLayout()
         self.columnsLayout.setSpacing(5)
         self.columnsLayout.setObjectName(u"columnsLayout")
-        self.fieldLabel2 = QLabel(self.formCard)
-        self.fieldLabel2.setObjectName(u"fieldLabel2")
+        self.lbl_columns = QLabel(self.formCard)
+        self.lbl_columns.setObjectName(u"lbl_columns")
 
-        self.columnsLayout.addWidget(self.fieldLabel2)
+        self.columnsLayout.addWidget(self.lbl_columns)
 
         self.columnsFrame = QFrame(self.formCard)
         self.columnsFrame.setObjectName(u"columnsFrame")
@@ -270,10 +271,10 @@ class Ui_MainWindow(object):
         self.pathLayout = QVBoxLayout()
         self.pathLayout.setSpacing(5)
         self.pathLayout.setObjectName(u"pathLayout")
-        self.fieldLabel3 = QLabel(self.formCard)
-        self.fieldLabel3.setObjectName(u"fieldLabel3")
+        self.lbl_path = QLabel(self.formCard)
+        self.lbl_path.setObjectName(u"lbl_path")
 
-        self.pathLayout.addWidget(self.fieldLabel3)
+        self.pathLayout.addWidget(self.lbl_path)
 
         self.pathInputLayout = QHBoxLayout()
         self.pathInputLayout.setSpacing(8)
@@ -380,7 +381,7 @@ class Ui_MainWindow(object):
         self.tab_14.setObjectName(u"tab_14")
         self.tabWidget.addTab(self.tab_14, "")
 
-        self.verticalLayout.addWidget(self.tabWidget, 0, Qt.AlignHCenter)
+        self.verticalLayout.addWidget(self.tabWidget, 0, Qt.AlignmentFlag.AlignHCenter)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -401,25 +402,25 @@ class Ui_MainWindow(object):
         self.role_lb.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c", None))
         self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0439\u0442\u0438", None))
         self.lbl_form_title.setText(QCoreApplication.translate("MainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0434\u0430\u043d\u043d\u044b\u0445", None))
-        self.fieldLabel.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0431\u043e\u0440 \u0434\u0430\u043d\u043d\u044b\u0445", None))
+        self.lbl_dataset.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0431\u043e\u0440 \u0434\u0430\u043d\u043d\u044b\u0445", None))
         self.comboDataset.setItemText(0, QCoreApplication.translate("MainWindow", u"\u041c\u0430\u0440\u0448\u0440\u0443\u0442\u044b / \u0422\u043e\u0447\u043a\u0438 / \u0417\u0430\u043f\u043e\u0432\u0435\u0434\u043d\u0438\u043a\u0438", None))
         self.comboDataset.setItemText(1, QCoreApplication.translate("MainWindow", u"\u041c\u0430\u0440\u0448\u0440\u0443\u0442\u044b", None))
         self.comboDataset.setItemText(2, QCoreApplication.translate("MainWindow", u"\u0422\u043e\u0447\u043a\u0438", None))
         self.comboDataset.setItemText(3, QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u043e\u0432\u0435\u0434\u043d\u0438\u043a\u0438", None))
 
-        self.fieldLabel1.setText(QCoreApplication.translate("MainWindow", u"\u0424\u043e\u0440\u043c\u0430\u0442 (CSV / Excel / JSON)", None))
+        self.lbl_format.setText(QCoreApplication.translate("MainWindow", u"\u0424\u043e\u0440\u043c\u0430\u0442 (CSV / Excel / JSON)", None))
         self.comboFormat.setItemText(0, QCoreApplication.translate("MainWindow", u"CSV", None))
         self.comboFormat.setItemText(1, QCoreApplication.translate("MainWindow", u"Excel", None))
         self.comboFormat.setItemText(2, QCoreApplication.translate("MainWindow", u"JSON", None))
 
-        self.fieldLabel2.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u043e\u043d\u043a\u0438", None))
+        self.lbl_columns.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043e\u043b\u043e\u043d\u043a\u0438", None))
         self.chkCol1.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", None))
         self.chkCol2.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f", None))
         self.chkCol3.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0442\u044f\u0436\u0451\u043d\u043d\u043e\u0441\u0442\u044c", None))
         self.chkCol4.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f", None))
         self.chkCol5.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0433\u0438\u043e\u043d", None))
         self.chkCol6.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0439\u0442\u0438\u043d\u0433", None))
-        self.fieldLabel3.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0443\u0442\u044c \u043a \u0444\u0430\u0439\u043b\u0443", None))
+        self.lbl_path.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0443\u0442\u044c \u043a \u0444\u0430\u0439\u043b\u0443", None))
         self.inputPath.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u043f\u0443\u0442\u044c \u0441\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u0438\u044f...", None))
         self.btn_browse.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0431\u0437\u043e\u0440...", None))
         self.btn_export.setText(QCoreApplication.translate("MainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))

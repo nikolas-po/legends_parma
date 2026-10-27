@@ -42,21 +42,19 @@ class Ui_MainWindow(object):
 "\n"
 "#formCard { background-color: #FFFFFF"
                         "; border: 1px solid #D4CBBE; border-radius: 4px; }\n"
-"#sectionTitle { font-size: 14px; font-weight: 600; color: #2C2A26; }\n"
+"#section_title_routes, #section_title_main { font-size: 14px; font-weight: 600; color: #2C2A26; }\n"
 "#hintLabel { font-size: 11px; color: #A39E94; }\n"
-"#fieldLabel { font-size: 12px; color: #6B6560; }\n"
+"#lbl_tour_name, #lbl_date_start, #lbl_date_end, #lbl_status { font-size: 12px; color: #6B6560; }\n"
 "\n"
 "QLineEdit, QDateEdit, QComboBox {\n"
 "    padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; min-height: 20px;\n"
 "}\n"
-"QDateEdit::drop-down {\n"
-"    subcontrol-origin: padding; subcontrol-position: top right; width: 28px; border-left: 1px solid #D4CBBE; background-color: #F5F0E8; border-top-right-radius: 4px; border-bottom-right-radius: 4px;\n"
-"}\n"
+"QDateEdit::drop-down { subcontrol-origin: padding; subcontrol-position: top right; width: 28px; border-left: 1px solid #D4CBBE; background-color: #F5F0E8; border-top-right-radius: 4px; border-bottom-right-radius: 4px; }\n"
 "QLineEdit:hover, QDateEdit:hover, QComboBox:hover { border: 1px solid #B8AE9E; }\n"
 "QLineEdit:focus, QDateEdit:focus, QComboBox:focus { border: 1px solid #4A6741; }\n"
 "QLineEdit[error=\"true\"], QDateEdit[error=\"true\"], QComboBox[error=\"true\"] { border: 1px solid #B54A3A; }\n"
-"QLineEdit:disabled, QDateEdit:disabled, QComboBox:disabled { border: "
-                        "1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }\n"
+"QLin"
+                        "eEdit:disabled, QDateEdit:disabled, QComboBox:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }\n"
 "\n"
 "QComboBox QAbstractItemView { background-color: #FFFFFF; border: 1px solid #D4CBBE; selection-background-color: #E8EDE4; selection-color: #2C2A26; }\n"
 "QComboBox QAbstractItemView::item:hover { background-color: #EDE6D9; }\n"
@@ -69,9 +67,8 @@ class Ui_MainWindow(object):
 "QListWidget:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }\n"
 "\n"
 "#actionBar { border-top: 1px solid #D4CBBE; }\n"
-"\n"
-"#btn_save { background-color: #4A6741; color: #FFFFFF; border: none; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius"
-                        ": 4px; }\n"
+"#btn_save { background-color: #4A6741; color: #FFFFFF; border: none; padding:"
+                        " 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }\n"
 "#btn_save:hover { background-color: #3D5636; }\n"
 "#btn_save:pressed { background-color: #334A2E; }\n"
 "#btn_save:disabled { background-color: #A8B5A0; }\n"
@@ -85,8 +82,8 @@ class Ui_MainWindow(object):
 "\n"
 "QTabWidget::panel { border: none; background-color: #FFFFFF; }\n"
 "QTabBar { background-color: #FFFFFF; border: none; }\n"
-"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; tex"
-                        "t-align: center; }\n"
+"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-botto"
+                        "m: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
 "QTabBar::tab:hover { color: #2C2A26; }\n"
 "QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
         self.centralwidget = QWidget(MainWindow)
@@ -192,10 +189,10 @@ class Ui_MainWindow(object):
         self.leftColumnLayout = QVBoxLayout()
         self.leftColumnLayout.setSpacing(8)
         self.leftColumnLayout.setObjectName(u"leftColumnLayout")
-        self.sectionTitle = QLabel(self.formCard)
-        self.sectionTitle.setObjectName(u"sectionTitle")
+        self.section_title_routes = QLabel(self.formCard)
+        self.section_title_routes.setObjectName(u"section_title_routes")
 
-        self.leftColumnLayout.addWidget(self.sectionTitle)
+        self.leftColumnLayout.addWidget(self.section_title_routes)
 
         self.hintLabel = QLabel(self.formCard)
         self.hintLabel.setObjectName(u"hintLabel")
@@ -227,18 +224,18 @@ class Ui_MainWindow(object):
         self.rightColumnLayout.setSpacing(14)
         self.rightColumnLayout.setObjectName(u"rightColumnLayout")
         self.rightColumnLayout.setContentsMargins(0, 0, 0, 0)
-        self.sectionTitle1 = QLabel(self.rightColumnFrame)
-        self.sectionTitle1.setObjectName(u"sectionTitle1")
+        self.section_title_main = QLabel(self.rightColumnFrame)
+        self.section_title_main.setObjectName(u"section_title_main")
 
-        self.rightColumnLayout.addWidget(self.sectionTitle1)
+        self.rightColumnLayout.addWidget(self.section_title_main)
 
         self.nameLayout = QVBoxLayout()
         self.nameLayout.setSpacing(5)
         self.nameLayout.setObjectName(u"nameLayout")
-        self.fieldLabel = QLabel(self.rightColumnFrame)
-        self.fieldLabel.setObjectName(u"fieldLabel")
+        self.lbl_tour_name = QLabel(self.rightColumnFrame)
+        self.lbl_tour_name.setObjectName(u"lbl_tour_name")
 
-        self.nameLayout.addWidget(self.fieldLabel)
+        self.nameLayout.addWidget(self.lbl_tour_name)
 
         self.inputName = QLineEdit(self.rightColumnFrame)
         self.inputName.setObjectName(u"inputName")
@@ -254,10 +251,10 @@ class Ui_MainWindow(object):
         self.startDateLayout = QVBoxLayout()
         self.startDateLayout.setSpacing(5)
         self.startDateLayout.setObjectName(u"startDateLayout")
-        self.fieldLabel1 = QLabel(self.rightColumnFrame)
-        self.fieldLabel1.setObjectName(u"fieldLabel1")
+        self.lbl_date_start = QLabel(self.rightColumnFrame)
+        self.lbl_date_start.setObjectName(u"lbl_date_start")
 
-        self.startDateLayout.addWidget(self.fieldLabel1)
+        self.startDateLayout.addWidget(self.lbl_date_start)
 
         self.dateStart = QDateEdit(self.rightColumnFrame)
         self.dateStart.setObjectName(u"dateStart")
@@ -271,10 +268,10 @@ class Ui_MainWindow(object):
         self.endDateLayout = QVBoxLayout()
         self.endDateLayout.setSpacing(5)
         self.endDateLayout.setObjectName(u"endDateLayout")
-        self.fieldLabel2 = QLabel(self.rightColumnFrame)
-        self.fieldLabel2.setObjectName(u"fieldLabel2")
+        self.lbl_date_end = QLabel(self.rightColumnFrame)
+        self.lbl_date_end.setObjectName(u"lbl_date_end")
 
-        self.endDateLayout.addWidget(self.fieldLabel2)
+        self.endDateLayout.addWidget(self.lbl_date_end)
 
         self.dateEnd = QDateEdit(self.rightColumnFrame)
         self.dateEnd.setObjectName(u"dateEnd")
@@ -291,10 +288,10 @@ class Ui_MainWindow(object):
         self.statusLayout = QVBoxLayout()
         self.statusLayout.setSpacing(5)
         self.statusLayout.setObjectName(u"statusLayout")
-        self.fieldLabel3 = QLabel(self.rightColumnFrame)
-        self.fieldLabel3.setObjectName(u"fieldLabel3")
+        self.lbl_status = QLabel(self.rightColumnFrame)
+        self.lbl_status.setObjectName(u"lbl_status")
 
-        self.statusLayout.addWidget(self.fieldLabel3)
+        self.statusLayout.addWidget(self.lbl_status)
 
         self.comboStatus = QComboBox(self.rightColumnFrame)
         self.comboStatus.addItem("")
@@ -404,7 +401,7 @@ class Ui_MainWindow(object):
         self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0439\u0442\u0438", None))
         self.btn_back.setText(QCoreApplication.translate("MainWindow", u"\u2039 \u041d\u0430\u0437\u0430\u0434", None))
         self.lbl_form_title.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0437\u0434\u0430\u043d\u0438\u0435 \u0442\u0443\u0440\u0430", None))
-        self.sectionTitle.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0430\u0440\u0448\u0440\u0443\u0442\u044b \u0432 \u0442\u0443\u0440\u0435 *", None))
+        self.section_title_routes.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0430\u0440\u0448\u0440\u0443\u0442\u044b \u0432 \u0442\u0443\u0440\u0435 *", None))
         self.hintLabel.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0438\u043d\u0438\u043c\u0443\u043c \u043e\u0434\u0438\u043d \u043c\u0430\u0440\u0448\u0440\u0443\u0442", None))
 
         __sortingEnabled = self.listRoutes.isSortingEnabled()
@@ -417,13 +414,13 @@ class Ui_MainWindow(object):
         ___qlistwidgetitem2.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0430\u0440\u0448\u0440\u0443\u0442 3", None))
         self.listRoutes.setSortingEnabled(__sortingEnabled)
 
-        self.sectionTitle1.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0441\u043d\u043e\u0432\u043d\u0430\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f", None))
-        self.fieldLabel.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u0443\u0440\u0430 *", None))
-        self.fieldLabel1.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0430\u0442\u0430 \u043d\u0430\u0447\u0430\u043b\u0430 *", None))
+        self.section_title_main.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0441\u043d\u043e\u0432\u043d\u0430\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f", None))
+        self.lbl_tour_name.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u0443\u0440\u0430 *", None))
+        self.lbl_date_start.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0430\u0442\u0430 \u043d\u0430\u0447\u0430\u043b\u0430 *", None))
         self.dateStart.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd.MM.yyyy", None))
-        self.fieldLabel2.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0430\u0442\u0430 \u043e\u043a\u043e\u043d\u0447\u0430\u043d\u0438\u044f *", None))
+        self.lbl_date_end.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0430\u0442\u0430 \u043e\u043a\u043e\u043d\u0447\u0430\u043d\u0438\u044f *", None))
         self.dateEnd.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd.MM.yyyy", None))
-        self.fieldLabel3.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0442\u0443\u0441", None))
+        self.lbl_status.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0442\u0443\u0441", None))
         self.comboStatus.setItemText(0, QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u043b\u0430\u043d\u0438\u0440\u043e\u0432\u0430\u043d", None))
         self.comboStatus.setItemText(1, QCoreApplication.translate("MainWindow", u"\u0412 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435", None))
         self.comboStatus.setItemText(2, QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0432\u0435\u0440\u0448\u0451\u043d", None))

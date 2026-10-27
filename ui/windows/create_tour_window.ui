@@ -29,16 +29,14 @@
 #lbl_form_title { font-size: 16px; font-weight: 600; color: #2C2A26; }
 
 #formCard { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }
-#sectionTitle { font-size: 14px; font-weight: 600; color: #2C2A26; }
+#section_title_routes, #section_title_main { font-size: 14px; font-weight: 600; color: #2C2A26; }
 #hintLabel { font-size: 11px; color: #A39E94; }
-#fieldLabel { font-size: 12px; color: #6B6560; }
+#lbl_tour_name, #lbl_date_start, #lbl_date_end, #lbl_status { font-size: 12px; color: #6B6560; }
 
 QLineEdit, QDateEdit, QComboBox {
     padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; min-height: 20px;
 }
-QDateEdit::drop-down {
-    subcontrol-origin: padding; subcontrol-position: top right; width: 28px; border-left: 1px solid #D4CBBE; background-color: #F5F0E8; border-top-right-radius: 4px; border-bottom-right-radius: 4px;
-}
+QDateEdit::drop-down { subcontrol-origin: padding; subcontrol-position: top right; width: 28px; border-left: 1px solid #D4CBBE; background-color: #F5F0E8; border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
 QLineEdit:hover, QDateEdit:hover, QComboBox:hover { border: 1px solid #B8AE9E; }
 QLineEdit:focus, QDateEdit:focus, QComboBox:focus { border: 1px solid #4A6741; }
 QLineEdit[error="true"], QDateEdit[error="true"], QComboBox[error="true"] { border: 1px solid #B54A3A; }
@@ -55,7 +53,6 @@ QListWidget[error="true"] { border: 1px solid #B54A3A; }
 QListWidget:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }
 
 #actionBar { border-top: 1px solid #D4CBBE; }
-
 #btn_save { background-color: #4A6741; color: #FFFFFF; border: none; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }
 #btn_save:hover { background-color: #3D5636; }
 #btn_save:pressed { background-color: #334A2E; }
@@ -179,7 +176,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            <layout class="QVBoxLayout" name="leftColumnLayout">
             <property name="spacing"><number>8</number></property>
             <item>
-             <widget class="QLabel" name="sectionTitle">
+             <widget class="QLabel" name="section_title_routes">
               <property name="text"><string>Маршруты в туре *</string></property>
              </widget>
             </item>
@@ -209,14 +206,14 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
              <property name="rightMargin"><number>0</number></property>
              <property name="bottomMargin"><number>0</number></property>
              <item>
-              <widget class="QLabel" name="sectionTitle">
+              <widget class="QLabel" name="section_title_main">
                <property name="text"><string>Основная информация</string></property>
               </widget>
              </item>
              <item>
               <layout class="QVBoxLayout" name="nameLayout">
                <property name="spacing"><number>5</number></property>
-               <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Название тура *</string></property></widget></item>
+               <item><widget class="QLabel" name="lbl_tour_name"><property name="text"><string>Название тура *</string></property></widget></item>
                <item><widget class="QLineEdit" name="inputName"/></item>
               </layout>
              </item>
@@ -226,7 +223,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                <item>
                 <layout class="QVBoxLayout" name="startDateLayout">
                  <property name="spacing"><number>5</number></property>
-                 <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Дата начала *</string></property></widget></item>
+                 <item><widget class="QLabel" name="lbl_date_start"><property name="text"><string>Дата начала *</string></property></widget></item>
                  <item>
                   <widget class="QDateEdit" name="dateStart">
                    <property name="calendarPopup"><bool>true</bool></property>
@@ -238,7 +235,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                <item>
                 <layout class="QVBoxLayout" name="endDateLayout">
                  <property name="spacing"><number>5</number></property>
-                 <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Дата окончания *</string></property></widget></item>
+                 <item><widget class="QLabel" name="lbl_date_end"><property name="text"><string>Дата окончания *</string></property></widget></item>
                  <item>
                   <widget class="QDateEdit" name="dateEnd">
                    <property name="calendarPopup"><bool>true</bool></property>
@@ -252,7 +249,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
              <item>
               <layout class="QVBoxLayout" name="statusLayout">
                <property name="spacing"><number>5</number></property>
-               <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Статус</string></property></widget></item>
+               <item><widget class="QLabel" name="lbl_status"><property name="text"><string>Статус</string></property></widget></item>
                <item>
                 <widget class="QComboBox" name="comboStatus">
                  <item><property name="text"><string>Запланирован</string></property></item>

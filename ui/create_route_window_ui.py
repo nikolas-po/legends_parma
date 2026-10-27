@@ -42,9 +42,9 @@ class Ui_MainWindow(object):
 "\n"
 "#leftFormCard, #rightFormCard { backg"
                         "round-color: #FFFFFF; border: 1px solid #D4CBBE; padding: 14px; }\n"
-"#sectionTitle { font-size: 11px; font-weight: 600; color: #6B6560; text-transform: uppercase; }\n"
+"#section_title_points, #section_title_main { font-size: 11px; font-weight: 600; color: #6B6560; text-transform: uppercase; }\n"
 "#hintLabel { font-size: 11px; color: #A39E94; }\n"
-"#fieldLabel { font-size: 12px; color: #6B6560; }\n"
+"#lbl_point_name, #lbl_lat, #lbl_lon, #lbl_alt, #lbl_reserve, #lbl_route_name, #lbl_type, #lbl_region, #lbl_length, #lbl_time, #lbl_desc { font-size: 12px; color: #6B6560; }\n"
 "#listTitle { font-size: 14px; font-weight: 600; color: #2C2A26; }\n"
 "\n"
 "QLineEdit, QTextEdit, QComboBox, QDoubleSpinBox {\n"
@@ -52,9 +52,9 @@ class Ui_MainWindow(object):
 "}\n"
 "QLineEdit:hover, QTextEdit:hover, QComboBox:hover, QDoubleSpinBox:hover { border: 1px solid #B8AE9E; }\n"
 "QLineEdit:focus, QTextEdit:focus, QComboBox:focus, QDoubleSpinBox:focus { border: 1px solid #4A6741; }\n"
-"QLineEdit[error=\"true\"], QTextEdit[error=\"true\"], QComboBox[error=\"true\"], QDoubleSpinBox[error=\"true\"] { border: 1px solid #B54A3A; }\n"
-"QLineEdit:disabled, QTextEdit:disabled, QComboBox:disabled, QDoubleSpinBox:disabled { border: 1px dashed #D4CBBE; color"
-                        ": #A39E94; background-color: #F5F0E8; }\n"
+"QLineEdit[error=\"true\"], QTextEdit[error=\"true\"], QComboBox[error=\"true\"], QDoubleSpinBox[error=\"true\"] {"
+                        " border: 1px solid #B54A3A; }\n"
+"QLineEdit:disabled, QTextEdit:disabled, QComboBox:disabled, QDoubleSpinBox:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }\n"
 "\n"
 "QComboBox QAbstractItemView { background-color: #FFFFFF; border: 1px solid #D4CBBE; selection-background-color: #E8EDE4; selection-color: #2C2A26; }\n"
 "QComboBox QAbstractItemView::item:hover { background-color: #EDE6D9; }\n"
@@ -66,11 +66,11 @@ class Ui_MainWindow(object):
 "#btn_add_point:focus { border: 1px dashed #4A6741; }\n"
 "\n"
 "#btn_save { background-color: #4A6741; color: #FFFFFF; border: none; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }\n"
-"#btn_save:hover { background-color: #3D5636; }\n"
+"#btn_save:hove"
+                        "r { background-color: #3D5636; }\n"
 "#btn_save:pressed { background-color: #334A2E; }\n"
 "#btn_save:disabled { background-color: #A8B5A0; }\n"
-"#btn_save"
-                        ":focus { border: 1px dashed #4A6741; }\n"
+"#btn_save:focus { border: 1px dashed #4A6741; }\n"
 "\n"
 "#btn_cancel { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }\n"
 "#btn_cancel:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }\n"
@@ -82,10 +82,10 @@ class Ui_MainWindow(object):
 "\n"
 "QTabWidget::panel { border: none; background-color: #FFFFFF; }\n"
 "QTabBar { background-color: #FFFFFF; border: none; }\n"
-"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
+"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border"
+                        "-top: 1px solid #D4CBBE; text-align: center; }\n"
 "QTabBar::tab:hover { color: #2C2A26; }\n"
-"QTabBar::tab:selected { color: #2C2A26; font-weight: 600; b"
-                        "order-bottom: 2px solid #4A6741; }")
+"QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -190,10 +190,10 @@ class Ui_MainWindow(object):
         self.leftFormLayout.setSpacing(10)
         self.leftFormLayout.setObjectName(u"leftFormLayout")
         self.leftFormLayout.setContentsMargins(14, 14, 14, 14)
-        self.sectionTitle = QLabel(self.leftFormCard)
-        self.sectionTitle.setObjectName(u"sectionTitle")
+        self.section_title_points = QLabel(self.leftFormCard)
+        self.section_title_points.setObjectName(u"section_title_points")
 
-        self.leftFormLayout.addWidget(self.sectionTitle)
+        self.leftFormLayout.addWidget(self.section_title_points)
 
         self.hintLabel = QLabel(self.leftFormCard)
         self.hintLabel.setObjectName(u"hintLabel")
@@ -203,10 +203,10 @@ class Ui_MainWindow(object):
         self.pointInputLayout = QVBoxLayout()
         self.pointInputLayout.setSpacing(5)
         self.pointInputLayout.setObjectName(u"pointInputLayout")
-        self.fieldLabel = QLabel(self.leftFormCard)
-        self.fieldLabel.setObjectName(u"fieldLabel")
+        self.lbl_point_name = QLabel(self.leftFormCard)
+        self.lbl_point_name.setObjectName(u"lbl_point_name")
 
-        self.pointInputLayout.addWidget(self.fieldLabel)
+        self.pointInputLayout.addWidget(self.lbl_point_name)
 
         self.input_point_name = QLineEdit(self.leftFormCard)
         self.input_point_name.setObjectName(u"input_point_name")
@@ -222,10 +222,10 @@ class Ui_MainWindow(object):
         self.latLayout = QVBoxLayout()
         self.latLayout.setSpacing(5)
         self.latLayout.setObjectName(u"latLayout")
-        self.fieldLabel1 = QLabel(self.leftFormCard)
-        self.fieldLabel1.setObjectName(u"fieldLabel1")
+        self.lbl_lat = QLabel(self.leftFormCard)
+        self.lbl_lat.setObjectName(u"lbl_lat")
 
-        self.latLayout.addWidget(self.fieldLabel1)
+        self.latLayout.addWidget(self.lbl_lat)
 
         self.input_lat = QDoubleSpinBox(self.leftFormCard)
         self.input_lat.setObjectName(u"input_lat")
@@ -241,10 +241,10 @@ class Ui_MainWindow(object):
         self.lonLayout = QVBoxLayout()
         self.lonLayout.setSpacing(5)
         self.lonLayout.setObjectName(u"lonLayout")
-        self.fieldLabel2 = QLabel(self.leftFormCard)
-        self.fieldLabel2.setObjectName(u"fieldLabel2")
+        self.lbl_lon = QLabel(self.leftFormCard)
+        self.lbl_lon.setObjectName(u"lbl_lon")
 
-        self.lonLayout.addWidget(self.fieldLabel2)
+        self.lonLayout.addWidget(self.lbl_lon)
 
         self.input_lon = QDoubleSpinBox(self.leftFormCard)
         self.input_lon.setObjectName(u"input_lon")
@@ -260,10 +260,10 @@ class Ui_MainWindow(object):
         self.altLayout = QVBoxLayout()
         self.altLayout.setSpacing(5)
         self.altLayout.setObjectName(u"altLayout")
-        self.fieldLabel3 = QLabel(self.leftFormCard)
-        self.fieldLabel3.setObjectName(u"fieldLabel3")
+        self.lbl_alt = QLabel(self.leftFormCard)
+        self.lbl_alt.setObjectName(u"lbl_alt")
 
-        self.altLayout.addWidget(self.fieldLabel3)
+        self.altLayout.addWidget(self.lbl_alt)
 
         self.input_alt = QDoubleSpinBox(self.leftFormCard)
         self.input_alt.setObjectName(u"input_alt")
@@ -280,10 +280,10 @@ class Ui_MainWindow(object):
         self.reserveLayout = QVBoxLayout()
         self.reserveLayout.setSpacing(5)
         self.reserveLayout.setObjectName(u"reserveLayout")
-        self.fieldLabel4 = QLabel(self.leftFormCard)
-        self.fieldLabel4.setObjectName(u"fieldLabel4")
+        self.lbl_reserve = QLabel(self.leftFormCard)
+        self.lbl_reserve.setObjectName(u"lbl_reserve")
 
-        self.reserveLayout.addWidget(self.fieldLabel4)
+        self.reserveLayout.addWidget(self.lbl_reserve)
 
         self.input_reserve = QLineEdit(self.leftFormCard)
         self.input_reserve.setObjectName(u"input_reserve")
@@ -340,18 +340,18 @@ class Ui_MainWindow(object):
         self.rightFormLayout.setSpacing(10)
         self.rightFormLayout.setObjectName(u"rightFormLayout")
         self.rightFormLayout.setContentsMargins(14, 14, 14, 14)
-        self.sectionTitle1 = QLabel(self.rightFormCard)
-        self.sectionTitle1.setObjectName(u"sectionTitle1")
+        self.section_title_main = QLabel(self.rightFormCard)
+        self.section_title_main.setObjectName(u"section_title_main")
 
-        self.rightFormLayout.addWidget(self.sectionTitle1)
+        self.rightFormLayout.addWidget(self.section_title_main)
 
         self.mainNameLayout = QVBoxLayout()
         self.mainNameLayout.setSpacing(5)
         self.mainNameLayout.setObjectName(u"mainNameLayout")
-        self.fieldLabel5 = QLabel(self.rightFormCard)
-        self.fieldLabel5.setObjectName(u"fieldLabel5")
+        self.lbl_route_name = QLabel(self.rightFormCard)
+        self.lbl_route_name.setObjectName(u"lbl_route_name")
 
-        self.mainNameLayout.addWidget(self.fieldLabel5)
+        self.mainNameLayout.addWidget(self.lbl_route_name)
 
         self.input_route_name = QLineEdit(self.rightFormCard)
         self.input_route_name.setObjectName(u"input_route_name")
@@ -367,10 +367,10 @@ class Ui_MainWindow(object):
         self.typeLayout = QVBoxLayout()
         self.typeLayout.setSpacing(5)
         self.typeLayout.setObjectName(u"typeLayout")
-        self.fieldLabel6 = QLabel(self.rightFormCard)
-        self.fieldLabel6.setObjectName(u"fieldLabel6")
+        self.lbl_type = QLabel(self.rightFormCard)
+        self.lbl_type.setObjectName(u"lbl_type")
 
-        self.typeLayout.addWidget(self.fieldLabel6)
+        self.typeLayout.addWidget(self.lbl_type)
 
         self.combo_type = QComboBox(self.rightFormCard)
         self.combo_type.setObjectName(u"combo_type")
@@ -383,10 +383,10 @@ class Ui_MainWindow(object):
         self.regionLayout = QVBoxLayout()
         self.regionLayout.setSpacing(5)
         self.regionLayout.setObjectName(u"regionLayout")
-        self.fieldLabel7 = QLabel(self.rightFormCard)
-        self.fieldLabel7.setObjectName(u"fieldLabel7")
+        self.lbl_region = QLabel(self.rightFormCard)
+        self.lbl_region.setObjectName(u"lbl_region")
 
-        self.regionLayout.addWidget(self.fieldLabel7)
+        self.regionLayout.addWidget(self.lbl_region)
 
         self.input_region = QLineEdit(self.rightFormCard)
         self.input_region.setObjectName(u"input_region")
@@ -405,10 +405,10 @@ class Ui_MainWindow(object):
         self.lengthLayout = QVBoxLayout()
         self.lengthLayout.setSpacing(5)
         self.lengthLayout.setObjectName(u"lengthLayout")
-        self.fieldLabel8 = QLabel(self.rightFormCard)
-        self.fieldLabel8.setObjectName(u"fieldLabel8")
+        self.lbl_length = QLabel(self.rightFormCard)
+        self.lbl_length.setObjectName(u"lbl_length")
 
-        self.lengthLayout.addWidget(self.fieldLabel8)
+        self.lengthLayout.addWidget(self.lbl_length)
 
         self.input_length = QDoubleSpinBox(self.rightFormCard)
         self.input_length.setObjectName(u"input_length")
@@ -422,10 +422,10 @@ class Ui_MainWindow(object):
         self.timeLayout = QVBoxLayout()
         self.timeLayout.setSpacing(5)
         self.timeLayout.setObjectName(u"timeLayout")
-        self.fieldLabel9 = QLabel(self.rightFormCard)
-        self.fieldLabel9.setObjectName(u"fieldLabel9")
+        self.lbl_time = QLabel(self.rightFormCard)
+        self.lbl_time.setObjectName(u"lbl_time")
 
-        self.timeLayout.addWidget(self.fieldLabel9)
+        self.timeLayout.addWidget(self.lbl_time)
 
         self.input_time = QDoubleSpinBox(self.rightFormCard)
         self.input_time.setObjectName(u"input_time")
@@ -442,10 +442,10 @@ class Ui_MainWindow(object):
         self.descLayout = QVBoxLayout()
         self.descLayout.setSpacing(5)
         self.descLayout.setObjectName(u"descLayout")
-        self.fieldLabel10 = QLabel(self.rightFormCard)
-        self.fieldLabel10.setObjectName(u"fieldLabel10")
+        self.lbl_desc = QLabel(self.rightFormCard)
+        self.lbl_desc.setObjectName(u"lbl_desc")
 
-        self.descLayout.addWidget(self.fieldLabel10)
+        self.descLayout.addWidget(self.lbl_desc)
 
         self.input_desc = QTextEdit(self.rightFormCard)
         self.input_desc.setObjectName(u"input_desc")
@@ -549,22 +549,22 @@ class Ui_MainWindow(object):
         self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0439\u0442\u0438", None))
         self.btn_back.setText(QCoreApplication.translate("MainWindow", u"\u2039 \u041d\u0430\u0437\u0430\u0434", None))
         self.lbl_form_title.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0437\u0434\u0430\u043d\u0438\u0435 \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u0430", None))
-        self.sectionTitle.setText(QCoreApplication.translate("MainWindow", u"\u0422\u041e\u0427\u041a\u0418 \u041c\u0410\u0420\u0428\u0420\u0423\u0422\u0410", None))
+        self.section_title_points.setText(QCoreApplication.translate("MainWindow", u"\u0422\u041e\u0427\u041a\u0418 \u041c\u0410\u0420\u0428\u0420\u0423\u0422\u0410", None))
         self.hintLabel.setText(QCoreApplication.translate("MainWindow", u"\u0422\u043e\u0447\u043a\u0438 \u043c\u043e\u0436\u043d\u043e \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u043f\u043e\u0437\u0436\u0435; \u0431\u0435\u0437 \u0442\u043e\u0447\u0435\u043a GPX \u043d\u0435\u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d", None))
-        self.fieldLabel.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u043e\u0447\u043a\u0438", None))
-        self.fieldLabel1.setText(QCoreApplication.translate("MainWindow", u"\u0428\u0438\u0440\u043e\u0442\u0430 (-90..90)", None))
-        self.fieldLabel2.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u043b\u0433\u043e\u0442\u0430 (-180..180)", None))
-        self.fieldLabel3.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0441\u043e\u0442\u0430, \u043c", None))
-        self.fieldLabel4.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u043e\u0432\u0435\u0434\u043d\u0438\u043a *", None))
+        self.lbl_point_name.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0442\u043e\u0447\u043a\u0438", None))
+        self.lbl_lat.setText(QCoreApplication.translate("MainWindow", u"\u0428\u0438\u0440\u043e\u0442\u0430 (-90..90)", None))
+        self.lbl_lon.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u043b\u0433\u043e\u0442\u0430 (-180..180)", None))
+        self.lbl_alt.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0441\u043e\u0442\u0430, \u043c", None))
+        self.lbl_reserve.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u043e\u0432\u0435\u0434\u043d\u0438\u043a *", None))
         self.btn_add_point.setText(QCoreApplication.translate("MainWindow", u"+ \u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0442\u043e\u0447\u043a\u0443", None))
         self.listTitle.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u043d\u044b\u0435 \u0442\u043e\u0447\u043a\u0438", None))
-        self.sectionTitle1.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0421\u041d\u041e\u0412\u041d\u0410\u042f \u0418\u041d\u0424\u041e\u0420\u041c\u0410\u0426\u0418\u042f", None))
-        self.fieldLabel5.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 *", None))
-        self.fieldLabel6.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f * (\u041f\u0435\u0448\u0438\u0439 / \u0412\u043e\u0434\u043d\u044b\u0439 / \u0413\u043e\u0440\u043d\u044b\u0439)", None))
-        self.fieldLabel7.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0433\u0438\u043e\u043d *", None))
-        self.fieldLabel8.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0442\u044f\u0436\u0451\u043d\u043d\u043e\u0441\u0442\u044c, \u043a\u043c *", None))
-        self.fieldLabel9.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f \u043f\u0440\u043e\u0445\u043e\u0436\u0434\u0435\u043d\u0438\u044f, \u0447 *", None))
-        self.fieldLabel10.setText(QCoreApplication.translate("MainWindow", u"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435", None))
+        self.section_title_main.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0421\u041d\u041e\u0412\u041d\u0410\u042f \u0418\u041d\u0424\u041e\u0420\u041c\u0410\u0426\u0418\u042f", None))
+        self.lbl_route_name.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 *", None))
+        self.lbl_type.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0438\u043f * (\u041f\u0435\u0448\u0438\u0439 / \u0412\u043e\u0434\u043d\u044b\u0439 / \u0413\u043e\u0440\u043d\u044b\u0439)", None))
+        self.lbl_region.setText(QCoreApplication.translate("MainWindow", u"\u0420\u0435\u0433\u0438\u043e\u043d *", None))
+        self.lbl_length.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0442\u044f\u0436\u0451\u043d\u043d\u043e\u0441\u0442\u044c, \u043a\u043c *", None))
+        self.lbl_time.setText(QCoreApplication.translate("MainWindow", u"\u0412\u0440\u0435\u043c\u044f \u043f\u0440\u043e\u0445\u043e\u0436\u0434\u0435\u043d\u0438\u044f, \u0447 *", None))
+        self.lbl_desc.setText(QCoreApplication.translate("MainWindow", u"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435", None))
         self.btn_save.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))
         self.btn_cancel.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0442\u043c\u0435\u043d\u0430", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u0430\u043b\u043e\u0433 \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u043e\u0432", None))

@@ -24,7 +24,7 @@
 
 #modalFrame { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }
 #lbl_modal_title { font-size: 16px; font-weight: 600; color: #2C2A26; }
-#lbl_field { font-size: 12px; color: #6B6560; }
+#lbl_rating_field, #lbl_review_field { font-size: 12px; color: #6B6560; }
 
 QLineEdit, QTextEdit, QComboBox {
     padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26;
@@ -148,7 +148,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
          <item>
           <layout class="QVBoxLayout" name="ratingLayout">
            <property name="spacing"><number>5</number></property>
-           <item><widget class="QLabel" name="lbl_field"><property name="text"><string>Оценка 1-5 *</string></property></widget></item>
+           <item><widget class="QLabel" name="lbl_rating_field"><property name="text"><string>Оценка 1-5 *</string></property></widget></item>
            <item>
             <widget class="QComboBox" name="input_rating">
              <property name="maximumSize"><size><width>150</width><height>16777215</height></size></property>
@@ -164,7 +164,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
          <item>
           <layout class="QVBoxLayout" name="reviewTextLayout">
            <property name="spacing"><number>5</number></property>
-           <item><widget class="QLabel" name="lbl_field"><property name="text"><string>Текст отзыва *</string></property></widget></item>
+           <item><widget class="QLabel" name="lbl_review_field"><property name="text"><string>Текст отзыва *</string></property></widget></item>
            <item>
             <widget class="QTextEdit" name="input_review">
              <property name="minimumSize"><size><width>0</width><height>120</height></size></property>

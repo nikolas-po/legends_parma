@@ -20,10 +20,11 @@
 #logout_btn { background-color: transparent; color: #F5F0E8; border: 1px solid rgba(255, 255, 255, 0.25); padding: 3px 10px; font-size: 12px; border-radius: 4px; }
 #logout_btn:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }
 #logout_btn:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }
+#logout_btn:focus { border: 1px dashed #F5F0E8; }
 
 #formCard { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }
 #lbl_form_title { font-size: 16px; font-weight: 600; color: #2C2A26; }
-#fieldLabel { font-size: 12px; color: #6B6560; }
+#lbl_dataset, #lbl_format, #lbl_columns, #lbl_path { font-size: 12px; color: #6B6560; }
 
 QLineEdit, QComboBox { padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; }
 QLineEdit:hover, QComboBox:hover { border: 1px solid #B8AE9E; }
@@ -167,11 +168,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
          <item>
           <layout class="QVBoxLayout" name="datasetLayout">
            <property name="spacing"><number>5</number></property>
-           <item>
-            <widget class="QLabel" name="fieldLabel">
-             <property name="text"><string>Набор данных</string></property>
-            </widget>
-           </item>
+           <item><widget class="QLabel" name="lbl_dataset"><property name="text"><string>Набор данных</string></property></widget></item>
            <item>
             <widget class="QComboBox" name="comboDataset">
              <property name="maximumSize"><size><width>300</width><height>16777215</height></size></property>
@@ -186,11 +183,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
          <item>
           <layout class="QVBoxLayout" name="formatLayout">
            <property name="spacing"><number>5</number></property>
-           <item>
-            <widget class="QLabel" name="fieldLabel">
-             <property name="text"><string>Формат (CSV / Excel / JSON)</string></property>
-            </widget>
-           </item>
+           <item><widget class="QLabel" name="lbl_format"><property name="text"><string>Формат (CSV / Excel / JSON)</string></property></widget></item>
            <item>
             <widget class="QComboBox" name="comboFormat">
              <property name="maximumSize"><size><width>150</width><height>16777215</height></size></property>
@@ -204,11 +197,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
          <item>
           <layout class="QVBoxLayout" name="columnsLayout">
            <property name="spacing"><number>5</number></property>
-           <item>
-            <widget class="QLabel" name="fieldLabel">
-             <property name="text"><string>Колонки</string></property>
-            </widget>
-           </item>
+           <item><widget class="QLabel" name="lbl_columns"><property name="text"><string>Колонки</string></property></widget></item>
            <item>
             <widget class="QFrame" name="columnsFrame">
              <property name="minimumSize"><size><width>0</width><height>100</height></size></property>
@@ -262,11 +251,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
          <item>
           <layout class="QVBoxLayout" name="pathLayout">
            <property name="spacing"><number>5</number></property>
-           <item>
-            <widget class="QLabel" name="fieldLabel">
-             <property name="text"><string>Путь к файлу</string></property>
-            </widget>
-           </item>
+           <item><widget class="QLabel" name="lbl_path"><property name="text"><string>Путь к файлу</string></property></widget></item>
            <item>
             <layout class="QHBoxLayout" name="pathInputLayout">
              <property name="spacing"><number>8</number></property>
@@ -341,7 +326,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
       <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
      </spacer>
     </item>
-    <item alignment="Qt::AlignHCenter">
+    <item alignment="Qt::AlignmentFlag::AlignHCenter">
      <widget class="QTabWidget" name="tabWidget">
       <property name="sizePolicy"><sizepolicy hsizetype="Maximum" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
       <property name="minimumSize"><size><width>0</width><height>44</height></size></property>

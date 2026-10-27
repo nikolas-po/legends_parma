@@ -36,13 +36,13 @@ class Ui_MainWindow(object):
 "\n"
 "#modalFrame { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }\n"
 "#lbl_modal_title { font-size: 16px; font-weight: 600; color: #2C2A26; }\n"
-"#lbl_field { font-size: 12px; color: #6B6560; }\n"
+"#lbl_rating_field, #lbl_review_field { font-size: 12px; color: #6B6560; }\n"
 "\n"
 "QLineEdit, QTextEdit, QComboBox {\n"
-"    padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26;\n"
+"    padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; colo"
+                        "r: #2C2A26;\n"
 "}\n"
-"QLin"
-                        "eEdit:hover, QTextEdit:hover, QComboBox:hover { border: 1px solid #B8AE9E; }\n"
+"QLineEdit:hover, QTextEdit:hover, QComboBox:hover { border: 1px solid #B8AE9E; }\n"
 "QLineEdit:focus, QTextEdit:focus, QComboBox:focus { border: 1px solid #4A6741; }\n"
 "QLineEdit[error=\"true\"], QTextEdit[error=\"true\"], QComboBox[error=\"true\"] { border: 1px solid #B54A3A; }\n"
 "QLineEdit:disabled, QTextEdit:disabled, QComboBox:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }\n"
@@ -54,8 +54,8 @@ class Ui_MainWindow(object):
 "#btn_publish:disabled { background-color: #A8B5A0; }\n"
 "#btn_publish:focus { border: 1px dashed #4A6741; }\n"
 "\n"
-"#btn_cancel { background-color: #FFFFFF; color: #2C2A26; border: 1px"
-                        " solid #D4CBBE; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }\n"
+"#btn_cancel { background-color: #FFFFFF; c"
+                        "olor: #2C2A26; border: 1px solid #D4CBBE; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }\n"
 "#btn_cancel:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }\n"
 "#btn_cancel:pressed { background-color: #EDE6D9; }\n"
 "#btn_cancel:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }\n"
@@ -154,10 +154,10 @@ class Ui_MainWindow(object):
         self.ratingLayout = QVBoxLayout()
         self.ratingLayout.setSpacing(5)
         self.ratingLayout.setObjectName(u"ratingLayout")
-        self.lbl_field = QLabel(self.modalFrame)
-        self.lbl_field.setObjectName(u"lbl_field")
+        self.lbl_rating_field = QLabel(self.modalFrame)
+        self.lbl_rating_field.setObjectName(u"lbl_rating_field")
 
-        self.ratingLayout.addWidget(self.lbl_field)
+        self.ratingLayout.addWidget(self.lbl_rating_field)
 
         self.input_rating = QComboBox(self.modalFrame)
         self.input_rating.addItem("")
@@ -176,10 +176,10 @@ class Ui_MainWindow(object):
         self.reviewTextLayout = QVBoxLayout()
         self.reviewTextLayout.setSpacing(5)
         self.reviewTextLayout.setObjectName(u"reviewTextLayout")
-        self.lbl_field1 = QLabel(self.modalFrame)
-        self.lbl_field1.setObjectName(u"lbl_field1")
+        self.lbl_review_field = QLabel(self.modalFrame)
+        self.lbl_review_field.setObjectName(u"lbl_review_field")
 
-        self.reviewTextLayout.addWidget(self.lbl_field1)
+        self.reviewTextLayout.addWidget(self.lbl_review_field)
 
         self.input_review = QTextEdit(self.modalFrame)
         self.input_review.setObjectName(u"input_review")
@@ -278,14 +278,14 @@ class Ui_MainWindow(object):
         self.role_lb.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440", None))
         self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0439\u0442\u0438", None))
         self.lbl_modal_title.setText(QCoreApplication.translate("MainWindow", u"\u0414\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043e\u0442\u0437\u044b\u0432\u0430", None))
-        self.lbl_field.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0446\u0435\u043d\u043a\u0430 1-5 *", None))
+        self.lbl_rating_field.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0446\u0435\u043d\u043a\u0430 1-5 *", None))
         self.input_rating.setItemText(0, QCoreApplication.translate("MainWindow", u"1", None))
         self.input_rating.setItemText(1, QCoreApplication.translate("MainWindow", u"2", None))
         self.input_rating.setItemText(2, QCoreApplication.translate("MainWindow", u"3", None))
         self.input_rating.setItemText(3, QCoreApplication.translate("MainWindow", u"4", None))
         self.input_rating.setItemText(4, QCoreApplication.translate("MainWindow", u"5", None))
 
-        self.lbl_field1.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u043a\u0441\u0442 \u043e\u0442\u0437\u044b\u0432\u0430 *", None))
+        self.lbl_review_field.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0435\u043a\u0441\u0442 \u043e\u0442\u0437\u044b\u0432\u0430 *", None))
         self.input_review.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u0434\u0435\u043b\u0438\u0442\u0435\u0441\u044c \u0432\u043f\u0435\u0447\u0430\u0442\u043b\u0435\u043d\u0438\u044f\u043c\u0438...", None))
         self.btn_publish.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c", None))
         self.btn_cancel.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0442\u043c\u0435\u043d\u0430", None))

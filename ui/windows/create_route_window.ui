@@ -29,9 +29,9 @@
 #lbl_form_title { font-size: 16px; font-weight: 600; color: #2C2A26; }
 
 #leftFormCard, #rightFormCard { background-color: #FFFFFF; border: 1px solid #D4CBBE; padding: 14px; }
-#sectionTitle { font-size: 11px; font-weight: 600; color: #6B6560; text-transform: uppercase; }
+#section_title_points, #section_title_main { font-size: 11px; font-weight: 600; color: #6B6560; text-transform: uppercase; }
 #hintLabel { font-size: 11px; color: #A39E94; }
-#fieldLabel { font-size: 12px; color: #6B6560; }
+#lbl_point_name, #lbl_lat, #lbl_lon, #lbl_alt, #lbl_reserve, #lbl_route_name, #lbl_type, #lbl_region, #lbl_length, #lbl_time, #lbl_desc { font-size: 12px; color: #6B6560; }
 #listTitle { font-size: 14px; font-weight: 600; color: #2C2A26; }
 
 QLineEdit, QTextEdit, QComboBox, QDoubleSpinBox {
@@ -177,7 +177,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
             <property name="rightMargin"><number>14</number></property>
             <property name="bottomMargin"><number>14</number></property>
             <item>
-             <widget class="QLabel" name="sectionTitle">
+             <widget class="QLabel" name="section_title_points">
               <property name="text"><string>ТОЧКИ МАРШРУТА</string></property>
              </widget>
             </item>
@@ -189,7 +189,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
             <item>
              <layout class="QVBoxLayout" name="pointInputLayout">
               <property name="spacing"><number>5</number></property>
-              <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Название точки</string></property></widget></item>
+              <item><widget class="QLabel" name="lbl_point_name"><property name="text"><string>Название точки</string></property></widget></item>
               <item><widget class="QLineEdit" name="input_point_name"/></item>
              </layout>
             </item>
@@ -199,7 +199,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
               <item>
                <layout class="QVBoxLayout" name="latLayout">
                 <property name="spacing"><number>5</number></property>
-                <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Широта (-90..90)</string></property></widget></item>
+                <item><widget class="QLabel" name="lbl_lat"><property name="text"><string>Широта (-90..90)</string></property></widget></item>
                 <item>
                  <widget class="QDoubleSpinBox" name="input_lat">
                   <property name="decimals"><number>6</number></property>
@@ -212,7 +212,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
               <item>
                <layout class="QVBoxLayout" name="lonLayout">
                 <property name="spacing"><number>5</number></property>
-                <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Долгота (-180..180)</string></property></widget></item>
+                <item><widget class="QLabel" name="lbl_lon"><property name="text"><string>Долгота (-180..180)</string></property></widget></item>
                 <item>
                  <widget class="QDoubleSpinBox" name="input_lon">
                   <property name="decimals"><number>6</number></property>
@@ -225,7 +225,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
               <item>
                <layout class="QVBoxLayout" name="altLayout">
                 <property name="spacing"><number>5</number></property>
-                <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Высота, м</string></property></widget></item>
+                <item><widget class="QLabel" name="lbl_alt"><property name="text"><string>Высота, м</string></property></widget></item>
                 <item>
                  <widget class="QDoubleSpinBox" name="input_alt">
                   <property name="maximum"><double>99999.000000000000000</double></property>
@@ -238,7 +238,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
             <item>
              <layout class="QVBoxLayout" name="reserveLayout">
               <property name="spacing"><number>5</number></property>
-              <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Заповедник *</string></property></widget></item>
+              <item><widget class="QLabel" name="lbl_reserve"><property name="text"><string>Заповедник *</string></property></widget></item>
               <item><widget class="QLineEdit" name="input_reserve"/></item>
              </layout>
             </item>
@@ -283,14 +283,14 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                <property name="rightMargin"><number>14</number></property>
                <property name="bottomMargin"><number>14</number></property>
                <item>
-                <widget class="QLabel" name="sectionTitle">
+                <widget class="QLabel" name="section_title_main">
                  <property name="text"><string>ОСНОВНАЯ ИНФОРМАЦИЯ</string></property>
                 </widget>
                </item>
                <item>
                 <layout class="QVBoxLayout" name="mainNameLayout">
                  <property name="spacing"><number>5</number></property>
-                 <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Название *</string></property></widget></item>
+                 <item><widget class="QLabel" name="lbl_route_name"><property name="text"><string>Название *</string></property></widget></item>
                  <item><widget class="QLineEdit" name="input_route_name"/></item>
                 </layout>
                </item>
@@ -300,14 +300,14 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                  <item>
                   <layout class="QVBoxLayout" name="typeLayout">
                    <property name="spacing"><number>5</number></property>
-                   <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Тип * (Пеший / Водный / Горный)</string></property></widget></item>
+                   <item><widget class="QLabel" name="lbl_type"><property name="text"><string>Тип * (Пеший / Водный / Горный)</string></property></widget></item>
                    <item><widget class="QComboBox" name="combo_type"/></item>
                   </layout>
                  </item>
                  <item>
                   <layout class="QVBoxLayout" name="regionLayout">
                    <property name="spacing"><number>5</number></property>
-                   <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Регион *</string></property></widget></item>
+                   <item><widget class="QLabel" name="lbl_region"><property name="text"><string>Регион *</string></property></widget></item>
                    <item><widget class="QLineEdit" name="input_region"/></item>
                   </layout>
                  </item>
@@ -319,7 +319,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                  <item>
                   <layout class="QVBoxLayout" name="lengthLayout">
                    <property name="spacing"><number>5</number></property>
-                   <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Протяжённость, км *</string></property></widget></item>
+                   <item><widget class="QLabel" name="lbl_length"><property name="text"><string>Протяжённость, км *</string></property></widget></item>
                    <item>
                     <widget class="QDoubleSpinBox" name="input_length">
                      <property name="maximum"><double>99999.000000000000000</double></property>
@@ -330,7 +330,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                  <item>
                   <layout class="QVBoxLayout" name="timeLayout">
                    <property name="spacing"><number>5</number></property>
-                   <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Время прохождения, ч *</string></property></widget></item>
+                   <item><widget class="QLabel" name="lbl_time"><property name="text"><string>Время прохождения, ч *</string></property></widget></item>
                    <item>
                     <widget class="QDoubleSpinBox" name="input_time">
                      <property name="maximum"><double>99999.000000000000000</double></property>
@@ -343,7 +343,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
                <item>
                 <layout class="QVBoxLayout" name="descLayout">
                  <property name="spacing"><number>5</number></property>
-                 <item><widget class="QLabel" name="fieldLabel"><property name="text"><string>Описание</string></property></widget></item>
+                 <item><widget class="QLabel" name="lbl_desc"><property name="text"><string>Описание</string></property></widget></item>
                  <item>
                   <widget class="QTextEdit" name="input_desc">
                    <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Expanding"><horstretch>0</horstretch><verstretch>1</verstretch></sizepolicy></property>

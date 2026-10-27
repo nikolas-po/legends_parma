@@ -36,13 +36,13 @@ class Ui_MainWindow(object):
 "\n"
 "#contentFrame { background-color: #F5F0E8; }\n"
 "#leftPanel, #rightPanel { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }\n"
-"#panelTitle { font-size: 14px; font-weight: 600; color: #2C2A26; }\n"
-"#fieldLabel { font-size: 12px; color: #6B6560; }\n"
-"#statsLabel { font-size: 12px; color: #6B6560; }\n"
+"#title_cache, #title_api { font-size: 14px; font-weight: 600; color: #2C2A26; }\n"
+"#lbl_ttl, #lbl_api_key, #lbl_osm, #lbl_timeout { font-size: 12px; color: #6B6560; }\n"
+"#lbl_stats { font-size: 12px; color: #6B6560; }\n"
 "\n"
 "QLineEdit, QSpinBox {\n"
-"    padding: 10px 12px; font-size: 14px; border"
-                        "-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26;\n"
+""
+                        "    padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26;\n"
 "}\n"
 "QLineEdit:hover, QSpinBox:hover { border: 1px solid #B8AE9E; }\n"
 "QLineEdit:focus, QSpinBox:focus { border: 1px solid #4A6741; }\n"
@@ -55,8 +55,8 @@ class Ui_MainWindow(object):
 "#btn_clear_cache:disabled { background-color: #FFFFFF; color: #D4A39C; border: 1px solid #E5C4BF; }\n"
 "#btn_clear_cache:focus { border: 1px dashed #4A6741; }\n"
 "\n"
-"#btn_save_cache, #btn_check_conn { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; padding: 11px 16px; font-size: 14px; border-r"
-                        "adius: 4px; }\n"
+"#btn_save_cache, #btn_check_conn { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE"
+                        "; padding: 11px 16px; font-size: 14px; border-radius: 4px; }\n"
 "#btn_save_cache:hover, #btn_check_conn:hover { border: 1px solid #4A6741; background-color: #F5F0E8; }\n"
 "#btn_save_cache:pressed, #btn_check_conn:pressed { background-color: #EDE6D9; }\n"
 "#btn_save_cache:disabled, #btn_check_conn:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }\n"
@@ -70,8 +70,8 @@ class Ui_MainWindow(object):
 "\n"
 "QTabWidget::panel { border: none; background-color: #FFFFFF; }\n"
 "QTabBar { background-color: #FFFFFF; border: none; }\n"
-"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; fon"
-                        "t-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
+"QTabBar::tab { height: 40px; background-color"
+                        ": #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
 "QTabBar::tab:hover { color: #2C2A26; }\n"
 "QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
         self.centralwidget = QWidget(MainWindow)
@@ -165,18 +165,18 @@ class Ui_MainWindow(object):
         self.leftLayout.setSpacing(14)
         self.leftLayout.setObjectName(u"leftLayout")
         self.leftLayout.setContentsMargins(14, 14, 14, 14)
-        self.panelTitle = QLabel(self.leftPanel)
-        self.panelTitle.setObjectName(u"panelTitle")
+        self.title_cache = QLabel(self.leftPanel)
+        self.title_cache.setObjectName(u"title_cache")
 
-        self.leftLayout.addWidget(self.panelTitle)
+        self.leftLayout.addWidget(self.title_cache)
 
         self.ttlLayout = QVBoxLayout()
         self.ttlLayout.setSpacing(5)
         self.ttlLayout.setObjectName(u"ttlLayout")
-        self.fieldLabel = QLabel(self.leftPanel)
-        self.fieldLabel.setObjectName(u"fieldLabel")
+        self.lbl_ttl = QLabel(self.leftPanel)
+        self.lbl_ttl.setObjectName(u"lbl_ttl")
 
-        self.ttlLayout.addWidget(self.fieldLabel)
+        self.ttlLayout.addWidget(self.lbl_ttl)
 
         self.input_ttl = QSpinBox(self.leftPanel)
         self.input_ttl.setObjectName(u"input_ttl")
@@ -191,15 +191,15 @@ class Ui_MainWindow(object):
         self.statsLayout = QVBoxLayout()
         self.statsLayout.setSpacing(5)
         self.statsLayout.setObjectName(u"statsLayout")
-        self.fieldLabel1 = QLabel(self.leftPanel)
-        self.fieldLabel1.setObjectName(u"fieldLabel1")
+        self.lbl_stats = QLabel(self.leftPanel)
+        self.lbl_stats.setObjectName(u"lbl_stats")
 
-        self.statsLayout.addWidget(self.fieldLabel1)
+        self.statsLayout.addWidget(self.lbl_stats)
 
-        self.statsLabel = QLabel(self.leftPanel)
-        self.statsLabel.setObjectName(u"statsLabel")
+        self.statsValue = QLabel(self.leftPanel)
+        self.statsValue.setObjectName(u"statsValue")
 
-        self.statsLayout.addWidget(self.statsLabel)
+        self.statsLayout.addWidget(self.statsValue)
 
 
         self.leftLayout.addLayout(self.statsLayout)
@@ -238,18 +238,18 @@ class Ui_MainWindow(object):
         self.rightLayout.setSpacing(14)
         self.rightLayout.setObjectName(u"rightLayout")
         self.rightLayout.setContentsMargins(14, 14, 14, 14)
-        self.panelTitle1 = QLabel(self.rightPanel)
-        self.panelTitle1.setObjectName(u"panelTitle1")
+        self.title_api = QLabel(self.rightPanel)
+        self.title_api.setObjectName(u"title_api")
 
-        self.rightLayout.addWidget(self.panelTitle1)
+        self.rightLayout.addWidget(self.title_api)
 
         self.apiKeyLayout = QVBoxLayout()
         self.apiKeyLayout.setSpacing(5)
         self.apiKeyLayout.setObjectName(u"apiKeyLayout")
-        self.fieldLabel2 = QLabel(self.rightPanel)
-        self.fieldLabel2.setObjectName(u"fieldLabel2")
+        self.lbl_api_key = QLabel(self.rightPanel)
+        self.lbl_api_key.setObjectName(u"lbl_api_key")
 
-        self.apiKeyLayout.addWidget(self.fieldLabel2)
+        self.apiKeyLayout.addWidget(self.lbl_api_key)
 
         self.input_api_key = QLineEdit(self.rightPanel)
         self.input_api_key.setObjectName(u"input_api_key")
@@ -263,10 +263,10 @@ class Ui_MainWindow(object):
         self.osmLayout = QVBoxLayout()
         self.osmLayout.setSpacing(5)
         self.osmLayout.setObjectName(u"osmLayout")
-        self.fieldLabel3 = QLabel(self.rightPanel)
-        self.fieldLabel3.setObjectName(u"fieldLabel3")
+        self.lbl_osm = QLabel(self.rightPanel)
+        self.lbl_osm.setObjectName(u"lbl_osm")
 
-        self.osmLayout.addWidget(self.fieldLabel3)
+        self.osmLayout.addWidget(self.lbl_osm)
 
         self.input_osm = QLineEdit(self.rightPanel)
         self.input_osm.setObjectName(u"input_osm")
@@ -279,10 +279,10 @@ class Ui_MainWindow(object):
         self.timeoutLayout = QVBoxLayout()
         self.timeoutLayout.setSpacing(5)
         self.timeoutLayout.setObjectName(u"timeoutLayout")
-        self.fieldLabel4 = QLabel(self.rightPanel)
-        self.fieldLabel4.setObjectName(u"fieldLabel4")
+        self.lbl_timeout = QLabel(self.rightPanel)
+        self.lbl_timeout.setObjectName(u"lbl_timeout")
 
-        self.timeoutLayout.addWidget(self.fieldLabel4)
+        self.timeoutLayout.addWidget(self.lbl_timeout)
 
         self.input_timeout = QSpinBox(self.rightPanel)
         self.input_timeout.setObjectName(u"input_timeout")
@@ -386,16 +386,16 @@ class Ui_MainWindow(object):
         self.role_lb.setText(QCoreApplication.translate("MainWindow", u"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440", None))
         self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0439\u0442\u0438", None))
         self.lbl_form_title.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 API \u0438 \u043a\u0435\u0448\u0430", None))
-        self.panelTitle.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0435\u0448", None))
-        self.fieldLabel.setText(QCoreApplication.translate("MainWindow", u"TTL, \u0441\u0435\u043a\u0443\u043d\u0434\u044b", None))
-        self.fieldLabel1.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043a\u0435\u0448\u0430", None))
-        self.statsLabel.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u0438\u0441\u0435\u0439: \u2014 \u00b7 \u0420\u0430\u0437\u043c\u0435\u0440: \u2014", None))
+        self.title_cache.setText(QCoreApplication.translate("MainWindow", u"\u041a\u0435\u0448", None))
+        self.lbl_ttl.setText(QCoreApplication.translate("MainWindow", u"TTL, \u0441\u0435\u043a\u0443\u043d\u0434\u044b", None))
+        self.lbl_stats.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043a\u0435\u0448\u0430", None))
+        self.statsValue.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u043f\u0438\u0441\u0435\u0439: \u2014 \u00b7 \u0420\u0430\u0437\u043c\u0435\u0440: \u2014", None))
         self.btn_clear_cache.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0447\u0438\u0441\u0442\u0438\u0442\u044c \u043a\u0435\u0448", None))
         self.btn_save_cache.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))
-        self.panelTitle1.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 API", None))
-        self.fieldLabel2.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043b\u044e\u0447 OpenWeather (\u043c\u0430\u0441\u043a\u0430)", None))
-        self.fieldLabel3.setText(QCoreApplication.translate("MainWindow", u"Endpoint OSM / Overpass", None))
-        self.fieldLabel4.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0430\u0439\u043c\u0430\u0443\u0442, \u0441", None))
+        self.title_api.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 API", None))
+        self.lbl_api_key.setText(QCoreApplication.translate("MainWindow", u"\u041a\u043b\u044e\u0447 OpenWeather (\u043c\u0430\u0441\u043a\u0430)", None))
+        self.lbl_osm.setText(QCoreApplication.translate("MainWindow", u"Endpoint OSM / Overpass", None))
+        self.lbl_timeout.setText(QCoreApplication.translate("MainWindow", u"\u0422\u0430\u0439\u043c\u0430\u0443\u0442, \u0441", None))
         self.btn_check_conn.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0435", None))
         self.btn_save_api.setText(QCoreApplication.translate("MainWindow", u"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_8), QCoreApplication.translate("MainWindow", u"\u041a\u0430\u0442\u0430\u043b\u043e\u0433 \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u043e\u0432", None))

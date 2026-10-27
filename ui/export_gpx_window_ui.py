@@ -32,15 +32,16 @@ class Ui_MainWindow(object):
 "#logout_btn { background-color: transparent; color: #F5F0E8; border: 1px solid rgba(255, 255, 255, 0.25); padding: 3px 10px; font-size: 12px; border-radius: 4px; }\n"
 "#logout_btn:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }\n"
 "#logout_btn:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }\n"
+"#logout_btn:focus { border: 1px dashed #F5F0E8; }\n"
 "\n"
 "#modalFrame { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }\n"
 "#lbl_modal_title { font-size: 16px; font-weight: 600; color: #2C2A26; }\n"
-"#lbl_field { font-size: 12px; color: #6B6560; }\n"
+"#lbl_route, #lbl_options, #lbl_path { font-size: 12px; color: #6B6560; }\n"
 "#lbl_error_hint { font-size: 12px; color: #B54A3A; }\n"
 "\n"
-"QComboBox, QLineEdit { padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; }\n"
-"QComboBox:hover, QLineEd"
-                        "it:hover { border: 1px solid #B8AE9E; }\n"
+"QComboBox, QLineEdit { padding: 10px 12px; font-size: 14px; border-radius: 4px; border: 1px solid #D4"
+                        "CBBE; background-color: #FFFFFF; color: #2C2A26; }\n"
+"QComboBox:hover, QLineEdit:hover { border: 1px solid #B8AE9E; }\n"
 "QComboBox:focus, QLineEdit:focus { border: 1px solid #4A6741; }\n"
 "QComboBox[error=\"true\"], QLineEdit[error=\"true\"] { border: 1px solid #B54A3A; }\n"
 "QComboBox:disabled, QLineEdit:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }\n"
@@ -51,10 +52,10 @@ class Ui_MainWindow(object):
 "QCheckBox::indicator:hover { border: 1px solid #B8AE9E; }\n"
 "QCheckBox::indicator:checked { background-color: #4A6741; border: 1px solid #4A6741; }\n"
 "QCheckBox::indicator:disabled { background-color: #E5DFD4; border: 1px solid #E5DFD4; }\n"
-"QCheckBox:disabled { color: #A39E94; }\n"
+"QChec"
+                        "kBox:disabled { color: #A39E94; }\n"
 "\n"
-"#btn_export { background-color: #4A6"
-                        "741; color: #FFFFFF; border: none; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }\n"
+"#btn_export { background-color: #4A6741; color: #FFFFFF; border: none; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }\n"
 "#btn_export:hover { background-color: #3D5636; }\n"
 "#btn_export:pressed { background-color: #334A2E; }\n"
 "#btn_export:disabled { background-color: #A8B5A0; }\n"
@@ -66,9 +67,9 @@ class Ui_MainWindow(object):
 "#btn_cancel:disabled, #btn_browse:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }\n"
 "#btn_cancel:focus, #btn_browse:focus { border: 1px dashed #4A6741; }\n"
 "\n"
-"#successBanner { background-color: #E8EDE4; border: 1px solid #4A6741; border-radius: 4px; }\n"
-"#successBanner QLabel { color: #4A674"
-                        "1; font-size: 12px; border: none; background: transparent; }\n"
+"#successBanner { background-color: #E8EDE4; border: 1px"
+                        " solid #4A6741; border-radius: 4px; }\n"
+"#successBanner QLabel { color: #4A6741; font-size: 12px; border: none; background: transparent; }\n"
 "#errorBanner { background-color: #F5E8E6; border: 1px solid #B54A3A; border-radius: 4px; }\n"
 "#errorBanner QLabel { color: #B54A3A; font-size: 12px; border: none; background: transparent; }\n"
 "\n"
@@ -171,10 +172,10 @@ class Ui_MainWindow(object):
         self.routeLayout = QVBoxLayout()
         self.routeLayout.setSpacing(5)
         self.routeLayout.setObjectName(u"routeLayout")
-        self.lbl_field = QLabel(self.modalFrame)
-        self.lbl_field.setObjectName(u"lbl_field")
+        self.lbl_route = QLabel(self.modalFrame)
+        self.lbl_route.setObjectName(u"lbl_route")
 
-        self.routeLayout.addWidget(self.lbl_field)
+        self.routeLayout.addWidget(self.lbl_route)
 
         self.comboRoute = QComboBox(self.modalFrame)
         self.comboRoute.addItem("")
@@ -189,10 +190,10 @@ class Ui_MainWindow(object):
         self.optionsLayout = QVBoxLayout()
         self.optionsLayout.setSpacing(6)
         self.optionsLayout.setObjectName(u"optionsLayout")
-        self.lbl_field1 = QLabel(self.modalFrame)
-        self.lbl_field1.setObjectName(u"lbl_field1")
+        self.lbl_options = QLabel(self.modalFrame)
+        self.lbl_options.setObjectName(u"lbl_options")
 
-        self.optionsLayout.addWidget(self.lbl_field1)
+        self.optionsLayout.addWidget(self.lbl_options)
 
         self.chkWaypoints = QCheckBox(self.modalFrame)
         self.chkWaypoints.setObjectName(u"chkWaypoints")
@@ -215,10 +216,10 @@ class Ui_MainWindow(object):
         self.pathLayout = QVBoxLayout()
         self.pathLayout.setSpacing(5)
         self.pathLayout.setObjectName(u"pathLayout")
-        self.lbl_field2 = QLabel(self.modalFrame)
-        self.lbl_field2.setObjectName(u"lbl_field2")
+        self.lbl_path = QLabel(self.modalFrame)
+        self.lbl_path.setObjectName(u"lbl_path")
 
-        self.pathLayout.addWidget(self.lbl_field2)
+        self.pathLayout.addWidget(self.lbl_path)
 
         self.pathInputLayout = QHBoxLayout()
         self.pathInputLayout.setSpacing(8)
@@ -339,7 +340,7 @@ class Ui_MainWindow(object):
         self.tab_14.setObjectName(u"tab_14")
         self.tabWidget.addTab(self.tab_14, "")
 
-        self.verticalLayout.addWidget(self.tabWidget, 0, Qt.AlignHCenter)
+        self.verticalLayout.addWidget(self.tabWidget, 0, Qt.AlignmentFlag.AlignHCenter)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -360,15 +361,15 @@ class Ui_MainWindow(object):
         self.role_lb.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c", None))
         self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0439\u0442\u0438", None))
         self.lbl_modal_title.setText(QCoreApplication.translate("MainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0432 GPX", None))
-        self.lbl_field.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0430\u0440\u0448\u0440\u0443\u0442", None))
+        self.lbl_route.setText(QCoreApplication.translate("MainWindow", u"\u041c\u0430\u0440\u0448\u0440\u0443\u0442", None))
         self.comboRoute.setItemText(0, QCoreApplication.translate("MainWindow", u"\u041b\u0435\u0441\u043d\u0430\u044f \u0442\u0440\u043e\u043f\u0430", None))
         self.comboRoute.setItemText(1, QCoreApplication.translate("MainWindow", u"\u0412\u043e\u0434\u043d\u044b\u0439 \u043f\u0443\u0442\u044c", None))
 
-        self.lbl_field1.setText(QCoreApplication.translate("MainWindow", u"\u041e\u043f\u0446\u0438\u0438", None))
+        self.lbl_options.setText(QCoreApplication.translate("MainWindow", u"\u041e\u043f\u0446\u0438\u0438", None))
         self.chkWaypoints.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0443\u0442\u0435\u0432\u044b\u0435 \u0442\u043e\u0447\u043a\u0438", None))
         self.chkElevations.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0441\u043e\u0442\u044b", None))
         self.lbl_error_hint.setText(QCoreApplication.translate("MainWindow", u"\u0411\u0435\u0437 \u0442\u043e\u0447\u0435\u043a \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u0430 \u044d\u043a\u0441\u043f\u043e\u0440\u0442 \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u0435\u043d", None))
-        self.lbl_field2.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0443\u0442\u044c \u043a \u0444\u0430\u0439\u043b\u0443", None))
+        self.lbl_path.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0443\u0442\u044c \u043a \u0444\u0430\u0439\u043b\u0443", None))
         self.inputPath.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u043f\u0443\u0442\u044c \u0441\u043e\u0445\u0440\u0430\u043d\u0435\u043d\u0438\u044f...", None))
         self.btn_browse.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0431\u0437\u043e\u0440...", None))
         self.btn_export.setText(QCoreApplication.translate("MainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442\u0438\u0440\u043e\u0432\u0430\u0442\u044c", None))
