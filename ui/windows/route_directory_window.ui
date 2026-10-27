@@ -258,14 +258,18 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
 }
 
 QTabWidget::panel { border: none; background-color: #FFFFFF; }
-QTabBar { background-color: #FFFFFF; border: none; }
+QTabBar { 
+    background-color: #FFFFFF; 
+    border: none; 
+    qproperty-expanding: true;
+}
 QTabBar::tab { 
     height: 40px; 
     background-color: #FFFFFF; 
     color: #6B6560; 
     font-size: 12px; 
     font-weight: normal; 
-    padding: 0px 30px; 
+    padding: 0px 10px; 
     border: none; 
     border-bottom: 2px solid transparent; 
     border-top: 1px solid #D4CBBE;
@@ -1091,11 +1095,11 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
       </layout>
      </widget>
     </item>
-    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+    <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>1</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
@@ -1120,7 +1124,7 @@ QTabBar::tab {
     color: #6B6560; 
     font-size: 12px; 
     font-weight: normal; 
-    padding: 0px 30px; 
+    padding: 0px 10px; 
     border: none; 
     border-bottom: 2px solid transparent; 
     text-align: center; 

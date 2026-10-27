@@ -278,21 +278,25 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QTabWidget::panel { border: none; background-color: #FFFFFF; }\n"
-"QTabBar { background-color: #FFFFFF; border: none; }\n"
+"QTabBar { \n"
+"    background-color: #FFFFFF; \n"
+"    border: none; \n"
+"    qproperty-expanding: true;\n"
+"}\n"
 "QTabBar::tab { \n"
 "    height: 40px; \n"
 "    background-color: #FFFFFF; \n"
 "    color: #6B6560; \n"
 "    font-size: 12px; \n"
 "    font-weight: normal; \n"
-"    padding: 0px 30px; \n"
+"    padding: 0px 10px; \n"
 "    border: none; \n"
 "    border-bottom: 2px solid transparent; \n"
-"    border-top: 1px solid #D4CBBE;\n"
+"    border-top: 1px sol"
+                        "id #D4CBBE;\n"
 "    text-align: center; \n"
 "}\n"
-"QTabBar"
-                        "::tab:hover { color: #2C2A26; }\n"
+"QTabBar::tab:hover { color: #2C2A26; }\n"
 "QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -848,8 +852,8 @@ class Ui_MainWindow(object):
 
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        sizePolicy1.setHorizontalStretch(1)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
         self.tabWidget.setSizePolicy(sizePolicy1)
@@ -863,7 +867,7 @@ class Ui_MainWindow(object):
 "    color: #6B6560; \n"
 "    font-size: 12px; \n"
 "    font-weight: normal; \n"
-"    padding: 0px 30px; \n"
+"    padding: 0px 10px; \n"
 "    border: none; \n"
 "    border-bottom: 2px solid transparent; \n"
 "    text-align: center; \n"
@@ -896,7 +900,7 @@ class Ui_MainWindow(object):
         self.tab_7.setObjectName(u"tab_7")
         self.tabWidget.addTab(self.tab_7, "")
 
-        self.verticalLayout.addWidget(self.tabWidget, 0, Qt.AlignmentFlag.AlignHCenter)
+        self.verticalLayout.addWidget(self.tabWidget)
 
         MainWindow.setCentralWidget(self.centralwidget)
 
