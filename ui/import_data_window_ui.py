@@ -66,10 +66,15 @@ class Ui_MainWindow(object):
 "QHeaderView::section { background-color: #EDE6D9; color: #6B6560; font-size: 11px; font-weight: 600; border: none; border-bottom: 1px solid #D4CBBE; padding: 7px 10px; }\n"
 "QTableWidget::item { border-bottom: 1px solid #D4CBBE; padding: 7px 10px; color: #2C2A26; font-size: 12px; }\n"
 "\n"
+"#modeBar { background: transparent; border: none; }\n"
+"#btn_mode_import, #btn_mode_export, #btn_mode_gpx { background-color: #FFFFFF; color: #6B6560; border: 1px solid #D4CBBE; padding: 7px 16px; font-size: 12px; border-radiu"
+                        "s: 4px; }\n"
+"#btn_mode_import:hover, #btn_mode_export:hover, #btn_mode_gpx:hover { color: #2C2A26; border: 1px solid #4A6741; }\n"
+"#btn_mode_import:checked, #btn_mode_export:checked, #btn_mode_gpx:checked { background-color: #4A6741; color: #FFFFFF; border: 1px solid #4A6741; font-weight: 600; }\n"
+"\n"
 "QTabWidget::panel { border: none; background-color: #FFFFFF; }\n"
 "QTabBar { background-color: #FFFFFF; border: none; }\n"
-"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: "
-                        "normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
+"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
 "QTabBar::tab:hover { color: #2C2A26; }\n"
 "QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
         self.centralwidget = QWidget(MainWindow)
@@ -136,6 +141,46 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout.addWidget(self.headerFrame)
+
+        self.modeBar = QFrame(self.centralwidget)
+        self.modeBar.setObjectName(u"modeBar")
+        self.modeLayout = QHBoxLayout(self.modeBar)
+        self.modeLayout.setSpacing(8)
+        self.modeLayout.setObjectName(u"modeLayout")
+        self.modeLayout.setContentsMargins(24, 12, 24, 0)
+        self.btn_mode_import = QPushButton(self.modeBar)
+        self.btn_mode_import.setObjectName(u"btn_mode_import")
+        self.btn_mode_import.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_mode_import.setCheckable(True)
+        self.btn_mode_import.setChecked(True)
+        self.btn_mode_import.setAutoExclusive(True)
+
+        self.modeLayout.addWidget(self.btn_mode_import)
+
+        self.btn_mode_export = QPushButton(self.modeBar)
+        self.btn_mode_export.setObjectName(u"btn_mode_export")
+        self.btn_mode_export.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_mode_export.setCheckable(True)
+        self.btn_mode_export.setChecked(False)
+        self.btn_mode_export.setAutoExclusive(True)
+
+        self.modeLayout.addWidget(self.btn_mode_export)
+
+        self.btn_mode_gpx = QPushButton(self.modeBar)
+        self.btn_mode_gpx.setObjectName(u"btn_mode_gpx")
+        self.btn_mode_gpx.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_mode_gpx.setCheckable(True)
+        self.btn_mode_gpx.setChecked(False)
+        self.btn_mode_gpx.setAutoExclusive(True)
+
+        self.modeLayout.addWidget(self.btn_mode_gpx)
+
+        self.modeSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.modeLayout.addItem(self.modeSpacer)
+
+
+        self.verticalLayout.addWidget(self.modeBar)
 
         self.centerLayout = QHBoxLayout()
         self.centerLayout.setSpacing(0)
@@ -329,6 +374,9 @@ class Ui_MainWindow(object):
         self.status_lb.setText("")
         self.role_lb.setText(QCoreApplication.translate("MainWindow", u"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c", None))
         self.logout_btn.setText(QCoreApplication.translate("MainWindow", u"\u0412\u044b\u0439\u0442\u0438", None))
+        self.btn_mode_import.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043c\u043f\u043e\u0440\u0442", None))
+        self.btn_mode_export.setText(QCoreApplication.translate("MainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442", None))
+        self.btn_mode_gpx.setText(QCoreApplication.translate("MainWindow", u"\u042d\u043a\u0441\u043f\u043e\u0440\u0442 GPX", None))
         self.lbl_form_title.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043c\u043f\u043e\u0440\u0442 \u0434\u0430\u043d\u043d\u044b\u0445", None))
         self.lbl_drop_main.setText(QCoreApplication.translate("MainWindow", u"\u041f\u0435\u0440\u0435\u0442\u0430\u0449\u0438\u0442\u0435 \u0444\u0430\u0439\u043b (CSV, Excel, JSON)", None))
         self.lbl_drop_sub.setText(QCoreApplication.translate("MainWindow", u"\u0438\u043b\u0438 \u043d\u0430\u0436\u043c\u0438\u0442\u0435 \u0434\u043b\u044f \u0432\u044b\u0431\u043e\u0440\u0430", None))

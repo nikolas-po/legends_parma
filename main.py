@@ -9,6 +9,8 @@ from PySide6.QtWidgets import (
 )
 
 from ui.audit_log_window_ui import Ui_MainWindow as Ui_Audit
+from ui.export_data_window_ui import Ui_MainWindow as Ui_Export
+from ui.export_gpx_window_ui import Ui_MainWindow as Ui_Gpx
 from ui.import_data_window_ui import Ui_MainWindow as Ui_Import
 from ui.login_window_ui import Ui_LoginWindow
 from ui.register_window_ui import Ui_RegWindow
@@ -31,9 +33,9 @@ class BaseWindow(QMainWindow):
     def setup_common_ui(self):
         tabs = self.ui.tabWidget
         tabs.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
+        tabs.setDocumentMode(True)  # панель вкладок на всю ширину
         tab_bar = tabs.tabBar()
         tab_bar.setExpanding(True)
-        tab_bar.setDocumentMode(True)
         tab_bar.setDrawBase(False)
         tabs.setCurrentIndex(self.TAB_INDEX)  # до connect — сигнал не сработает
         tabs.currentChanged.connect(self.switch_tab)
@@ -45,10 +47,15 @@ class BaseWindow(QMainWindow):
         self.ui.logout_btn.clicked.connect(self.on_logout)
 
     def switch_tab(self, index):
-        if index == self.TAB_INDEX:
+        if index != self.TAB_INDEX:
+            self.open_window(TAB_WINDOWS[index])
+
+    def open_window(self, window_class):
+        """Открывает другое окно на месте текущего (вкладка или режим внутри вкладки)."""
+        if isinstance(self, window_class):
             return
 
-        self.next_window = TAB_WINDOWS[index]()
+        self.next_window = window_class()
         self.next_window.setGeometry(self.geometry())
         if self.isMaximized():
             self.next_window.showMaximized()
@@ -92,6 +99,35 @@ class ImportWindow(BaseWindow):
         self.ui.setupUi(self)
         self.setup_common_ui()
 
+        self.ui.btn_mode_export.clicked.connect(lambda: self.open_window(ExportWindow))
+        self.ui.btn_mode_gpx.clicked.connect(lambda: self.open_window(GpxExportWindow))
+
+
+class ExportWindow(BaseWindow):
+    TAB_INDEX = 2  # та же вкладка «Импорт и экспорт»
+
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_Export()
+        self.ui.setupUi(self)
+        self.setup_common_ui()
+
+        self.ui.btn_mode_import.clicked.connect(lambda: self.open_window(ImportWindow))
+        self.ui.btn_mode_gpx.clicked.connect(lambda: self.open_window(GpxExportWindow))
+
+
+class GpxExportWindow(BaseWindow):
+    TAB_INDEX = 2  # та же вкладка «Импорт и экспорт»
+
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_Gpx()
+        self.ui.setupUi(self)
+        self.setup_common_ui()
+
+        self.ui.btn_mode_import.clicked.connect(lambda: self.open_window(ImportWindow))
+        self.ui.btn_mode_export.clicked.connect(lambda: self.open_window(ExportWindow))
+
 
 class SyncWindow(BaseWindow):
     TAB_INDEX = 3
@@ -133,6 +169,7 @@ class SettingsWindow(BaseWindow):
         self.setup_common_ui()
 
 
+# Порядок = порядок вкладок в tabWidget
 TAB_WINDOWS = [
     RouteCatalogWindow,
     TourWindow,
