@@ -295,9 +295,11 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
       <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
      </spacer>
     </item>
-    <item alignment="Qt::AlignmentFlag::AlignHCenter">
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="sizePolicy"><sizepolicy hsizetype="Maximum" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
+    <item>
+      <widget class='QTabWidget' name='tabWidget'>
+        <property name='sizePolicy'>
+          <sizepolicy hsizetype='Expanding' vsizetype='Fixed'>
+            <horstretch>1</horstretch><verstretch>0</verstretch></sizepolicy></property>
       <property name="minimumSize"><size><width>0</width><height>44</height></size></property>
       <property name="maximumSize"><size><width>16777215</width><height>44</height></size></property>
       <property name="tabPosition"><enum>QTabWidget::TabPosition::North</enum></property>
@@ -322,3 +324,9 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
  </resources>
  <connections/>
 </ui>
+
+
+
+
+
+

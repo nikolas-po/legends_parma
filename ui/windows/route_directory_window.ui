@@ -1192,3 +1192,9 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
  </resources>
  <connections/>
 </ui>
+
+
+
+
+
+

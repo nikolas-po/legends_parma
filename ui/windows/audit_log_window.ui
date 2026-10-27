@@ -204,27 +204,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
              <column><property name="text"><string>Объект</string></property></column>
              <column><property name="text"><string>Результат</string></property></column>
              <column><property name="text"><string>Детали</string></property></column>
-             
-             <item row="0" column="0"><property name="text"><string>12.05.2024 14:30:00</string></property></item>
-             <item row="0" column="1"><property name="text"><string>admin</string></property></item>
-             <item row="0" column="2"><property name="text"><string>Вход в систему</string></property></item>
-             <item row="0" column="3"><property name="text"><string>—</string></property></item>
-             <item row="0" column="4"><property name="text"><string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" color:#4A6741;"&gt;Успех&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property></item>
-             <item row="0" column="5"><property name="text"><string>IP: 192.168.1.1</string></property></item>
-             
-             <item row="1" column="0"><property name="text"><string>12.05.2024 14:35:12</string></property></item>
-             <item row="1" column="1"><property name="text"><string>admin</string></property></item>
-             <item row="1" column="2"><property name="text"><string>Создание маршрута</string></property></item>
-             <item row="1" column="3"><property name="text"><string>Маршрут "Лесная тропа"</string></property></item>
-             <item row="1" column="4"><property name="text"><string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" color:#4A6741;"&gt;Успех&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property></item>
-             <item row="1" column="5"><property name="text"><string>—</string></property></item>
-             
-             <item row="2" column="0"><property name="text"><string>12.05.2024 15:00:00</string></property></item>
-             <item row="2" column="1"><property name="text"><string>user1</string></property></item>
-             <item row="2" column="2"><property name="text"><string>Вход в систему</string></property></item>
-             <item row="2" column="3"><property name="text"><string>—</string></property></item>
-             <item row="2" column="4"><property name="text"><string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" color:#B54A3A;"&gt;Ошибка&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property></item>
-             <item row="2" column="5"><property name="text"><string>Неверный пароль</string></property></item>
             </widget>
            </item>
           </layout>
@@ -414,9 +393,9 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
      </widget>
     </item>
 
-    <item alignment="Qt::AlignHCenter">
+    <item>
      <widget class="QTabWidget" name="tabWidget">
-      <property name="sizePolicy"><sizepolicy hsizetype="Maximum" vsizetype="Fixed"><horstretch>0</horstretch><verstretch>0</verstretch></sizepolicy></property>
+      <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>1</horstretch><verstretch>0</verstretch></sizepolicy></property>
       <property name="minimumSize"><size><width>0</width><height>44</height></size></property>
       <property name="maximumSize"><size><width>16777215</width><height>44</height></size></property>
       <property name="tabPosition"><enum>QTabWidget::TabPosition::North</enum></property>
@@ -442,3 +421,10 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
  </resources>
  <connections/>
 </ui>
+
+
+
+
+
+
+
