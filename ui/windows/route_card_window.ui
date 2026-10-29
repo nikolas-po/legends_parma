@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>mainWindow</class>
  <widget class="QMainWindow" name="mainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -72,7 +75,7 @@
 #btn_delete:focus { border: 1px dashed #4A6741; }
 
 QTabWidget::panel { border: none; background-color: #FFFFFF; }
-QTabBar { background-color: #FFFFFF; border: none; }
+QTabBar { background-color: #FFFFFF; border: none; qproperty-drawBase: 0; qproperty-expanding: true; }
 QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }
 QTabBar::tab:hover { color: #2C2A26; }
 QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }</string>
@@ -472,7 +475,7 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
       <property name="currentIndex"><number>0</number></property>
       <property name="usesScrollButtons"><bool>false</bool></property>
       <property name="tabsClosable"><bool>false</bool></property>
-      <property name="drawBase" stdset="0"><bool>false</bool></property>
+      <property name="documentMode"><bool>true</bool></property>
       <widget class="QWidget" name="tab_36"><attribute name="title"><string>Каталог маршрутов</string></attribute></widget>
       <widget class="QWidget" name="tab_37"><attribute name="title"><string>Туры</string></attribute></widget>
       <widget class="QWidget" name="tab_38"><attribute name="title"><string>Импорт и экспорт</string></attribute></widget>

@@ -19,7 +19,6 @@ from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
     QLabel, QLineEdit, QMainWindow, QPushButton,
     QSizePolicy, QSpacerItem, QVBoxLayout, QWidget)
 import login_res_rc
-import login_res_rc
 
 class Ui_RegWindow(object):
     def setupUi(self, RegWindow):

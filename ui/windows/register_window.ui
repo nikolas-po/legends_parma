@@ -251,7 +251,6 @@ QPushButton:disabled { color: #A39E94; }</string>
  </widget>
  <resources>
   <include location="../qrc/login_res.qrc"/>
-  <include location="../venv/Lib/site-packages/qrc/login_res.qrc"/>
  </resources>
  <connections/>
 </ui>

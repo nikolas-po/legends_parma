@@ -25,6 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
+        MainWindow.setWindowModality(Qt.ApplicationModal)
         MainWindow.resize(1172, 673)
         MainWindow.setStyleSheet(u"#centralwidget { background-color: #F5F0E8; }\n"
 "#headerFrame { background-color: #2C2A26; border: none; }\n"
@@ -81,9 +82,9 @@ class Ui_MainWindow(object):
 "#actionBar { border-top: 1px solid #D4CBBE; }\n"
 "\n"
 "QTabWidget::panel { border: none; background-color: #FFFFFF; }\n"
-"QTabBar { background-color: #FFFFFF; border: none; }\n"
-"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border"
-                        "-top: 1px solid #D4CBBE; text-align: center; }\n"
+"QTabBar { background-color: #FFFFFF; border: none; qproperty-drawBase: 0; qproperty-expanding: true; }\n"
+"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: "
+                        "none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
 "QTabBar::tab:hover { color: #2C2A26; }\n"
 "QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
         self.centralwidget = QWidget(MainWindow)
@@ -507,7 +508,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabPosition(QTabWidget.TabPosition.North)
         self.tabWidget.setUsesScrollButtons(False)
         self.tabWidget.setTabsClosable(False)
-        self.tabWidget.setProperty(u"drawBase", False)
+        self.tabWidget.setDocumentMode(True)
         self.tab_8 = QWidget()
         self.tab_8.setObjectName(u"tab_8")
         self.tabWidget.addTab(self.tab_8, "")
@@ -536,7 +537,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

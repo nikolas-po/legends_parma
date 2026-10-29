@@ -1,24 +1,34 @@
 import sys
-
 from PySide6.QtWidgets import (
-    QApplication,
-    QHeaderView,
-    QMainWindow,
-    QSizePolicy,
-    QTableWidget,
+    QApplication, QHeaderView, QMainWindow, QTableWidget, QFileDialog
 )
 
+from ui.add_review_window_ui import Ui_MainWindow as Ui_AddReview
 from ui.audit_log_window_ui import Ui_MainWindow as Ui_Audit
+from ui.create_route_window_ui import Ui_MainWindow as Ui_CreateRoute
+from ui.create_tour_window_ui import Ui_MainWindow as Ui_CreateTour
 from ui.export_data_window_ui import Ui_MainWindow as Ui_Export
 from ui.export_gpx_window_ui import Ui_MainWindow as Ui_Gpx
 from ui.import_data_window_ui import Ui_MainWindow as Ui_Import
 from ui.login_window_ui import Ui_LoginWindow
 from ui.register_window_ui import Ui_RegWindow
+from ui.route_card_window_ui import Ui_mainWindow as Ui_RouteCard
 from ui.route_directory_window_ui import Ui_MainWindow as Ui_Routes
 from ui.set_api_hash_window_ui import Ui_MainWindow as Ui_Settings
 from ui.sinhr_window_ui import Ui_MainWindow as Ui_Sync
 from ui.tour_list_window_ui import Ui_MainWindow as Ui_Tours
 from ui.users_window_ui import Ui_MainWindow as Ui_Users
+
+
+def logout():
+    app = QApplication.instance()
+    app.login_window = LoginWindow()
+    app.login_window.show()
+
+    for widget in QApplication.topLevelWidgets():
+        if isinstance(widget, QMainWindow) and widget != app.login_window:
+            widget.close()
+            widget.deleteLater()
 
 
 class BaseWindow(QMainWindow):
@@ -28,45 +38,35 @@ class BaseWindow(QMainWindow):
         super().__init__()
         self.ui = None
         self.next_window = None
-        self.login_window = None
 
     def setup_common_ui(self):
-        tabs = self.ui.tabWidget
-        tabs.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
-        tabs.setDocumentMode(True)  # панель вкладок на всю ширину
-        tab_bar = tabs.tabBar()
-        tab_bar.setExpanding(True)
-        tab_bar.setDrawBase(False)
-        tabs.setCurrentIndex(self.TAB_INDEX)  # до connect — сигнал не сработает
-        tabs.currentChanged.connect(self.switch_tab)
+        self.ui.tabWidget.currentChanged.connect(self.switch_tab)
 
-        # Таблицы называются по-разному (tableWidget, auditTable, ...) — берём все
         for table in self.findChildren(QTableWidget):
             table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
-        self.ui.logout_btn.clicked.connect(self.on_logout)
+        self.ui.logout_btn.clicked.connect(logout)
 
     def switch_tab(self, index):
         if index != self.TAB_INDEX:
             self.open_window(TAB_WINDOWS[index])
 
     def open_window(self, window_class):
-        """Открывает другое окно на месте текущего (вкладка или режим внутри вкладки)."""
         if isinstance(self, window_class):
             return
 
         self.next_window = window_class()
         self.next_window.setGeometry(self.geometry())
+
         if self.isMaximized():
             self.next_window.showMaximized()
         else:
             self.next_window.show()
-        QApplication.processEvents()  # дать новому окну отрисоваться до закрытия старого
-        self.close()
 
-    def on_logout(self):
-        self.login_window = LoginWindow()
-        self.login_window.show()
+        self.next_window.activateWindow()
+        self.next_window.raise_()
+
+        QApplication.processEvents()
         self.close()
 
 
@@ -79,6 +79,27 @@ class RouteCatalogWindow(BaseWindow):
         self.ui.setupUi(self)
         self.setup_common_ui()
 
+        self.card_window = None
+        self.create_window = None
+
+        self.ui.btn_add_route.clicked.connect(self.on_create_clicked)
+        self.ui.btn_open.clicked.connect(self.on_open_clicked)
+        self.ui.btn_delete.clicked.connect(self.on_delete_clicked)
+        self.ui.btn_reset.clicked.connect(lambda: self.ui.searchInput.clear())
+
+    def on_create_clicked(self):
+        self.create_window = CreateRouteWindow()
+        self.create_window.show()
+
+    def on_open_clicked(self):
+        self.card_window = RouteCardWindow()
+        self.card_window.show()
+
+    def on_delete_clicked(self):
+        row = self.ui.tableWidget.currentRow()
+        if row >= 0:
+            self.ui.tableWidget.removeRow(row)
+
 
 class TourWindow(BaseWindow):
     TAB_INDEX = 1
@@ -88,6 +109,13 @@ class TourWindow(BaseWindow):
         self.ui = Ui_Tours()
         self.ui.setupUi(self)
         self.setup_common_ui()
+
+        self.create_window = None
+        self.ui.btn_new_tour.clicked.connect(self.on_create_clicked)
+
+    def on_create_clicked(self):
+        self.create_window = CreateTourWindow()
+        self.create_window.show()
 
 
 class ImportWindow(BaseWindow):
@@ -99,12 +127,18 @@ class ImportWindow(BaseWindow):
         self.ui.setupUi(self)
         self.setup_common_ui()
 
+        self.ui.btn_import.clicked.connect(self.on_import_clicked)
         self.ui.btn_mode_export.clicked.connect(lambda: self.open_window(ExportWindow))
         self.ui.btn_mode_gpx.clicked.connect(lambda: self.open_window(GpxExportWindow))
 
+    def on_import_clicked(self):
+        file_name, _ = QFileDialog.getOpenFileName(self, "Выберите файл для импорта", "", "Все файлы (*.*)")
+        if file_name:
+            self.ui.successBanner.setVisible(True)
+
 
 class ExportWindow(BaseWindow):
-    TAB_INDEX = 2  # та же вкладка «Импорт и экспорт»
+    TAB_INDEX = 2
 
     def __init__(self):
         super().__init__()
@@ -112,12 +146,28 @@ class ExportWindow(BaseWindow):
         self.ui.setupUi(self)
         self.setup_common_ui()
 
+        self.ui.btn_browse.clicked.connect(self.on_browse_clicked)
+        self.ui.btn_export.clicked.connect(self.on_export_clicked)
         self.ui.btn_mode_import.clicked.connect(lambda: self.open_window(ImportWindow))
         self.ui.btn_mode_gpx.clicked.connect(lambda: self.open_window(GpxExportWindow))
 
+    def on_browse_clicked(self):
+        path, _ = QFileDialog.getSaveFileName(self, "Сохранить файл", "", "Все файлы (*.*)")
+        if path:
+            self.ui.inputPath.setText(path)
+
+    def on_export_clicked(self):
+        if self.ui.inputPath.text():
+            try:
+                with open(self.ui.inputPath.text(), 'w', encoding='utf-8') as f:
+                    f.write("Экспортированные данные")
+                self.ui.successBanner.setVisible(True)
+            except Exception:
+                self.ui.errorBanner.setVisible(True)
+
 
 class GpxExportWindow(BaseWindow):
-    TAB_INDEX = 2  # та же вкладка «Импорт и экспорт»
+    TAB_INDEX = 2
 
     def __init__(self):
         super().__init__()
@@ -125,8 +175,25 @@ class GpxExportWindow(BaseWindow):
         self.ui.setupUi(self)
         self.setup_common_ui()
 
+        self.ui.btn_browse.clicked.connect(self.on_browse_clicked)
+        self.ui.btn_export.clicked.connect(self.on_export_clicked)
+        self.ui.btn_cancel.clicked.connect(self.close)
         self.ui.btn_mode_import.clicked.connect(lambda: self.open_window(ImportWindow))
         self.ui.btn_mode_export.clicked.connect(lambda: self.open_window(ExportWindow))
+
+    def on_browse_clicked(self):
+        path, _ = QFileDialog.getSaveFileName(self, "Сохранить GPX", "", "GPX Files (*.gpx)")
+        if path:
+            self.ui.inputPath.setText(path)
+
+    def on_export_clicked(self):
+        if self.ui.inputPath.text():
+            try:
+                with open(self.ui.inputPath.text(), 'w', encoding='utf-8') as f:
+                    f.write("<gpx></gpx>")
+                self.ui.successBanner.setVisible(True)
+            except Exception:
+                self.ui.errorBanner.setVisible(True)
 
 
 class SyncWindow(BaseWindow):
@@ -169,7 +236,59 @@ class SettingsWindow(BaseWindow):
         self.setup_common_ui()
 
 
-# Порядок = порядок вкладок в tabWidget
+class RouteCardWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_RouteCard()
+        self.ui.setupUi(self)
+
+        self.review_window = None
+
+        self.ui.btn_back.clicked.connect(self.close)
+        self.ui.btn_leave_review.clicked.connect(self.on_add_review_clicked)
+        self.ui.btn_delete.clicked.connect(self.close)
+        self.ui.logout_btn.clicked.connect(logout)
+
+    def on_add_review_clicked(self):
+        self.review_window = AddReviewWindow()
+        self.review_window.show()
+
+
+class CreateRouteWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_CreateRoute()
+        self.ui.setupUi(self)
+
+        self.ui.btn_back.clicked.connect(self.close)
+        self.ui.btn_cancel.clicked.connect(self.close)
+        self.ui.btn_save.clicked.connect(self.close)
+        self.ui.logout_btn.clicked.connect(logout)
+
+
+class CreateTourWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_CreateTour()
+        self.ui.setupUi(self)
+
+        self.ui.btn_back.clicked.connect(self.close)
+        self.ui.btn_cancel.clicked.connect(self.close)
+        self.ui.btn_save.clicked.connect(self.close)
+        self.ui.logout_btn.clicked.connect(logout)
+
+
+class AddReviewWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_AddReview()
+        self.ui.setupUi(self)
+
+        self.ui.btn_cancel.clicked.connect(self.close)
+        self.ui.btn_publish.clicked.connect(self.close)
+        self.ui.logout_btn.clicked.connect(logout)
+
+
 TAB_WINDOWS = [
     RouteCatalogWindow,
     TourWindow,
@@ -218,6 +337,7 @@ class RegisterWindow(QMainWindow):
 
         self.login_window = None
         self.ui.log_btn.clicked.connect(self.on_login_clicked)
+        self.ui.reg_btn_2.clicked.connect(self.on_login_clicked)
 
     def on_login_clicked(self):
         self.login_window = LoginWindow()
@@ -229,7 +349,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setStyle("Fusion")
 
-    window = LoginWindow()
-    window.show()
+    app.login_window = LoginWindow()
+    app.login_window.show()
 
     sys.exit(app.exec())

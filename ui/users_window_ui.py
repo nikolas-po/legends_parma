@@ -81,11 +81,11 @@ class Ui_MainWindow(object):
 "#btnRetry:hover { border: 1px solid #4A6741; background-color: #F5F0E8; }\n"
 "\n"
 "QTabWidget::panel { border: none; background-color: #FFFFFF; }\n"
-"QTabBar { background-color: #FFFFFF; border: none; }\n"
+"QTabBar { background-color: #FFFFFF; border: none; qproperty-drawBase: 0; qproperty-expanding: true; }\n"
 "QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
-"QTabBar::tab:hover { color: #2C2A26; }\n"
-"QTabBar::tab:selecte"
-                        "d { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
+"QTabBar::tab:"
+                        "hover { color: #2C2A26; }\n"
+"QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -382,7 +382,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabPosition(QTabWidget.TabPosition.North)
         self.tabWidget.setUsesScrollButtons(False)
         self.tabWidget.setTabsClosable(False)
-        self.tabWidget.setProperty(u"drawBase", False)
+        self.tabWidget.setDocumentMode(True)
         self.tab_8 = QWidget()
         self.tab_8.setObjectName(u"tab_8")
         self.tabWidget.addTab(self.tab_8, "")

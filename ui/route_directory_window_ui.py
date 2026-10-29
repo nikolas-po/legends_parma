@@ -281,8 +281,7 @@ class Ui_MainWindow(object):
 "QTabBar { \n"
 "    background-color: #FFFFFF; \n"
 "    border: none; \n"
-"    qproperty-expanding: true;\n"
-"}\n"
+"    qproperty-expanding: true; qproperty-drawBase: 0; }\n"
 "QTabBar::tab { \n"
 "    height: 40px; \n"
 "    background-color: #FFFFFF; \n"
@@ -292,8 +291,8 @@ class Ui_MainWindow(object):
 "    padding: 0px 10px; \n"
 "    border: none; \n"
 "    border-bottom: 2px solid transparent; \n"
-"    border-top: 1px sol"
-                        "id #D4CBBE;\n"
+"    "
+                        "border-top: 1px solid #D4CBBE;\n"
 "    text-align: center; \n"
 "}\n"
 "QTabBar::tab:hover { color: #2C2A26; }\n"
@@ -860,7 +859,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setMinimumSize(QSize(0, 44))
         self.tabWidget.setMaximumSize(QSize(16777215, 44))
         self.tabWidget.setStyleSheet(u"QTabWidget::panel { border: none; background-color: #FFFFFF; }\n"
-"QTabBar { background-color: #FFFFFF; border: none; }\n"
+"QTabBar { background-color: #FFFFFF; border: none; qproperty-drawBase: 0; qproperty-expanding: true; }\n"
 "QTabBar::tab { \n"
 "    height: 40px; \n"
 "    background-color: #FFFFFF; \n"
@@ -877,7 +876,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabPosition(QTabWidget.TabPosition.North)
         self.tabWidget.setUsesScrollButtons(False)
         self.tabWidget.setTabsClosable(False)
-        self.tabWidget.setProperty(u"drawBase", False)
+        self.tabWidget.setDocumentMode(True)
         self.tab_1 = QWidget()
         self.tab_1.setObjectName(u"tab_1")
         self.tabWidget.addTab(self.tab_1, "")
