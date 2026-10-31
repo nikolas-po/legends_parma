@@ -224,18 +224,10 @@ class ExportWindow(BaseWindow):
         self.ui.btn_mode_gpx.clicked.connect(lambda: self.open_window(GpxExportWindow))
 
     def on_browse_clicked(self):
-        path, _ = QFileDialog.getSaveFileName(self, "Сохранить файл", "", "Все файлы (*.*)")
-        if path:
-            self.ui.inputPath.setText(path)
+        QFileDialog.getSaveFileName(self, "Сохранить файл", "", "Все файлы (*.*)")
 
     def on_export_clicked(self):
-        if self.ui.inputPath.text():
-            try:
-                with open(self.ui.inputPath.text(), 'w', encoding='utf-8') as f:
-                    f.write("Экспортированные данные")
-                self.ui.successBanner.setVisible(True)
-            except Exception:
-                self.ui.errorBanner.setVisible(True)
+        QFileDialog.getSaveFileName(self, "Сохранить файл", "", "Все файлы (*.*)")
 
 
 class GpxExportWindow(BaseWindow):
@@ -252,18 +244,10 @@ class GpxExportWindow(BaseWindow):
         self.ui.btn_mode_export.clicked.connect(lambda: self.open_window(ExportWindow))
 
     def on_browse_clicked(self):
-        path, _ = QFileDialog.getSaveFileName(self, "Сохранить GPX", "", "GPX Files (*.gpx)")
-        if path:
-            self.ui.inputPath.setText(path)
+        QFileDialog.getSaveFileName(self, "Сохранить GPX", "", "GPX Files (*.gpx)")
 
     def on_export_clicked(self):
-        if self.ui.inputPath.text():
-            try:
-                with open(self.ui.inputPath.text(), 'w', encoding='utf-8') as f:
-                    f.write("<gpx></gpx>")
-                self.ui.successBanner.setVisible(True)
-            except Exception:
-                self.ui.errorBanner.setVisible(True)
+        QFileDialog.getSaveFileName(self, "Сохранить GPX", "", "GPX Files (*.gpx)")
 
 
 class SyncWindow(BaseWindow):
