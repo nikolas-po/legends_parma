@@ -95,12 +95,14 @@ class Ui_MainWindow(object):
 "QHeaderView { background-color: #EDE6D9; }\n"
 "QHeaderView::section { font-size: 11px; font-weight: 600; color: #6B6560; background-color: #EDE6D9; padding: 7px 10px; border: none; border-bottom: 1px solid #D4CBBE; border-right: 1px solid #D4CBBE; }\n"
 "QHeaderView::section:vertical { background-color: #EDE6D9; color: #6B6560; border: none; padding: 4px 6px; }\n"
+"QTableWidget QHeaderView::section:vertical { background-color: #EDE6D9; color: #6B6560; border: none; padding: 4px 6px; }\n"
+"QTableCornerButton::section { background-color: #EDE6D9; border: none; }\n"
 "QTableWidget::item { font-size: 12px; color: #2C2A26; padding: 7px 10px; border-bottom: 1px solid #D4CBBE; }\n"
-"QTableWidget::item:hover { background-color: #EDE6D9; }\n"
+"QTableWidget::item:hover { "
+                        "background-color: #EDE6D9; }\n"
 "QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }\n"
 "#footerLabel { font-size: 11px; color: #6B6560; }\n"
-"#lblLoadingTitle { font-size: 14px; c"
-                        "olor: #6B6560; }\n"
+"#lblLoadingTitle { font-size: 14px; color: #6B6560; }\n"
 "#lblLoadingSub { font-size: 12px; color: #A39E94; }\n"
 "#lblEmptyTitle { font-size: 14px; color: #6B6560; }\n"
 "#lblEmptySub { font-size: 12px; color: #A39E94; }\n"
@@ -110,10 +112,10 @@ class Ui_MainWindow(object):
 "#btnRetry:hover { border: 1px solid #4A6741; background-color: #F5F0E8; }\n"
 "QTabWidget::panel { border: none; background-color: #FFFFFF; }\n"
 "QTabBar { background-color: #FFFFFF; border: none; qproperty-expanding: true; qproperty-drawBase: 0; }\n"
-"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 10px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
+"QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12"
+                        "px; font-weight: normal; padding: 0px 10px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
 "QTabBar::tab:hover { color: #2C2A26; }\n"
-"QTabBar"
-                        "::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
+"QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)

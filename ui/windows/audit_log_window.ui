@@ -21,10 +21,12 @@
 #logout_btn:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }
 #logout_btn:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }
 #contentFrame { background-color: #F5F0E8; }
+QTableWidget { background-color: #FFFFFF; border: 1px solid #D4CBBE; outline: none; gridline-color: transparent; }
 QHeaderView { background-color: #EDE6D9; }
 QHeaderView::section { background-color: #EDE6D9; color: #6B6560; font-size: 11px; font-weight: 600; border: none; border-bottom: 1px solid #D4CBBE; border-right: 1px solid #D4CBBE; padding: 7px 10px; text-align: left; }
 QHeaderView::section:vertical { background-color: #EDE6D9; color: #6B6560; border: none; padding: 4px 6px; }
-QTableWidget { background-color: #FFFFFF; border: 1px solid #D4CBBE; outline: none; gridline-color: transparent; }
+QTableWidget QHeaderView::section:vertical { background-color: #EDE6D9; color: #6B6560; border: none; padding: 4px 6px; }
+QTableCornerButton::section { background-color: #EDE6D9; border: none; }
 QTableWidget::item { border-bottom: 1px solid #D4CBBE; padding: 7px 10px; color: #2C2A26; font-size: 12px; }
 QTableWidget::item:hover { background-color: #EDE6D9; }
 QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
