@@ -33,52 +33,42 @@ class Ui_MainWindow(object):
 "#logout_btn { background-color: transparent; color: #F5F0E8; border: 1px solid rgba(255, 255, 255, 0.25); padding: 3px 10px; font-size: 12px; border-radius: 4px; }\n"
 "#logout_btn:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }\n"
 "#logout_btn:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }\n"
-"\n"
 "#leftPanel { background-color: #FFFFFF; border-right: 1px solid #D4CBBE; }\n"
 "#lbl_selected_title { font-size: 14px; font-weight: 600; color: #2C2A26; }\n"
 "#lbl_selected_desc { font-size: 12px; color: #6B6560; }\n"
-"\n"
 "#btn_open_left { background-color: #4A6741; color: #FFFFFF; border: none; padding: 3px 9px; font-size: 12px; border-radius: 4px; }\n"
 "#btn_open_left:hover { background-color: #3D5636; }\n"
-"#btn_open_left:pressed { background-color: #334A2E"
-                        "; }\n"
-"#btn_open_left:disabled { background-color: #A8B5A0; }\n"
+"#btn_open_left:pressed { background-color: #334A2E; }\n"
+"#b"
+                        "tn_open_left:disabled { background-color: #A8B5A0; }\n"
 "#btn_open_left:focus { border: 1px dashed #4A6741; }\n"
-"\n"
 "#btn_edit_left { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; padding: 3px 9px; font-size: 12px; border-radius: 4px; }\n"
 "#btn_edit_left:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }\n"
 "#btn_edit_left:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }\n"
 "#btn_edit_left:focus { border: 1px dashed #4A6741; }\n"
-"\n"
 "#rightPanel { background-color: #FFFFFF; }\n"
-"\n"
 "#tableWidget { background-color: #FFFFFF; alternate-background-color: #FAF8F3; border: none; outline: none; }\n"
+"QHeaderView { background-color: #EDE6D9; }\n"
 "QHeaderView::section { background-color: #EDE6D9; color: #6B6560; font-size: 11px; font-weight: 600; border: none; border-bottom: 1px solid #D4CBBE; padding: 7px 10px; text-align: left; }\n"
-"QTableWidget::item { border-bottom: 1px solid #D4CBBE; padding: 7px 10px; color: #2C2A26; font-size: 12px; }\n"
-"QTableWidget::item:hover { bac"
-                        "kground-color: #EDE6D9; }\n"
+"QHeaderView::section:vertical { background-color: #EDE6D9; color: #6B6560; border: none; padding: 4px 6px; }\n"
+"QTableWi"
+                        "dget::item { border-bottom: 1px solid #D4CBBE; padding: 7px 10px; color: #2C2A26; font-size: 12px; }\n"
+"QTableWidget::item:hover { background-color: #EDE6D9; }\n"
 "QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }\n"
-"\n"
-"QTableWidget QPushButton { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; border-radius: 4px; padding: 3px 9px; font-size: 12px; }\n"
-"QTableWidget QPushButton:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }\n"
-"\n"
 "#searchInput { padding: 4px 8px; font-size: 12px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; min-width: 160px; max-width: 240px; }\n"
 "#searchInput:hover { border: 1px solid #B8AE9E; }\n"
 "#searchInput:focus { border: 1px solid #4A6741; }\n"
 "#searchInput[error=\"true\"] { border: 1px solid #B54A3A; }\n"
 "#searchInput:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }\n"
-"\n"
 "#btn_new_tour { background-color: #4A6741; color: #FFFFFF; border: none; padding: 3px 9px; font-size: 12px; border-radius: 4px; }\n"
 "#btn_new_tour:hover { background-color: #3D5636; }\n"
-"#btn_n"
-                        "ew_tour:pressed { background-color: #334A2E; }\n"
+"#btn_new_tour:pressed { background-color: #334A2E; }\n"
 "#btn_new_tour:disabled { background-color: #A8B5A0; }\n"
-"#btn_new_tour:focus { border: 1px dashed #4A6741; }\n"
-"\n"
+"#btn_new_tour:focus { "
+                        "border: 1px dashed #4A6741; }\n"
 "#offlineBanner { background-color: #F0EEEA; border: 1px solid #D4CBBE; border-radius: 4px; }\n"
 "#offlineBanner QLabel { font-size: 12px; color: #6B6560; }\n"
 "#offlineDot { background-color: #A39E94; border-radius: 4px; min-width: 8px; max-width: 8px; min-height: 8px; max-height: 8px; }\n"
-"\n"
 "#lblLoadingTitle { font-size: 14px; color: #6B6560; }\n"
 "#lblLoadingSub { font-size: 12px; color: #A39E94; }\n"
 "#lblEmptyTitle { font-size: 14px; color: #6B6560; }\n"
@@ -86,11 +76,10 @@ class Ui_MainWindow(object):
 "#errorFrame { background-color: #FFFFFF; border: 1px solid #B54A3A; border-radius: 4px; }\n"
 "#errorFrame QLabel { font-size: 14px; color: #B54A3A; }\n"
 "#btnRetry { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; border-radius: 4px; padding: 6px 16px; font-size: 12px; }\n"
-"#btnRetry:hover { border: 1px solid"
-                        " #4A6741; background-color: #F5F0E8; }\n"
-"\n"
+"#btnRetry:hover { border: 1px solid #4A6741; background-color: #F5F0E8; }\n"
 "QTabWidget::panel { border: none; background-color: #FFFFFF; }\n"
-"QTabBar { background-color: #FFFFFF; border: none; qproperty-drawBase: 0; qproperty-expanding: true; }\n"
+"QTabBar { background-color: #FF"
+                        "FFFF; border: none; qproperty-drawBase: 0; qproperty-expanding: true; }\n"
 "QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }\n"
 "QTabBar::tab:hover { color: #2C2A26; }\n"
 "QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }")
@@ -249,8 +238,8 @@ class Ui_MainWindow(object):
         self.normalLayout.setObjectName(u"normalLayout")
         self.normalLayout.setContentsMargins(0, 0, 0, 0)
         self.tableWidget = QTableWidget(self.pageNormal)
-        if (self.tableWidget.columnCount() < 5):
-            self.tableWidget.setColumnCount(5)
+        if (self.tableWidget.columnCount() < 4):
+            self.tableWidget.setColumnCount(4)
         __qtablewidgetitem = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
@@ -259,15 +248,13 @@ class Ui_MainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
-        __qtablewidgetitem4 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         self.tableWidget.setObjectName(u"tableWidget")
         self.tableWidget.setFrameShape(QFrame.Shape.NoFrame)
         self.tableWidget.setAlternatingRowColors(True)
         self.tableWidget.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.tableWidget.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.tableWidget.setShowGrid(False)
-        self.tableWidget.horizontalHeader().setStretchLastSection(False)
+        self.tableWidget.horizontalHeader().setStretchLastSection(True)
 
         self.normalLayout.addWidget(self.tableWidget)
 
@@ -460,8 +447,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0430\u0442\u0430 \u043e\u043a\u043e\u043d\u0447\u0430\u043d\u0438\u044f", None))
         ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"\u0421\u0442\u0430\u0442\u0443\u0441", None))
-        ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044f", None))
         self.lblLoadingTitle.setText(QCoreApplication.translate("MainWindow", u"\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430...", None))
         self.lblLoadingSub.setText(QCoreApplication.translate("MainWindow", u"\u0418\u043d\u0434\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441\u0430", None))
         self.lblEmptyTitle.setText(QCoreApplication.translate("MainWindow", u"\u041d\u0438\u0447\u0435\u0433\u043e \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", None))

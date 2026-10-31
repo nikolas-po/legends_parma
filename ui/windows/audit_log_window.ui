@@ -20,21 +20,17 @@
 #logout_btn { background-color: transparent; color: #F5F0E8; border: 1px solid rgba(255, 255, 255, 0.25); padding: 3px 10px; font-size: 12px; border-radius: 4px; }
 #logout_btn:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }
 #logout_btn:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }
-
 #contentFrame { background-color: #F5F0E8; }
-
-QTableWidget { background-color: #FFFFFF; border: 1px solid #D4CBBE; outline: none; gridline-color: transparent; }
+QHeaderView { background-color: #EDE6D9; }
 QHeaderView::section { background-color: #EDE6D9; color: #6B6560; font-size: 11px; font-weight: 600; border: none; border-bottom: 1px solid #D4CBBE; border-right: 1px solid #D4CBBE; padding: 7px 10px; text-align: left; }
+QHeaderView::section:vertical { background-color: #EDE6D9; color: #6B6560; border: none; padding: 4px 6px; }
+QTableWidget { background-color: #FFFFFF; border: 1px solid #D4CBBE; outline: none; gridline-color: transparent; }
 QTableWidget::item { border-bottom: 1px solid #D4CBBE; padding: 7px 10px; color: #2C2A26; font-size: 12px; }
 QTableWidget::item:hover { background-color: #EDE6D9; }
 QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
-
 #filterFrame { background-color: transparent; }
 #filterFrame QLabel { font-size: 13px; font-weight: 500; color: #6B6560; }
-
-QDateEdit, QComboBox {
-    padding: 8px 12px; font-size: 13px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; min-height: 20px;
-}
+QDateEdit, QComboBox { padding: 8px 12px; font-size: 13px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; min-height: 20px; }
 QDateEdit::drop-down { subcontrol-origin: padding; subcontrol-position: top right; width: 28px; border-left: 1px solid #D4CBBE; background-color: #F5F0E8; border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
 QDateEdit:hover, QComboBox:hover { border: 1px solid #B8AE9E; }
 QDateEdit:focus, QComboBox:focus { border: 1px solid #4A6741; }
@@ -42,19 +38,14 @@ QDateEdit[error="true"], QComboBox[error="true"] { border: 1px solid #B54A3A; }
 QDateEdit:disabled, QComboBox:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }
 QComboBox QAbstractItemView { background-color: #FFFFFF; border: 1px solid #D4CBBE; selection-background-color: #E8EDE4; selection-color: #2C2A26; }
 QComboBox QAbstractItemView::item:hover { background-color: #EDE6D9; }
-
-#btn_apply, #btn_export {
-    padding: 8px 16px; font-size: 13px; border-radius: 4px; background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; min-height: 20px;
-}
+#btn_apply, #btn_export { padding: 8px 16px; font-size: 13px; border-radius: 4px; background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; min-height: 20px; }
 #btn_apply:hover, #btn_export:hover { border: 1px solid #4A6741; background-color: #F5F0E8; }
 #btn_apply:pressed, #btn_export:pressed { background-color: #EDE6D9; }
 #btn_apply:disabled, #btn_export:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }
 #btn_apply:focus, #btn_export:focus { border: 1px dashed #4A6741; }
-
 #offlineBanner { background-color: #F0EEEA; border: 1px solid #D4CBBE; border-radius: 4px; }
 #offlineBanner QLabel { font-size: 12px; color: #6B6560; }
 #offlineDot { background-color: #A39E94; border-radius: 4px; min-width: 8px; max-width: 8px; min-height: 8px; max-height: 8px; }
-
 #lblLoadingTitle { font-size: 14px; color: #6B6560; }
 #lblLoadingSub { font-size: 12px; color: #A39E94; }
 #lblEmptyTitle { font-size: 14px; color: #6B6560; }
@@ -63,7 +54,6 @@ QComboBox QAbstractItemView::item:hover { background-color: #EDE6D9; }
 #errorFrame QLabel { font-size: 14px; color: #B54A3A; }
 #btnRetry { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; border-radius: 4px; padding: 6px 16px; font-size: 12px; }
 #btnRetry:hover { border: 1px solid #4A6741; background-color: #F5F0E8; }
-
 QTabWidget::panel { border: none; background-color: #FFFFFF; }
 QTabBar { background-color: #FFFFFF; border: none; qproperty-drawBase: 0; qproperty-expanding: true; }
 QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }
@@ -77,7 +67,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
     <property name="topMargin"><number>0</number></property>
     <property name="rightMargin"><number>0</number></property>
     <property name="bottomMargin"><number>0</number></property>
-    
     <item>
      <widget class="QFrame" name="headerFrame">
       <property name="minimumSize"><size><width>0</width><height>40</height></size></property>
@@ -142,7 +131,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
       </layout>
      </widget>
     </item>
-
     <item>
      <widget class="QFrame" name="contentFrame">
       <layout class="QVBoxLayout" name="contentLayout">
@@ -151,7 +139,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
        <property name="topMargin"><number>12</number></property>
        <property name="rightMargin"><number>12</number></property>
        <property name="bottomMargin"><number>12</number></property>
-       
        <item>
         <widget class="QFrame" name="offlineBanner">
          <property name="visible"><bool>false</bool></property>
@@ -180,11 +167,9 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
          </layout>
         </widget>
        </item>
-       
        <item>
         <widget class="QStackedWidget" name="stateStack">
          <property name="currentIndex"><number>0</number></property>
-         
          <widget class="QWidget" name="pageNormal">
           <layout class="QVBoxLayout" name="normalLayout">
            <property name="leftMargin"><number>0</number></property>
@@ -208,7 +193,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </item>
           </layout>
          </widget>
-         
          <widget class="QWidget" name="pageLoading">
           <layout class="QVBoxLayout" name="loadingLayout">
            <property name="leftMargin"><number>0</number></property>
@@ -239,7 +223,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </item>
           </layout>
          </widget>
-         
          <widget class="QWidget" name="pageEmpty">
           <layout class="QVBoxLayout" name="emptyLayout">
            <property name="leftMargin"><number>0</number></property>
@@ -270,7 +253,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </item>
           </layout>
          </widget>
-         
          <widget class="QWidget" name="pageError">
           <layout class="QVBoxLayout" name="errorLayout">
            <property name="leftMargin"><number>0</number></property>
@@ -313,10 +295,8 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </item>
           </layout>
          </widget>
-         
         </widget>
        </item>
-       
        <item>
         <widget class="QFrame" name="filterFrame">
          <layout class="QHBoxLayout" name="filterLayout">
@@ -325,7 +305,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
           <property name="topMargin"><number>0</number></property>
           <property name="rightMargin"><number>0</number></property>
           <property name="bottomMargin"><number>0</number></property>
-          
           <item>
            <widget class="QLabel" name="lblDateFrom">
             <property name="text"><string>С</string></property>
@@ -362,14 +341,12 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
             <item><property name="text"><string>Действие</string></property></item>
            </widget>
           </item>
-          
           <item>
            <spacer name="filterSpacer">
             <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
             <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
            </spacer>
           </item>
-          
           <item>
            <widget class="QPushButton" name="btn_apply">
             <property name="minimumSize"><size><width>0</width><height>36</height></size></property>
@@ -384,15 +361,12 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
             <property name="text"><string>Выгрузить CSV</string></property>
            </widget>
           </item>
-          
          </layout>
         </widget>
        </item>
-       
       </layout>
      </widget>
     </item>
-
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="sizePolicy"><sizepolicy hsizetype="Expanding" vsizetype="Fixed"><horstretch>1</horstretch><verstretch>0</verstretch></sizepolicy></property>
@@ -412,7 +386,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
       <widget class="QWidget" name="tab_14"><attribute name="title"><string>Настройки API и кеш</string></attribute></widget>
      </widget>
     </item>
-    
    </layout>
   </widget>
  </widget>
@@ -421,10 +394,3 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
  </resources>
  <connections/>
 </ui>
-
-
-
-
-
-
-

@@ -14,779 +14,73 @@
    <string>RouteCatalogWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#centralwidget {
-    background-color: #F5F0E8;
-}
-
-#headerFrame {
-    background-color: #2C2A26;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-#headerFrame QLabel {
-    color: #F5F0E8;
-    border: none;
-}
-#logout_btn {
-    background-color: transparent;
-    color: #F5F0E8;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 3px 10px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-#logout_btn:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-#logout_btn:pressed {
-    background-color: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-#leftPanel {
-    background-color: #F5F0E8;
-    border-right: 1px solid #D4CBBE;
-}
+   <string notr="true">#centralwidget { background-color: #F5F0E8; }
+#headerFrame { background-color: #2C2A26; border-bottom: 1px solid rgba(255,255,255,0.2); }
+#headerFrame QLabel { color: #F5F0E8; border: none; }
+#logout_btn { background-color: transparent; color: #F5F0E8; border: 1px solid rgba(255, 255, 255, 0.25); padding: 3px 10px; font-size: 12px; border-radius: 4px; }
+#logout_btn:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }
+#logout_btn:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }
+#leftPanel { background-color: #F5F0E8; border-right: 1px solid #D4CBBE; }
 #lbl_title { font-size: 12px; color: #6B6560; }
 #lbl_desc { font-size: 11px; color: #6B6560; }
-
-#btn_open {
-    background-color: #4A6741;
-    color: #FFFFFF;
-    border: none;
-    padding: 3px 9px;
-    font-size: 12px;
-    border-radius: 4px;
-}
+#btn_open { background-color: #4A6741; color: #FFFFFF; border: none; padding: 3px 9px; font-size: 12px; border-radius: 4px; }
 #btn_open:hover { background-color: #3D5636; }
 #btn_open:pressed { background-color: #334A2E; }
 #btn_open:disabled { background-color: #A8B5A0; }
-
-#btn_edit {
-    background-color: #FFFFFF;
-    color: #2C2A26;
-    border: 1px solid #D4CBBE;
-    padding: 3px 9px;
-    font-size: 12px;
-    border-radius: 4px;
-}
+#btn_edit { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; padding: 3px 9px; font-size: 12px; border-radius: 4px; }
 #btn_edit:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }
 #btn_edit:pressed { background-color: #EDE6D9; border: 1px solid #3D5636; }
 #btn_edit:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }
-
-#btn_delete {
-    background-color: #FFFFFF;
-    color: #B54A3A;
-    border: 1px solid #B54A3A;
-    padding: 3px 9px;
-    font-size: 12px;
-    border-radius: 4px;
-}
+#btn_delete { background-color: #FFFFFF; color: #B54A3A; border: 1px solid #B54A3A; padding: 3px 9px; font-size: 12px; border-radius: 4px; }
 #btn_delete:hover { background-color: #F5E8E6; color: #B54A3A; border: 1px solid #B54A3A; }
 #btn_delete:pressed { background-color: #EBD5D1; color: #9A3E30; border: 1px solid #9A3E30; }
 #btn_delete:disabled { background-color: #FFFFFF; color: #D4A39C; border: 1px solid #E5C4BF; }
-
 QRadioButton { spacing: 6px; font-size: 12px; color: #6B6560; }
 QRadioButton::indicator { width: 15px; height: 15px; }
 QRadioButton::indicator:unchecked { border: 1px solid #D4CBBE; border-radius: 8px; background-color: #FFFFFF; }
 QRadioButton::indicator:checked { border: 4px solid #4A6741; border-radius: 8px; background-color: #FFFFFF; }
-
 #rightPanel { background-color: #F5F0E8; }
-
-#offlineBanner {
-    background-color: #F0EEEA;
-    border: 1px solid #D4CBBE;
-    border-radius: 4px;
-}
-#offlineBanner QLabel {
-    font-size: 12px;
-    color: #6B6560;
-}
-#offlineDot {
-    background-color: #A39E94;
-    border-radius: 4px;
-    min-width: 8px;
-    max-width: 8px;
-    min-height: 8px;
-    max-height: 8px;
-}
-
-#filterPanel {
-    background-color: #F5F0E8;
-    border-top: 1px solid #D4CBBE;
-}
-#filterPanel QLineEdit {
-    padding: 4px 8px;
-    font-size: 12px;
-    border-radius: 4px;
-    border: 1px solid #D4CBBE;
-    background-color: #FFFFFF;
-    color: #2C2A26;
-}
+#offlineBanner { background-color: #F0EEEA; border: 1px solid #D4CBBE; border-radius: 4px; }
+#offlineBanner QLabel { font-size: 12px; color: #6B6560; }
+#offlineDot { background-color: #A39E94; border-radius: 4px; min-width: 8px; max-width: 8px; min-height: 8px; max-height: 8px; }
+#filterPanel { background-color: #F5F0E8; border-top: 1px solid #D4CBBE; }
+#filterPanel QLineEdit { padding: 4px 8px; font-size: 12px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; }
 #filterPanel QLineEdit:hover { border: 1px solid #B8AE9E; }
 #filterPanel QLineEdit:focus { border: 1px solid #4A6741; }
 #filterPanel QLineEdit[error="true"] { border: 1px solid #B54A3A; }
 #filterPanel QLineEdit:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }
 #filterPanel QLineEdit#searchInput { min-width: 160px; max-width: 240px; }
-
-#filterPanel QComboBox {
-    padding: 4px 8px;
-    font-size: 12px;
-    border-radius: 4px;
-    border: 1px solid #D4CBBE;
-    background-color: #FFFFFF;
-    color: #2C2A26;
-    min-width: 120px;
-}
+#filterPanel QComboBox { padding: 4px 8px; font-size: 12px; border-radius: 4px; border: 1px solid #D4CBBE; background-color: #FFFFFF; color: #2C2A26; min-width: 120px; }
 #filterPanel QComboBox:hover { border: 1px solid #B8AE9E; }
 #filterPanel QComboBox:on { border: 1px solid #4A6741; }
 #filterPanel QComboBox:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }
-#filterPanel QComboBox QAbstractItemView {
-    background-color: #FFFFFF;
-    border: 1px solid #D4CBBE;
-    selection-background-color: #E8EDE4;
-    selection-color: #2C2A26;
-}
+#filterPanel QComboBox QAbstractItemView { background-color: #FFFFFF; border: 1px solid #D4CBBE; selection-background-color: #E8EDE4; selection-color: #2C2A26; }
 #filterPanel QComboBox QAbstractItemView::item:hover { background-color: #EDE6D9; }
-
-#btn_add_route {
-    background-color: #4A6741;
-    color: #FFFFFF;
-    border: none;
-    padding: 3px 9px;
-    font-size: 12px;
-    border-radius: 4px;
-}
+#btn_add_route { background-color: #4A6741; color: #FFFFFF; border: none; padding: 3px 9px; font-size: 12px; border-radius: 4px; }
 #btn_add_route:hover { background-color: #3D5636; }
 #btn_add_route:pressed { background-color: #334A2E; }
 #btn_add_route:disabled { background-color: #A8B5A0; }
 #btn_add_route:focus { border: 1px dashed #4A6741; }
-
-#btn_reset {
-    background-color: #FFFFFF;
-    color: #2C2A26;
-    border: 1px solid #D4CBBE;
-    padding: 3px 9px;
-    font-size: 12px;
-    border-radius: 4px;
-}
+#btn_reset { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; padding: 3px 9px; font-size: 12px; border-radius: 4px; }
 #btn_reset:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }
 #btn_reset:pressed { background-color: #EDE6D9; border: 1px solid #3D5636; }
 #btn_reset:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }
 #btn_reset:focus { border: 1px dashed #4A6741; }
-
-#chk_deleted {
-    spacing: 6px;
-    font-size: 12px;
-    color: #6B6560;
-}
-#chk_deleted::indicator {
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    border: 1px solid #D4CBBE;
-    background-color: #FFFFFF;
-}
+#chk_deleted { spacing: 6px; font-size: 12px; color: #6B6560; }
+#chk_deleted::indicator { width: 15px; height: 15px; border-radius: 3px; border: 1px solid #D4CBBE; background-color: #FFFFFF; }
 #chk_deleted::indicator:hover { border: 1px solid #B8AE9E; }
 #chk_deleted::indicator:checked { background-color: #4A6741; border: 1px solid #4A6741; }
 #chk_deleted::indicator:pressed { background-color: #334A2E; border: 1px solid #334A2E; }
 #chk_deleted::indicator:disabled { background-color: #E5DFD4; border: 1px solid #E5DFD4; }
 #chk_deleted:disabled { color: #A39E94; }
-
-#tableWidget {
-    background-color: #FFFFFF;
-    alternate-background-color: #FAF8F3;
-    border: 1px solid #D4CBBE;
-    outline: none;
-}
-QHeaderView::section {
-    font-size: 11px;
-    font-weight: 600;
-    color: #6B6560;
-    background-color: #EDE6D9;
-    padding: 7px 10px;
-    border: none;
-    border-bottom: 1px solid #D4CBBE;
-    border-right: 1px solid #D4CBBE;
-}
-QTableWidget::item {
-    font-size: 12px;
-    color: #2C2A26;
-    padding: 7px 10px;
-    border-bottom: 1px solid #D4CBBE;
-}
+#tableWidget { background-color: #FFFFFF; alternate-background-color: #FAF8F3; border: 1px solid #D4CBBE; outline: none; }
+QHeaderView { background-color: #EDE6D9; }
+QHeaderView::section { font-size: 11px; font-weight: 600; color: #6B6560; background-color: #EDE6D9; padding: 7px 10px; border: none; border-bottom: 1px solid #D4CBBE; border-right: 1px solid #D4CBBE; }
+QHeaderView::section:vertical { background-color: #EDE6D9; color: #6B6560; border: none; padding: 4px 6px; }
+QTableWidget::item { font-size: 12px; color: #2C2A26; padding: 7px 10px; border-bottom: 1px solid #D4CBBE; }
 QTableWidget::item:hover { background-color: #EDE6D9; }
 QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
 #footerLabel { font-size: 11px; color: #6B6560; }
-
-#lblLoadingTitle {
-    font-size: 14px;
-    color: #6B6560;
-}
-#lblLoadingSub {
-    font-size: 12px;
-    color: #A39E94;
-}
-#lblEmptyTitle {
-    font-size: 14px;
-    color: #6B6560;
-}
-#lblEmptySub {
-    font-size: 12px;
-    color: #A39E94;
-}
-#errorFrame {
-    background-color: #FFFFFF;
-    border: 1px solid #B54A3A;
-    border-radius: 4px;
-}
-#errorFrame QLabel {
-    font-size: 14px;
-    color: #B54A3A;
-}
-#btnRetry {
-    background-color: #FFFFFF;
-    color: #2C2A26;
-    border: 1px solid #D4CBBE;
-    border-radius: 4px;
-    padding: 6px 16px;
-    font-size: 12px;
-}
-#btnRetry:hover {
-    border: 1px solid #4A6741;
-    background-color: #F5F0E8;
-}
-
-QTabWidget::panel { border: none; background-color: #FFFFFF; }
-QTabBar { 
-    background-color: #FFFFFF; 
-    border: none; 
-    qproperty-expanding: true; qproperty-drawBase: 0; }
-QTabBar::tab { 
-    height: 40px; 
-    background-color: #FFFFFF; 
-    color: #6B6560; 
-    font-size: 12px; 
-    font-weight: normal; 
-    padding: 0px 10px; 
-    border: none; 
-    border-bottom: 2px solid transparent; 
-    border-top: 1px solid #D4CBBE;
-    text-align: center; 
-}
-QTabBar::tab:hover { color: #2C2A26; }
-QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
-    <item>
-     <widget class="QFrame" name="headerFrame">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">#headerFrame { background-color: #2C2A26; border: none; }
-#headerFrame QLabel { color: #F5F0E8; }
-#logout_btn {
-    background-color: transparent;
-    color: #F5F0E8;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 3px 10px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-#logout_btn:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-#logout_btn:pressed {
-    background-color: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}</string>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <property name="leftMargin">
-        <number>15</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>15</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QPushButton" name="logo">
-         <property name="minimumSize">
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton { background: transparent; margin-right: 12px; }</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="../qrc/login_res.qrc">
-           <normaloff>:/login/icons/logo.png</normaloff>:/login/icons/logo.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>18</width>
-           <height>18</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="name">
-         <property name="styleSheet">
-          <string notr="true">font-size: 13px; font-weight: bold; margin-right: 15px;</string>
-         </property>
-         <property name="text">
-          <string>Легенды Пармы</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="name_chart">
-         <property name="styleSheet">
-          <string notr="true">font-size: 13px; margin-right: 10px;</string>
-         </property>
-         <property name="text">
-          <string>Каталог маршрутов</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QLabel" name="status_lb">
-         <property name="minimumSize">
-          <size>
-           <width>7</width>
-           <height>7</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>7</width>
-           <height>7</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: #4A6741; border-radius: 3px;</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="role_lb">
-         <property name="styleSheet">
-          <string notr="true">font-size: 12px; margin-right: 15px;</string>
-         </property>
-         <property name="text">
-          <string>Администратор</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="logout_btn">
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Выйти</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QFrame" name="centralFrame">
-      <property name="frameShape">
-       <enum>QFrame::Shape::NoFrame</enum>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_main">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QFrame" name="leftPanel">
-         <property name="minimumSize">
-          <size>
-           <width>280</width>
-           <height>260</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>280</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">#leftPanel { background-color: #F5F0E8; border-right: 1px solid #D4CBBE; }
-#lbl_title { font-size: 12px; color: #6B6560; }
-#lbl_desc { font-size: 11px; color: #6B6560; }
-
-#btn_open {
-    background-color: #4A6741;
-    color: #FFFFFF;
-    border: none;
-    padding: 3px 9px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-#btn_open:hover { background-color: #3D5636; }
-#btn_open:pressed { background-color: #334A2E; }
-#btn_open:disabled { background-color: #A8B5A0; }
-
-#btn_edit {
-    background-color: #FFFFFF;
-    color: #2C2A26;
-    border: 1px solid #D4CBBE;
-    padding: 3px 9px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-#btn_edit:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }
-#btn_edit:pressed { background-color: #EDE6D9; border: 1px solid #3D5636; }
-#btn_edit:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }
-
-#btn_delete {
-    background-color: #FFFFFF;
-    color: #B54A3A;
-    border: 1px solid #B54A3A;
-    padding: 3px 9px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-#btn_delete:hover { background-color: #F5E8E6; color: #B54A3A; border: 1px solid #B54A3A; }
-#btn_delete:pressed { background-color: #EBD5D1; color: #9A3E30; border: 1px solid #9A3E30; }
-#btn_delete:disabled { background-color: #FFFFFF; color: #D4A39C; border: 1px solid #E5C4BF; }
-
-QRadioButton { spacing: 6px; font-size: 12px; color: #6B6560; }
-QRadioButton::indicator { width: 15px; height: 15px; }
-QRadioButton::indicator:unchecked { border: 1px solid #D4CBBE; border-radius: 8px; background-color: #FFFFFF; }
-QRadioButton::indicator:checked { border: 4px solid #4A6741; border-radius: 8px; background-color: #FFFFFF; }</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <property name="spacing">
-           <number>12</number>
-          </property>
-          <property name="leftMargin">
-           <number>14</number>
-          </property>
-          <property name="topMargin">
-           <number>14</number>
-          </property>
-          <property name="rightMargin">
-           <number>14</number>
-          </property>
-          <property name="bottomMargin">
-           <number>14</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="lbl_title">
-            <property name="text">
-             <string>ВЫБРАННЫЙ МАРШРУТ</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="lbl_desc">
-            <property name="text">
-             <string>Краткие сведения</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="lbl_name">
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11px; color:#6B6560;&quot;&gt;Название:&lt;/span&gt; &lt;span style=&quot; font-size:12px; color:#2C2A26;&quot;&gt;—&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="lbl_type">
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11px; color:#6B6560;&quot;&gt;Тип:&lt;/span&gt; &lt;span style=&quot; font-size:12px; color:#2C2A26;&quot;&gt;—&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="lbl_length">
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11px; color:#6B6560;&quot;&gt;Протяжённость:&lt;/span&gt; &lt;span style=&quot; font-size:12px; color:#2C2A26;&quot;&gt;—&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="lbl_region">
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11px; color:#6B6560;&quot;&gt;Регион:&lt;/span&gt; &lt;span style=&quot; font-size:12px; color:#2C2A26;&quot;&gt;Республика Коми&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Orientation::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QFrame" name="buttonsContainer">
-            <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <property name="spacing">
-              <number>4</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QPushButton" name="btn_open">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string>Открыть</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btn_edit">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string>Редактировать</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btn_delete">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string>Удалить</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="rightPanel">
-         <property name="styleSheet">
-          <string notr="true">#rightPanel { background-color: #F5F0E8; }
-#filterPanel {
-    background-color: #F5F0E8;
-    border-top: 1px solid #D4CBBE;
-}
-
-#filterPanel QLineEdit {
-    padding: 4px 8px;
-    font-size: 12px;
-    border-radius: 4px;
-    border: 1px solid #D4CBBE;
-    background-color: #FFFFFF;
-    color: #2C2A26;
-}
-#filterPanel QLineEdit:hover { border: 1px solid #B8AE9E; }
-#filterPanel QLineEdit:focus { border: 1px solid #4A6741; }
-#filterPanel QLineEdit[error="true"] { border: 1px solid #B54A3A; }
-#filterPanel QLineEdit:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }
-#filterPanel QLineEdit#searchInput { min-width: 160px; max-width: 240px; }
-
-#filterPanel QComboBox {
-    padding: 4px 8px;
-    font-size: 12px;
-    border-radius: 4px;
-    border: 1px solid #D4CBBE;
-    background-color: #FFFFFF;
-    color: #2C2A26;
-    min-width: 120px;
-}
-#filterPanel QComboBox:hover { border: 1px solid #B8AE9E; }
-#filterPanel QComboBox:on { border: 1px solid #4A6741; }
-#filterPanel QComboBox:disabled { border: 1px dashed #D4CBBE; color: #A39E94; background-color: #F5F0E8; }
-#filterPanel QComboBox QAbstractItemView {
-    background-color: #FFFFFF;
-    border: 1px solid #D4CBBE;
-    selection-background-color: #E8EDE4;
-    selection-color: #2C2A26;
-}
-#filterPanel QComboBox QAbstractItemView::item:hover {
-    background-color: #EDE6D9;
-}
-
-#btn_add_route {
-    background-color: #4A6741;
-    color: #FFFFFF;
-    border: none;
-    padding: 3px 9px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-#btn_add_route:hover { background-color: #3D5636; }
-#btn_add_route:pressed { background-color: #334A2E; }
-#btn_add_route:disabled { background-color: #A8B5A0; }
-#btn_add_route:focus { border: 1px dashed #4A6741; }
-
-#btn_reset {
-    background-color: #FFFFFF;
-    color: #2C2A26;
-    border: 1px solid #D4CBBE;
-    padding: 3px 9px;
-    font-size: 12px;
-    border-radius: 4px;
-}
-#btn_reset:hover { background-color: #F5F0E8; border: 1px solid #4A6741; }
-#btn_reset:pressed { background-color: #EDE6D9; border: 1px solid #3D5636; }
-#btn_reset:disabled { background-color: #FFFFFF; color: #A39E94; border: 1px solid #E5DFD4; }
-#btn_reset:focus { border: 1px dashed #4A6741; }
-
-#chk_deleted {
-    spacing: 6px;
-    font-size: 12px;
-    color: #6B6560;
-}
-#chk_deleted::indicator {
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    border: 1px solid #D4CBBE;
-    background-color: #FFFFFF;
-}
-#chk_deleted::indicator:hover { border: 1px solid #B8AE9E; }
-#chk_deleted::indicator:checked { background-color: #4A6741; border: 1px solid #4A6741; }
-#chk_deleted::indicator:pressed { background-color: #334A2E; border: 1px solid #334A2E; }
-#chk_deleted::indicator:disabled { background-color: #E5DFD4; border: 1px solid #E5DFD4; }
-#chk_deleted:disabled { color: #A39E94; }
-
-#tableWidget {
-    background-color: #FFFFFF;
-    alternate-background-color: #FAF8F3;
-    border: 1px solid #D4CBBE;
-    outline: none;
-}
-QHeaderView::section {
-    font-size: 11px;
-    font-weight: 600;
-    color: #6B6560;
-    background-color: #EDE6D9;
-    padding: 7px 10px;
-    border: none;
-    border-bottom: 1px solid #D4CBBE;
-    border-right: 1px solid #D4CBBE;
-}
-QTableWidget::item {
-    font-size: 12px;
-    color: #2C2A26;
-    padding: 7px 10px;
-    border-bottom: 1px solid #D4CBBE;
-}
-QTableWidget::item:hover { background-color: #EDE6D9; }
-QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
-#footerLabel { font-size: 11px; color: #6B6560; }
-
 #lblLoadingTitle { font-size: 14px; color: #6B6560; }
 #lblLoadingSub { font-size: 12px; color: #A39E94; }
 #lblEmptyTitle { font-size: 14px; color: #6B6560; }
@@ -795,31 +89,168 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
 #errorFrame QLabel { font-size: 14px; color: #B54A3A; }
 #btnRetry { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; border-radius: 4px; padding: 6px 16px; font-size: 12px; }
 #btnRetry:hover { border: 1px solid #4A6741; background-color: #F5F0E8; }
-
-#offlineBanner { background-color: #F0EEEA; border: 1px solid #D4CBBE; border-radius: 4px; }
-#offlineBanner QLabel { font-size: 12px; color: #6B6560; }
-#offlineDot { background-color: #A39E94; border-radius: 4px; min-width: 8px; max-width: 8px; min-height: 8px; max-height: 8px; }</string>
+QTabWidget::panel { border: none; background-color: #FFFFFF; }
+QTabBar { background-color: #FFFFFF; border: none; qproperty-expanding: true; qproperty-drawBase: 0; }
+QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 10px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }
+QTabBar::tab:hover { color: #2C2A26; }
+QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing"><number>0</number></property>
+    <property name="leftMargin"><number>0</number></property>
+    <property name="topMargin"><number>0</number></property>
+    <property name="rightMargin"><number>0</number></property>
+    <property name="bottomMargin"><number>0</number></property>
+    <item>
+     <widget class="QFrame" name="headerFrame">
+      <property name="minimumSize"><size><width>0</width><height>40</height></size></property>
+      <property name="maximumSize"><size><width>16777215</width><height>40</height></size></property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing"><number>0</number></property>
+       <property name="leftMargin"><number>15</number></property>
+       <property name="topMargin"><number>0</number></property>
+       <property name="rightMargin"><number>15</number></property>
+       <property name="bottomMargin"><number>0</number></property>
+       <item>
+        <widget class="QPushButton" name="logo">
+         <property name="minimumSize"><size><width>22</width><height>22</height></size></property>
+         <property name="maximumSize"><size><width>22</width><height>22</height></size></property>
+         <property name="styleSheet"><string notr="true">QPushButton { background: transparent; margin-right: 12px; }</string></property>
+         <property name="text"><string/></property>
+         <property name="icon">
+          <iconset resource="../qrc/login_res.qrc">
+           <normaloff>:/login/icons/logo.png</normaloff>:/login/icons/logo.png</iconset>
          </property>
-         <property name="frameShape">
-          <enum>QFrame::Shape::NoFrame</enum>
-         </property>
+         <property name="iconSize"><size><width>18</width><height>18</height></size></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="name">
+         <property name="styleSheet"><string notr="true">font-size: 13px; font-weight: bold; margin-right: 15px;</string></property>
+         <property name="text"><string>Легенды Пармы</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="name_chart">
+         <property name="styleSheet"><string notr="true">font-size: 13px; margin-right: 10px;</string></property>
+         <property name="text"><string>Каталог маршрутов</string></property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+         <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="status_lb">
+         <property name="minimumSize"><size><width>7</width><height>7</height></size></property>
+         <property name="maximumSize"><size><width>7</width><height>7</height></size></property>
+         <property name="styleSheet"><string notr="true">background-color: #4A6741; border-radius: 3px;</string></property>
+         <property name="text"><string/></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="role_lb">
+         <property name="styleSheet"><string notr="true">font-size: 12px; margin-right: 15px;</string></property>
+         <property name="text"><string>Администратор</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="logout_btn">
+         <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+         <property name="text"><string>Выйти</string></property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="centralFrame">
+      <property name="frameShape"><enum>QFrame::Shape::NoFrame</enum></property>
+      <layout class="QHBoxLayout" name="horizontalLayout_main">
+       <property name="spacing"><number>0</number></property>
+       <property name="leftMargin"><number>0</number></property>
+       <property name="topMargin"><number>0</number></property>
+       <property name="rightMargin"><number>0</number></property>
+       <property name="bottomMargin"><number>0</number></property>
+       <item>
+        <widget class="QFrame" name="leftPanel">
+         <property name="minimumSize"><size><width>280</width><height>260</height></size></property>
+         <property name="maximumSize"><size><width>280</width><height>16777215</height></size></property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="spacing"><number>12</number></property>
+          <property name="leftMargin"><number>14</number></property>
+          <property name="topMargin"><number>14</number></property>
+          <property name="rightMargin"><number>14</number></property>
+          <property name="bottomMargin"><number>14</number></property>
+          <item>
+           <widget class="QLabel" name="lbl_title">
+            <property name="text"><string>ВЫБРАННЫЙ МАРШРУТ</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_desc">
+            <property name="text"><string>Краткие сведения</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_name">
+            <property name="text"><string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:11px; color:#6B6560;"&gt;Название:&lt;/span&gt; &lt;span style=" font-size:12px; color:#2C2A26;"&gt;—&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_type">
+            <property name="text"><string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:11px; color:#6B6560;"&gt;Тип:&lt;/span&gt; &lt;span style=" font-size:12px; color:#2C2A26;"&gt;—&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_length">
+            <property name="text"><string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-size:11px; color:#6B6560;"&gt;Протяжённость:&lt;/span&gt; &lt;span style=" font-size:12px; color:#2C2A26;"&gt;—&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="leftSpacer">
+            <property name="orientation"><enum>Qt::Orientation::Vertical</enum></property>
+            <property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="leftButtonsLayout">
+            <property name="spacing"><number>6</number></property>
+            <item>
+             <widget class="QPushButton" name="btn_open">
+              <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+              <property name="text"><string>Открыть</string></property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_edit">
+              <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+              <property name="text"><string>Редактировать</string></property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_delete">
+              <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+              <property name="text"><string>Удалить</string></property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="rightPanel">
+         <property name="frameShape"><enum>QFrame::Shape::NoFrame</enum></property>
          <layout class="QVBoxLayout" name="verticalLayout_right">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>12</number>
-          </property>
-          <property name="topMargin">
-           <number>12</number>
-          </property>
-          <property name="rightMargin">
-           <number>12</number>
-          </property>
-          <property name="bottomMargin">
-           <number>12</number>
-          </property>
-          
+          <property name="spacing"><number>0</number></property>
+          <property name="leftMargin"><number>12</number></property>
+          <property name="topMargin"><number>12</number></property>
+          <property name="rightMargin"><number>12</number></property>
+          <property name="bottomMargin"><number>12</number></property>
           <item>
            <widget class="QFrame" name="offlineBanner">
             <property name="visible"><bool>false</bool></property>
@@ -848,11 +279,9 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
             </layout>
            </widget>
           </item>
-          
           <item>
            <widget class="QStackedWidget" name="stateStack">
             <property name="currentIndex"><number>0</number></property>
-            
             <widget class="QWidget" name="pageNormal">
              <layout class="QVBoxLayout" name="normalLayout">
               <property name="leftMargin"><number>0</number></property>
@@ -877,7 +306,6 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
               </item>
              </layout>
             </widget>
-            
             <widget class="QWidget" name="pageLoading">
              <layout class="QVBoxLayout" name="loadingLayout">
               <property name="leftMargin"><number>0</number></property>
@@ -908,7 +336,6 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
               </item>
              </layout>
             </widget>
-            
             <widget class="QWidget" name="pageEmpty">
              <layout class="QVBoxLayout" name="emptyLayout">
               <property name="leftMargin"><number>0</number></property>
@@ -939,7 +366,6 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
               </item>
              </layout>
             </widget>
-            
             <widget class="QWidget" name="pageError">
              <layout class="QVBoxLayout" name="errorLayout">
               <property name="leftMargin"><number>0</number></property>
@@ -982,107 +408,60 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
               </item>
              </layout>
             </widget>
-            
            </widget>
           </item>
-          
           <item>
            <widget class="QLabel" name="footerLabel">
-            <property name="styleSheet">
-             <string notr="true">margin-top: 8px; margin-bottom: 8px; margin-left: 2px;</string>
-            </property>
-            <property name="text">
-             <string>Показано N из M</string>
-            </property>
+            <property name="styleSheet"><string notr="true">margin-top: 8px; margin-bottom: 8px; margin-left: 2px;</string></property>
+            <property name="text"><string>Показано N из M</string></property>
            </widget>
           </item>
           <item>
            <widget class="QFrame" name="filterPanel">
-            <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
-            </property>
+            <property name="frameShape"><enum>QFrame::Shape::NoFrame</enum></property>
             <layout class="QHBoxLayout" name="filterLayout">
-             <property name="spacing">
-              <number>8</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>8</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>8</number>
-             </property>
+             <property name="spacing"><number>8</number></property>
+             <property name="leftMargin"><number>0</number></property>
+             <property name="topMargin"><number>8</number></property>
+             <property name="rightMargin"><number>0</number></property>
+             <property name="bottomMargin"><number>8</number></property>
              <item>
               <widget class="QLineEdit" name="searchInput">
-               <property name="placeholderText">
-                <string>Поиск по названию</string>
-               </property>
+               <property name="placeholderText"><string>Поиск по названию</string></property>
               </widget>
              </item>
              <item>
               <widget class="QComboBox" name="typeSelect">
-               <item>
-                <property name="text">
-                 <string>Тип</string>
-                </property>
-               </item>
+               <item><property name="text"><string>Тип</string></property></item>
               </widget>
              </item>
              <item>
               <widget class="QComboBox" name="regionSelect">
-               <item>
-                <property name="text">
-                 <string>Регион</string>
-                </property>
-               </item>
+               <item><property name="text"><string>Регион</string></property></item>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="btn_reset">
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="text">
-                <string>Сбросить</string>
-               </property>
+               <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+               <property name="text"><string>Сбросить</string></property>
               </widget>
              </item>
              <item>
               <spacer name="horizontalSpacer_right">
-               <property name="orientation">
-                <enum>Qt::Orientation::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
+               <property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property>
+               <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
               </spacer>
              </item>
              <item>
               <widget class="QPushButton" name="btn_add_route">
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="text">
-                <string>+ Новый маршрут</string>
-               </property>
+               <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+               <property name="text"><string>+ Новый маршрут</string></property>
               </widget>
              </item>
              <item>
               <widget class="QCheckBox" name="chk_deleted">
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="text">
-                <string>Показывать удалённые</string>
-               </property>
+               <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+               <property name="text"><string>Показывать удалённые</string></property>
               </widget>
              </item>
             </layout>
@@ -1102,83 +481,20 @@ QTableWidget::item:selected { background-color: #E8EDE4; color: #2C2A26; }
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>44</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>44</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QTabWidget::panel { border: none; background-color: #FFFFFF; }
-QTabBar { background-color: #FFFFFF; border: none; qproperty-drawBase: 0; qproperty-expanding: true; }
-QTabBar::tab { 
-    height: 40px; 
-    background-color: #FFFFFF; 
-    color: #6B6560; 
-    font-size: 12px; 
-    font-weight: normal; 
-    padding: 0px 10px; 
-    border: none; 
-    border-bottom: 2px solid transparent; 
-    text-align: center; 
-}
-QTabBar::tab:hover { color: #2C2A26; }
-QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px solid #4A6741; }</string>
-      </property>
-      <property name="tabPosition">
-       <enum>QTabWidget::TabPosition::North</enum>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <property name="usesScrollButtons">
-       <bool>false</bool>
-      </property>
-      <property name="tabsClosable">
-       <bool>false</bool>
-      </property>
+      <property name="minimumSize"><size><width>0</width><height>44</height></size></property>
+      <property name="maximumSize"><size><width>16777215</width><height>44</height></size></property>
+      <property name="tabPosition"><enum>QTabWidget::TabPosition::North</enum></property>
+      <property name="currentIndex"><number>0</number></property>
+      <property name="usesScrollButtons"><bool>false</bool></property>
+      <property name="tabsClosable"><bool>false</bool></property>
       <property name="documentMode"><bool>true</bool></property>
-      <widget class="QWidget" name="tab_1">
-       <attribute name="title">
-        <string>Каталог маршрутов</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_2">
-       <attribute name="title">
-        <string>Туры</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_3">
-       <attribute name="title">
-        <string>Импорт и экспорт</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_4">
-       <attribute name="title">
-        <string>Синхронизация</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_5">
-       <attribute name="title">
-        <string>Пользователи</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_6">
-       <attribute name="title">
-        <string>Журнал аудита</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_7">
-       <attribute name="title">
-        <string>Настройки API и кеш</string>
-       </attribute>
-      </widget>
+      <widget class="QWidget" name="tab_1"><attribute name="title"><string>Каталог маршрутов</string></attribute></widget>
+      <widget class="QWidget" name="tab_2"><attribute name="title"><string>Туры</string></attribute></widget>
+      <widget class="QWidget" name="tab_3"><attribute name="title"><string>Импорт и экспорт</string></attribute></widget>
+      <widget class="QWidget" name="tab_4"><attribute name="title"><string>Синхронизация</string></attribute></widget>
+      <widget class="QWidget" name="tab_5"><attribute name="title"><string>Пользователи</string></attribute></widget>
+      <widget class="QWidget" name="tab_6"><attribute name="title"><string>Журнал аудита</string></attribute></widget>
+      <widget class="QWidget" name="tab_7"><attribute name="title"><string>Настройки API и кеш</string></attribute></widget>
      </widget>
     </item>
    </layout>
@@ -1189,9 +505,3 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
  </resources>
  <connections/>
 </ui>
-
-
-
-
-
-

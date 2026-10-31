@@ -20,34 +20,30 @@
 #logout_btn { background-color: transparent; color: #F5F0E8; border: 1px solid rgba(255, 255, 255, 0.25); padding: 3px 10px; font-size: 12px; border-radius: 4px; }
 #logout_btn:hover { background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.4); }
 #logout_btn:pressed { background-color: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.5); }
-
 #formCard { background-color: #FFFFFF; border: 1px solid #D4CBBE; border-radius: 4px; }
 #lbl_form_title { font-size: 16px; font-weight: 600; color: #2C2A26; }
 #lbl_status { font-size: 12px; }
 #lbl_queue_title { font-size: 11px; font-weight: 600; color: #6B6560; }
-
 QCheckBox { spacing: 6px; font-size: 12px; color: #6B6560; background: transparent; }
 QCheckBox::indicator { width: 15px; height: 15px; border-radius: 3px; border: 1px solid #D4CBBE; background-color: #FFFFFF; }
 QCheckBox::indicator:hover { border: 1px solid #B8AE9E; }
 QCheckBox::indicator:checked { background-color: #4A6741; border: 1px solid #4A6741; }
 QCheckBox::indicator:disabled { background-color: #E5DFD4; border: 1px solid #E5DFD4; }
 QCheckBox:disabled { color: #A39E94; }
-
-QTableWidget { background-color: #FFFFFF; border: 1px solid #D4CBBE; outline: none; }
+QHeaderView { background-color: #EDE6D9; }
 QHeaderView::section { background-color: #EDE6D9; color: #6B6560; font-size: 11px; font-weight: 600; border: none; border-bottom: 1px solid #D4CBBE; padding: 7px 10px; }
+QHeaderView::section:vertical { background-color: #EDE6D9; color: #6B6560; border: none; padding: 4px 6px; }
+QTableWidget { background-color: #FFFFFF; border: 1px solid #D4CBBE; outline: none; }
 QTableWidget::item { border-bottom: 1px solid #E0DCD3; padding: 7px 10px; color: #2C2A26; font-size: 12px; }
 QTableWidget::item:hover { background-color: #EDE6D9; }
-
 #btn_sync { background-color: #4A6741; color: #FFFFFF; border: none; padding: 11px 16px; font-size: 14px; font-weight: 600; border-radius: 4px; }
 #btn_sync:hover { background-color: #3D5636; }
 #btn_sync:pressed { background-color: #334A2E; }
 #btn_sync:disabled { background-color: #A8B5A0; }
 #btn_sync:focus { border: 1px dashed #4A6741; }
-
 #offlineBanner { background-color: #F0EEEA; border: 1px solid #D4CBBE; border-radius: 4px; }
 #offlineBanner QLabel { font-size: 12px; color: #6B6560; }
 #offlineDot { background-color: #A39E94; border-radius: 4px; min-width: 8px; max-width: 8px; min-height: 8px; max-height: 8px; }
-
 #lblLoadingTitle { font-size: 14px; color: #6B6560; }
 #lblLoadingSub { font-size: 12px; color: #A39E94; }
 #lblEmptyTitle { font-size: 14px; color: #6B6560; }
@@ -56,7 +52,6 @@ QTableWidget::item:hover { background-color: #EDE6D9; }
 #errorFrame QLabel { font-size: 14px; color: #B54A3A; }
 #btnRetry { background-color: #FFFFFF; color: #2C2A26; border: 1px solid #D4CBBE; border-radius: 4px; padding: 6px 16px; font-size: 12px; }
 #btnRetry:hover { border: 1px solid #4A6741; background-color: #F5F0E8; }
-
 QTabWidget::panel { border: none; background-color: #FFFFFF; }
 QTabBar { background-color: #FFFFFF; border: none; qproperty-drawBase: 0; qproperty-expanding: true; }
 QTabBar::tab { height: 40px; background-color: #FFFFFF; color: #6B6560; font-size: 12px; font-weight: normal; padding: 0px 30px; border: none; border-bottom: 2px solid transparent; border-top: 1px solid #D4CBBE; text-align: center; }
@@ -70,7 +65,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
     <property name="topMargin"><number>0</number></property>
     <property name="rightMargin"><number>0</number></property>
     <property name="bottomMargin"><number>0</number></property>
-    
     <item>
      <widget class="QFrame" name="headerFrame">
       <property name="minimumSize"><size><width>0</width><height>40</height></size></property>
@@ -159,13 +153,11 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
          <property name="topMargin"><number>24</number></property>
          <property name="rightMargin"><number>24</number></property>
          <property name="bottomMargin"><number>24</number></property>
-         
          <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="lbl_form_title">
            <property name="text"><string>Синхронизация</string></property>
           </widget>
          </item>
-         
          <item>
           <widget class="QFrame" name="offlineBanner">
            <property name="visible"><bool>false</bool></property>
@@ -194,19 +186,16 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </layout>
           </widget>
          </item>
-         
          <item>
           <widget class="QLabel" name="lbl_status">
            <property name="text"><string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" color:#6B6560;"&gt;Статус:&lt;/span&gt; &lt;span style=" color:#2C2A26;"&gt;Готово к синхронизации&lt;/span&gt;&lt;br/&gt;&lt;span style=" color:#A39E94; font-size:11px;"&gt;Последняя синхронизация: —&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property>
           </widget>
          </item>
-         
          <item>
           <widget class="QLabel" name="lbl_queue_title">
            <property name="text"><string>ОЧЕРЕДЬ ЗАПРОСОВ</string></property>
           </widget>
          </item>
-         
          <item>
           <layout class="QVBoxLayout" name="checkboxesLayout">
            <property name="spacing"><number>8</number></property>
@@ -227,11 +216,9 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
            </item>
           </layout>
          </item>
-         
          <item>
           <widget class="QStackedWidget" name="stateStack">
            <property name="currentIndex"><number>0</number></property>
-           
            <widget class="QWidget" name="pageNormal">
             <layout class="QVBoxLayout" name="normalLayout">
              <property name="leftMargin"><number>0</number></property>
@@ -252,7 +239,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
              </item>
             </layout>
            </widget>
-           
            <widget class="QWidget" name="pageLoading">
             <layout class="QVBoxLayout" name="loadingLayout">
              <property name="leftMargin"><number>0</number></property>
@@ -283,7 +269,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
              </item>
             </layout>
            </widget>
-           
            <widget class="QWidget" name="pageEmpty">
             <layout class="QVBoxLayout" name="emptyLayout">
              <property name="leftMargin"><number>0</number></property>
@@ -314,7 +299,6 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
              </item>
             </layout>
            </widget>
-           
            <widget class="QWidget" name="pageError">
             <layout class="QVBoxLayout" name="errorLayout">
              <property name="leftMargin"><number>0</number></property>
@@ -357,10 +341,8 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
              </item>
             </layout>
            </widget>
-           
           </widget>
          </item>
-         
          <item alignment="Qt::AlignmentFlag::AlignLeft">
           <widget class="QPushButton" name="btn_sync">
            <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
@@ -385,10 +367,13 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
      </spacer>
     </item>
     <item>
-      <widget class="QTabWidget" name="tabWidget">
-        <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>1</horstretch><verstretch>0</verstretch></sizepolicy></property>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="minimumSize"><size><width>0</width><height>44</height></size></property>
       <property name="maximumSize"><size><width>16777215</width><height>44</height></size></property>
       <property name="tabPosition"><enum>QTabWidget::TabPosition::North</enum></property>
@@ -413,9 +398,3 @@ QTabBar::tab:selected { color: #2C2A26; font-weight: 600; border-bottom: 2px sol
  </resources>
  <connections/>
 </ui>
-
-
-
-
-
-
